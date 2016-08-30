@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04243B061D75179800809AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B051D75179800809AC5 /* main.m */; };
-		04243B091D75179800809AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B081D75179800809AC5 /* AppDelegate.m */; };
-		04243B0C1D75179800809AC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B0B1D75179800809AC5 /* ViewController.m */; };
-		04243B0F1D75179800809AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04243B0D1D75179800809AC5 /* Main.storyboard */; };
 		04243B111D75179800809AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04243B101D75179800809AC5 /* Assets.xcassets */; };
 		04243B141D75179800809AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04243B121D75179800809AC5 /* LaunchScreen.storyboard */; };
 		04243B1F1D75179900809AC5 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B1E1D75179900809AC5 /* ____Tests.m */; };
 		04243B2A1D75179900809AC5 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B291D75179900809AC5 /* ____UITests.m */; };
+		04A22A721D75319C002C3490 /* NXHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A611D75319C002C3490 /* NXHMainViewController.m */; };
+		04A22A731D75319C002C3490 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A6E1D75319C002C3490 /* AppDelegate.m */; };
+		04A22A741D75319C002C3490 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A22A6F1D75319C002C3490 /* Info.plist */; };
+		04A22A751D75319C002C3490 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A701D75319C002C3490 /* main.m */; };
+		04A22A7C1D7531FB002C3490 /* NXHGudieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A7B1D7531FB002C3490 /* NXHGudieTool.m */; };
+		04A22A801D753474002C3490 /* NXHSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A7F1D753474002C3490 /* NXHSaveTool.m */; };
+		04A22A891D753792002C3490 /* NXHNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A881D753792002C3490 /* NXHNewFeatureViewController.m */; };
+		04A22A8D1D753C19002C3490 /* NXHNewFeatureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A8C1D753C19002C3490 /* NXHNewFeatureCell.m */; };
+		04A22A931D7565AD002C3490 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A901D7565AD002C3490 /* UIImage+Image.m */; };
+		04A22A941D7565AD002C3490 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A921D7565AD002C3490 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +42,33 @@
 
 /* Begin PBXFileReference section */
 		04243B011D75179800809AC5 /* 农事无忧.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "农事无忧.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04243B051D75179800809AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		04243B071D75179800809AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		04243B081D75179800809AC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		04243B0A1D75179800809AC5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		04243B0B1D75179800809AC5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		04243B0E1D75179800809AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04243B101D75179800809AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04243B131D75179800809AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04243B151D75179800809AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04243B1A1D75179900809AC5 /* 农事无忧Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "农事无忧Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B1E1D75179900809AC5 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		04243B201D75179900809AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04243B251D75179900809AC5 /* 农事无忧UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "农事无忧UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B291D75179900809AC5 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		04243B2B1D75179900809AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A22A601D75319C002C3490 /* NXHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHMainViewController.h; sourceTree = "<group>"; };
+		04A22A611D75319C002C3490 /* NXHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHMainViewController.m; sourceTree = "<group>"; };
+		04A22A6D1D75319C002C3490 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04A22A6E1D75319C002C3490 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04A22A6F1D75319C002C3490 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A22A701D75319C002C3490 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04A22A7A1D7531FB002C3490 /* NXHGudieTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHGudieTool.h; sourceTree = "<group>"; };
+		04A22A7B1D7531FB002C3490 /* NXHGudieTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHGudieTool.m; sourceTree = "<group>"; };
+		04A22A7E1D753474002C3490 /* NXHSaveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSaveTool.h; sourceTree = "<group>"; };
+		04A22A7F1D753474002C3490 /* NXHSaveTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHSaveTool.m; sourceTree = "<group>"; };
+		04A22A871D753792002C3490 /* NXHNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHNewFeatureViewController.h; sourceTree = "<group>"; };
+		04A22A881D753792002C3490 /* NXHNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHNewFeatureViewController.m; sourceTree = "<group>"; };
+		04A22A8A1D753858002C3490 /* 农事无忧.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "农事无忧.pch"; sourceTree = "<group>"; };
+		04A22A8B1D753C19002C3490 /* NXHNewFeatureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHNewFeatureCell.h; sourceTree = "<group>"; };
+		04A22A8C1D753C19002C3490 /* NXHNewFeatureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHNewFeatureCell.m; sourceTree = "<group>"; };
+		04A22A8F1D7565AD002C3490 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		04A22A901D7565AD002C3490 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
+		04A22A911D7565AD002C3490 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		04A22A921D7565AD002C3490 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +119,9 @@
 		04243B031D75179800809AC5 /* 农事无忧 */ = {
 			isa = PBXGroup;
 			children = (
-				04243B071D75179800809AC5 /* AppDelegate.h */,
-				04243B081D75179800809AC5 /* AppDelegate.m */,
-				04243B0A1D75179800809AC5 /* ViewController.h */,
-				04243B0B1D75179800809AC5 /* ViewController.m */,
-				04243B0D1D75179800809AC5 /* Main.storyboard */,
+				04A22A551D75319C002C3490 /* Class */,
 				04243B101D75179800809AC5 /* Assets.xcassets */,
 				04243B121D75179800809AC5 /* LaunchScreen.storyboard */,
-				04243B151D75179800809AC5 /* Info.plist */,
 				04243B041D75179800809AC5 /* Supporting Files */,
 			);
 			path = "农事无忧";
@@ -117,7 +130,6 @@
 		04243B041D75179800809AC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04243B051D75179800809AC5 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,6 +150,264 @@
 				04243B2B1D75179900809AC5 /* Info.plist */,
 			);
 			path = "农事无忧UITests";
+			sourceTree = "<group>";
+		};
+		04A22A551D75319C002C3490 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A831D75376A002C3490 /* NewFeature(新特性界面) */,
+				04A22A561D75319C002C3490 /* Discover(发现) */,
+				04A22A5A1D75319C002C3490 /* Home(首页) */,
+				04A22A5E1D75319C002C3490 /* Main(主要) */,
+				04A22A641D75319C002C3490 /* Me(我) */,
+				04A22A681D75319C002C3490 /* Message(消息) */,
+				04A22A6C1D75319C002C3490 /* Other */,
+				04A22A711D75319C002C3490 /* Tool(业务) */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		04A22A561D75319C002C3490 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A571D75319C002C3490 /* Controller */,
+				04A22A581D75319C002C3490 /* Model */,
+				04A22A591D75319C002C3490 /* View-Model */,
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		04A22A571D75319C002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A581D75319C002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A591D75319C002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A5A1D75319C002C3490 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A5B1D75319C002C3490 /* Controller */,
+				04A22A5C1D75319C002C3490 /* Model */,
+				04A22A5D1D75319C002C3490 /* View-Model */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		04A22A5B1D75319C002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A5C1D75319C002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A5D1D75319C002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A5E1D75319C002C3490 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A5F1D75319C002C3490 /* Controller */,
+				04A22A621D75319C002C3490 /* Model */,
+				04A22A631D75319C002C3490 /* View-Model */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		04A22A5F1D75319C002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A601D75319C002C3490 /* NXHMainViewController.h */,
+				04A22A611D75319C002C3490 /* NXHMainViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A621D75319C002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A631D75319C002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A641D75319C002C3490 /* Me(我) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A651D75319C002C3490 /* Controller */,
+				04A22A661D75319C002C3490 /* Model */,
+				04A22A671D75319C002C3490 /* View-Model */,
+			);
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		04A22A651D75319C002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A661D75319C002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A671D75319C002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A681D75319C002C3490 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A691D75319C002C3490 /* Controller */,
+				04A22A6A1D75319C002C3490 /* Model */,
+				04A22A6B1D75319C002C3490 /* View-Model */,
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		04A22A691D75319C002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A6A1D75319C002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A6B1D75319C002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A6C1D75319C002C3490 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A8E1D7565AD002C3490 /* Categoty */,
+				04A22A6D1D75319C002C3490 /* AppDelegate.h */,
+				04A22A6E1D75319C002C3490 /* AppDelegate.m */,
+				04A22A6F1D75319C002C3490 /* Info.plist */,
+				04A22A701D75319C002C3490 /* main.m */,
+				04A22A8A1D753858002C3490 /* 农事无忧.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		04A22A711D75319C002C3490 /* Tool(业务) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A7D1D75345C002C3490 /* Save */,
+				04A22A791D7531FB002C3490 /* Gudie */,
+			);
+			path = "Tool(业务)";
+			sourceTree = "<group>";
+		};
+		04A22A791D7531FB002C3490 /* Gudie */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A7A1D7531FB002C3490 /* NXHGudieTool.h */,
+				04A22A7B1D7531FB002C3490 /* NXHGudieTool.m */,
+			);
+			path = Gudie;
+			sourceTree = "<group>";
+		};
+		04A22A7D1D75345C002C3490 /* Save */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A7E1D753474002C3490 /* NXHSaveTool.h */,
+				04A22A7F1D753474002C3490 /* NXHSaveTool.m */,
+			);
+			path = Save;
+			sourceTree = "<group>";
+		};
+		04A22A831D75376A002C3490 /* NewFeature(新特性界面) */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A841D75376A002C3490 /* Controller */,
+				04A22A851D75376A002C3490 /* Model */,
+				04A22A861D75376A002C3490 /* View-Model */,
+			);
+			path = "NewFeature(新特性界面)";
+			sourceTree = "<group>";
+		};
+		04A22A841D75376A002C3490 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A871D753792002C3490 /* NXHNewFeatureViewController.h */,
+				04A22A881D753792002C3490 /* NXHNewFeatureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04A22A851D75376A002C3490 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04A22A861D75376A002C3490 /* View-Model */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A8B1D753C19002C3490 /* NXHNewFeatureCell.h */,
+				04A22A8C1D753C19002C3490 /* NXHNewFeatureCell.m */,
+			);
+			path = "View-Model";
+			sourceTree = "<group>";
+		};
+		04A22A8E1D7565AD002C3490 /* Categoty */ = {
+			isa = PBXGroup;
+			children = (
+				04A22A8F1D7565AD002C3490 /* UIImage+Image.h */,
+				04A22A901D7565AD002C3490 /* UIImage+Image.m */,
+				04A22A911D7565AD002C3490 /* UIView+Frame.h */,
+				04A22A921D7565AD002C3490 /* UIView+Frame.m */,
+			);
+			path = Categoty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +472,7 @@
 		04243AF91D75179800809AC5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = NXH;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = HBNXWLKJ;
 				TargetAttributes = {
@@ -245,7 +516,7 @@
 			files = (
 				04243B141D75179800809AC5 /* LaunchScreen.storyboard in Resources */,
 				04243B111D75179800809AC5 /* Assets.xcassets in Resources */,
-				04243B0F1D75179800809AC5 /* Main.storyboard in Resources */,
+				04A22A741D75319C002C3490 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +541,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04243B0C1D75179800809AC5 /* ViewController.m in Sources */,
-				04243B091D75179800809AC5 /* AppDelegate.m in Sources */,
-				04243B061D75179800809AC5 /* main.m in Sources */,
+				04A22A8D1D753C19002C3490 /* NXHNewFeatureCell.m in Sources */,
+				04A22A931D7565AD002C3490 /* UIImage+Image.m in Sources */,
+				04A22A731D75319C002C3490 /* AppDelegate.m in Sources */,
+				04A22A941D7565AD002C3490 /* UIView+Frame.m in Sources */,
+				04A22A891D753792002C3490 /* NXHNewFeatureViewController.m in Sources */,
+				04A22A751D75319C002C3490 /* main.m in Sources */,
+				04A22A801D753474002C3490 /* NXHSaveTool.m in Sources */,
+				04A22A721D75319C002C3490 /* NXHMainViewController.m in Sources */,
+				04A22A7C1D7531FB002C3490 /* NXHGudieTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,14 +585,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04243B0D1D75179800809AC5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04243B0E1D75179800809AC5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		04243B121D75179800809AC5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,7 +633,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +672,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,10 +684,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "农事无忧/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,10 +700,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "农事无忧/Info.plist";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -498,6 +777,7 @@
 				04243B301D75179900809AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04243B311D75179900809AC5 /* Build configuration list for PBXNativeTarget "农事无忧Tests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +786,7 @@
 				04243B331D75179900809AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04243B341D75179900809AC5 /* Build configuration list for PBXNativeTarget "农事无忧UITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +795,7 @@
 				04243B361D75179900809AC5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

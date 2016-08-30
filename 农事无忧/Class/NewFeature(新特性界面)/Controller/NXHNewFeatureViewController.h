@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NXHNewFeatureViewController.h
 //  农事无忧
 //
 //  Created by Mac on 16/8/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NXHNewFeatureViewController : UICollectionViewController
 
 @end
-

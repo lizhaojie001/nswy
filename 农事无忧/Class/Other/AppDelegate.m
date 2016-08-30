@@ -7,16 +7,24 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NXHGudieTool.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+ 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [NSThread sleepForTimeInterval:2];
+    UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen  ].bounds];
+    self.window =window;
+    window.backgroundColor = [UIColor redColor];
+    
+    window.rootViewController = [NXHGudieTool chooseRootViewController];
+ 
+    [window makeKeyAndVisible];
+  
     return YES;
 }
 
