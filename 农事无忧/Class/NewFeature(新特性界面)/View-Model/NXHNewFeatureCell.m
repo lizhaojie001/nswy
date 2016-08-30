@@ -37,6 +37,8 @@
 		UIImageView * imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         _imageView =imageView;
         [self.contentView addSubview:_imageView];
+        _imageView.backgroundColor= NXHColor(arc4random()%255, 1, 1);
+        
 	}
 	return _imageView;
 }

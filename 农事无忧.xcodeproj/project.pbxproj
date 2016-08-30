@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412C3521D75783C00F534BA /* NXHNFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0412C3511D75783C00F534BA /* NXHNFViewController.m */; };
+		0412C3591D75840000F534BA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0412C3581D75840000F534BA /* Launch Screen.storyboard */; };
+		0412C37D1D75871900F534BA /* guide_four.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0412C3771D75871900F534BA /* guide_four.jpg */; };
+		0412C37E1D75871900F534BA /* guide_go_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 0412C3781D75871900F534BA /* guide_go_btn.png */; };
+		0412C37F1D75871900F534BA /* guide_one.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0412C3791D75871900F534BA /* guide_one.jpg */; };
+		0412C3801D75871900F534BA /* guide_three.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0412C37A1D75871900F534BA /* guide_three.jpg */; };
+		0412C3811D75871900F534BA /* guide_two.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0412C37B1D75871900F534BA /* guide_two.jpg */; };
+		0412C3821D75871900F534BA /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0412C37C1D75871900F534BA /* splash.jpg */; };
 		04243B111D75179800809AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04243B101D75179800809AC5 /* Assets.xcassets */; };
-		04243B141D75179800809AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04243B121D75179800809AC5 /* LaunchScreen.storyboard */; };
 		04243B1F1D75179900809AC5 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B1E1D75179900809AC5 /* ____Tests.m */; };
 		04243B2A1D75179900809AC5 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B291D75179900809AC5 /* ____UITests.m */; };
 		04A22A721D75319C002C3490 /* NXHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A22A611D75319C002C3490 /* NXHMainViewController.m */; };
@@ -41,9 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0412C3501D75783C00F534BA /* NXHNFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHNFViewController.h; sourceTree = "<group>"; };
+		0412C3511D75783C00F534BA /* NXHNFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHNFViewController.m; sourceTree = "<group>"; usesTabs = 0; };
+		0412C3581D75840000F534BA /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0412C3771D75871900F534BA /* guide_four.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide_four.jpg; sourceTree = "<group>"; };
+		0412C3781D75871900F534BA /* guide_go_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide_go_btn.png; sourceTree = "<group>"; };
+		0412C3791D75871900F534BA /* guide_one.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide_one.jpg; sourceTree = "<group>"; };
+		0412C37A1D75871900F534BA /* guide_three.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide_three.jpg; sourceTree = "<group>"; };
+		0412C37B1D75871900F534BA /* guide_two.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide_two.jpg; sourceTree = "<group>"; };
+		0412C37C1D75871900F534BA /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		04243B011D75179800809AC5 /* 农事无忧.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "农事无忧.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B101D75179800809AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04243B131D75179800809AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04243B1A1D75179900809AC5 /* 农事无忧Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "农事无忧Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B1E1D75179900809AC5 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		04243B201D75179900809AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +111,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0412C3761D75871900F534BA /* GuideImage */ = {
+			isa = PBXGroup;
+			children = (
+				0412C3771D75871900F534BA /* guide_four.jpg */,
+				0412C3781D75871900F534BA /* guide_go_btn.png */,
+				0412C3791D75871900F534BA /* guide_one.jpg */,
+				0412C37A1D75871900F534BA /* guide_three.jpg */,
+				0412C37B1D75871900F534BA /* guide_two.jpg */,
+				0412C37C1D75871900F534BA /* splash.jpg */,
+			);
+			name = GuideImage;
+			path = GudieImage;
+			sourceTree = "<group>";
+		};
 		04243AF81D75179800809AC5 = {
 			isa = PBXGroup;
 			children = (
@@ -121,7 +150,7 @@
 			children = (
 				04A22A551D75319C002C3490 /* Class */,
 				04243B101D75179800809AC5 /* Assets.xcassets */,
-				04243B121D75179800809AC5 /* LaunchScreen.storyboard */,
+				0412C3581D75840000F534BA /* Launch Screen.storyboard */,
 				04243B041D75179800809AC5 /* Supporting Files */,
 			);
 			path = "农事无忧";
@@ -367,6 +396,7 @@
 		04A22A831D75376A002C3490 /* NewFeature(新特性界面) */ = {
 			isa = PBXGroup;
 			children = (
+				0412C3761D75871900F534BA /* GuideImage */,
 				04A22A841D75376A002C3490 /* Controller */,
 				04A22A851D75376A002C3490 /* Model */,
 				04A22A861D75376A002C3490 /* View-Model */,
@@ -379,6 +409,8 @@
 			children = (
 				04A22A871D753792002C3490 /* NXHNewFeatureViewController.h */,
 				04A22A881D753792002C3490 /* NXHNewFeatureViewController.m */,
+				0412C3501D75783C00F534BA /* NXHNFViewController.h */,
+				0412C3511D75783C00F534BA /* NXHNFViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -514,8 +546,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04243B141D75179800809AC5 /* LaunchScreen.storyboard in Resources */,
+				0412C3801D75871900F534BA /* guide_three.jpg in Resources */,
+				0412C3591D75840000F534BA /* Launch Screen.storyboard in Resources */,
 				04243B111D75179800809AC5 /* Assets.xcassets in Resources */,
+				0412C3821D75871900F534BA /* splash.jpg in Resources */,
+				0412C3811D75871900F534BA /* guide_two.jpg in Resources */,
+				0412C37D1D75871900F534BA /* guide_four.jpg in Resources */,
+				0412C37F1D75871900F534BA /* guide_one.jpg in Resources */,
+				0412C37E1D75871900F534BA /* guide_go_btn.png in Resources */,
 				04A22A741D75319C002C3490 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +584,7 @@
 				04A22A731D75319C002C3490 /* AppDelegate.m in Sources */,
 				04A22A941D7565AD002C3490 /* UIView+Frame.m in Sources */,
 				04A22A891D753792002C3490 /* NXHNewFeatureViewController.m in Sources */,
+				0412C3521D75783C00F534BA /* NXHNFViewController.m in Sources */,
 				04A22A751D75319C002C3490 /* main.m in Sources */,
 				04A22A801D753474002C3490 /* NXHSaveTool.m in Sources */,
 				04A22A721D75319C002C3490 /* NXHMainViewController.m in Sources */,
@@ -583,17 +622,6 @@
 			targetProxy = 04243B261D75179900809AC5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		04243B121D75179800809AC5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				04243B131D75179800809AC5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04243B2C1D75179900809AC5 /* Debug */ = {

@@ -7,6 +7,7 @@
 //
 
 #import "NXHNewFeatureViewController.h"
+#import "NXHNewFeatureCell.h"
 
 @interface NXHNewFeatureViewController ()
 
@@ -44,7 +45,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     self.view.backgroundColor = [UIColor orangeColor];
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[NXHNewFeatureCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -67,10 +68,12 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = NXHColor(arc4random()%255, 0, 0);
-    // Configure the cell
+    NXHNewFeatureCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    NSString * imageName = [NSString stringWithFormat:@"gudie%ldBackgroud",indexPath.item+1];
     
+         // Configure the cell
+    cell.image = [UIImage imageNamed:imageName];
+    [cell setUpIndexPath:indexPath count:NXHPages];
     return cell;
 }
 

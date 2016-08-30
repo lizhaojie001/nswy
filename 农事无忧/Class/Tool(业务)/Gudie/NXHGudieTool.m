@@ -11,6 +11,8 @@
 #import "NXHMainViewController.h"
 #define NXHBVersion @"version"
 #import "NXHNewFeatureViewController.h"
+#import "NXHNFViewController.h"
+
 @implementation NXHGudieTool
 + (UIViewController *)chooseRootViewController{
     //判断有没有新的版本号
@@ -32,7 +34,7 @@
     }else{
         //最新版本号,进入新特性界面,保存当前版本号的最细版本号
         //collectionVc必须初始化的时候设置布局参数
-        rootVC = [[NXHNewFeatureViewController alloc] init];
+        rootVC = [[NXHNFViewController alloc] init];
     }
     return rootVC;
 }

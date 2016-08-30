@@ -13,7 +13,9 @@
 @end
 
 @implementation NXHMainViewController
-
+- (BOOL)prefersStatusBarHidden{
+    return NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
