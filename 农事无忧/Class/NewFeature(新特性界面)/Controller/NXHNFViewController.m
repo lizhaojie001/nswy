@@ -8,6 +8,7 @@
 
 #import "NXHNFViewController.h"
 #import "NXHpageControl.h"
+#import "NXHMainViewController.h"
 
 @interface NXHNFViewController ()<UIScrollViewDelegate>
 
@@ -128,18 +129,56 @@
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed: @"guide_go_btn"] forState:UIControlStateNormal];
     
-        
+    [btn addTarget:self action:@selector(gotoNX) forControlEvents:UIControlEventTouchUpInside];
+    
         // 默认按钮的尺寸跟背景图片一样大
         // sizeToFit:默认会根据按钮的背景图片或者image和文字计算出按钮的最合适的尺寸
         [btn sizeToFit];
-    btn.frame =CGRectMake(self.scrollView.contentSize.width -self.scrollView.width+60, self.view.height-130, self.view.width-120, 50);
+    btn.frame =CGRectMake(self.scrollView.contentSize.width -self.scrollView.width+60, self.view.height-130, self.view.width-120,  (self.view.width-120)/3.8);
     [self.scrollView addSubview:btn];
         
     
     return btn;
 }
+-(void)gotoNX{
+    // 点击立即体验按钮
+   
+      // 跳转到核心界面,push,modal,切换跟控制器的方法
+        NXHKeyWindow.rootViewController = [[NXHMainViewController alloc] init];
+        
+        CATransition *anim = [CATransition animation];
+        anim.duration = 0.5;
+    /**
+     *   fade     //交叉淡化过渡(不支持过渡方向)
+     
+     push     //新视图把旧视图推出去
+     
+     moveIn   //新视图移到旧视图上面
+     
+     reveal   //将旧视图移开,显示下面的新视图
+     
+     cube     //立方体翻滚效果
+     
+     oglFlip  //上下左右翻转效果
+     
+     suckEffect   //收缩效果，如一块布被抽走(不支持过渡方向)
+     
+     rippleEffect //滴水效果(不支持过渡方向)
+     
+     pageCurl     //向上翻页效果
+     
+     pageUnCurl   //向下翻页效果
+     
+     cameraIrisHollowOpen  //相机镜头打开效果(不支持过渡方向)
+     
+     cameraIrisHollowClose //相机镜头关上效果(不支持过渡方向)
+     
+     */
+        anim.type = @"rippleEffect";
+        [NXHKeyWindow.layer addAnimation:anim forKey:nil];
+     
 
-
+}
 
 //改变页码的方法实现
 - (void)changePage:(id)sender
@@ -163,10 +202,11 @@
     CGFloat pageWith = scrollView.frame.size.width;
     //根据scrolView的左右滑动,对pageCotrol的当前指示器进行切换(设置currentPage)
     int page = floor((scrollView.contentOffset.x - pageWith/2)/pageWith)+1;
+    [self.pageControl curPageControl:page];
+
     //切换改变页码，小圆点
     self.pageControl.currentPage = page;
-    [self.pageControl curPageControl:page];
-    MYLog(@"self.pageControl.currentPage=%d",page);
+       MYLog(@"self.pageControl.currentPage=%d",page);
 }
 
 

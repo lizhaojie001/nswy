@@ -51,7 +51,7 @@
         UIView * view = self.subviews[i];
         VX = i*VW;
         view.frame = CGRectMake(VX, VY, VW, VH);
-        ((UIImageView*)self.picArr[i]).frame= CGRectMake(0, 0, 20, 20   );
+        ((UIImageView*)self.picArr[i]).frame= CGRectMake(view.width/2, view.height/2, 20, 20   );
         [self.subviews[i] addSubview:self.picArr[i]];
         
     }
