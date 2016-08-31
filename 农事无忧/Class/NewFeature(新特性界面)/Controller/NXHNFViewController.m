@@ -7,15 +7,17 @@
 //
 
 #import "NXHNFViewController.h"
+#import "NXHpageControl.h"
 
 @interface NXHNFViewController ()<UIScrollViewDelegate>
 
 
-//**滚动视图对象/
+/**滚动视图对象*/
 @property (strong, nonatomic) UIScrollView *scrollView;
-//**视图中小圆点，对应视图的页码/
-@property (strong, nonatomic) UIPageControl *pageControl;
-//**动态数组对象，存储图片/
+/**视图中小圆点，对应视图的页码*/
+@property (strong, nonatomic) NXHpageControl *pageControl;
+/**动态数组对象，存储图片*/
+
 @property (strong, nonatomic) NSMutableArray *images;
 
 @end
@@ -30,11 +32,12 @@
 {
     [super viewDidLoad];
     
-    //初始化scrollView
+  
+       //初始化scrollView
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height)];
     //初始化pageControl
-    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.view.height-30, 320, 36)];
-    self.pageControl.pageIndicatorTintColor = [UIColor redColor];
+    self.pageControl = [[NXHpageControl alloc]initWithFrame:CGRectMake(100, self.view.height-50, self.view.width-200, 30)];
+  //  self.pageControl.pageIndicatorTintColor = [UIColor redColor];
     //初始化数组，存储滚动视图的图片
     self.images = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"guide_one.jpg"],[UIImage imageNamed:@"guide_two.jpg"],[UIImage imageNamed:@"guide_three.jpg"],[UIImage imageNamed:@"guide_four.jpg"], nil ];
     //把scrollView与pageControl添加到当前视图中
@@ -95,13 +98,14 @@
         pImageView.contentMode = UIViewContentModeScaleAspectFill;
         //把视图添加到当前的滚动视图中
         [self.scrollView addSubview:pImageView];
+        
         //下一张视图的x坐标:offset为:self.scrollView.frame.size.width.
         originX += self.scrollView .width;
         //记录scrollView内imageView的个数
         pages++;
     }
     //设置页码控制器的响应方法
-    [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+   // [self.pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
     //设置总页数
     self.pageControl.numberOfPages = 4;
     self.pageControl.userInteractionEnabled =NO;
@@ -111,7 +115,32 @@
     self.pageControl.tag = 110;
     //设置滚动视图的位置
     [self.scrollView setContentSize:CGSizeMake(originX, self.scrollView.bounds.size.height)];
+    [self plusButton];
 }
+/**
+ *  添加按钮
+ *
+ *  @return
+ */
+- (UIButton *)plusButton
+{
+    
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setImage:[UIImage imageNamed: @"guide_go_btn"] forState:UIControlStateNormal];
+    
+        
+        // 默认按钮的尺寸跟背景图片一样大
+        // sizeToFit:默认会根据按钮的背景图片或者image和文字计算出按钮的最合适的尺寸
+        [btn sizeToFit];
+    btn.frame =CGRectMake(self.scrollView.contentSize.width -self.scrollView.width+60, self.view.height-130, self.view.width-120, 50);
+    [self.scrollView addSubview:btn];
+        
+    
+    return btn;
+}
+
+
+
 //改变页码的方法实现
 - (void)changePage:(id)sender
 {
@@ -124,6 +153,7 @@
     rect.origin.y = 0;
     //scrollView可视区域
     [self.scrollView scrollRectToVisible:rect animated:YES];
+    
 }
 #pragma mark-----UIScrollViewDelegate---------
 //实现协议UIScrollViewDelegate的方法，必须实现的
@@ -135,6 +165,8 @@
     int page = floor((scrollView.contentOffset.x - pageWith/2)/pageWith)+1;
     //切换改变页码，小圆点
     self.pageControl.currentPage = page;
+    [self.pageControl curPageControl:page];
+    MYLog(@"self.pageControl.currentPage=%d",page);
 }
 
 

@@ -10,7 +10,7 @@
 #import "NXHSaveTool.h"
 #import "NXHMainViewController.h"
 #define NXHBVersion @"version"
-#import "NXHNewFeatureViewController.h"
+ 
 #import "NXHNFViewController.h"
 
 @implementation NXHGudieTool
