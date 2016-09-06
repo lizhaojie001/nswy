@@ -95,6 +95,8 @@
 		0433E18C1D7E82C900E015D3 /* NXHGudieTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04231F0A1D7E79EC0015EC53 /* NXHGudieTool.m */; };
 		0433E18D1D7E82D800E015D3 /* NXHSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04231F151D7E79EC0015EC53 /* NXHSaveTool.m */; };
 		0433E18E1D7E82E600E015D3 /* NXHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04231F0D1D7E79EC0015EC53 /* NXHLoginViewController.m */; };
+		0433E1961D7E8E5600E015D3 /* NXHLogon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1941D7E8E5600E015D3 /* NXHLogon.m */; };
+		0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433E1981D7E8EB700E015D3 /* NXHLogon.xib */; };
 		157252BFE04E57ED36E961E3 /* libPods-农事无忧UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */; };
 		7647BFAFDD51A5F87D491997 /* libPods-农事无忧.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84389CBDC87229FA6D6F9D53 /* libPods-农事无忧.a */; };
 		9045776B09475E7345E910F4 /* libPods-农事无忧Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A46B0ADD176888D3AED0CD2 /* libPods-农事无忧Tests.a */; };
@@ -271,6 +273,9 @@
 		0433E1711D7E80F200E015D3 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		0433E1731D7E80FE00E015D3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0433E1751D7E811400E015D3 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		0433E1931D7E8E5600E015D3 /* NXHLogon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHLogon.h; sourceTree = "<group>"; };
+		0433E1941D7E8E5600E015D3 /* NXHLogon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHLogon.m; sourceTree = "<group>"; };
+		0433E1981D7E8EB700E015D3 /* NXHLogon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHLogon.xib; sourceTree = "<group>"; };
 		3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B0DB95506BEF009C8ABB9A /* Pods-农事无忧Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧Tests/Pods-农事无忧Tests.release.xcconfig"; sourceTree = "<group>"; };
 		64273C7015BB8B1CBC133341 /* Pods-农事无忧.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧/Pods-农事无忧.release.xcconfig"; sourceTree = "<group>"; };
@@ -754,6 +759,7 @@
 		04231EF61D7E79EC0015EC53 /* Tool(业务) */ = {
 			isa = PBXGroup;
 			children = (
+				0433E1921D7E8E4100E015D3 /* Logon */,
 				04231EF71D7E79EC0015EC53 /* Gudie */,
 				04231F0B1D7E79EC0015EC53 /* Login */,
 				04231F131D7E79EC0015EC53 /* Save */,
@@ -887,6 +893,16 @@
 				04243B2B1D75179900809AC5 /* Info.plist */,
 			);
 			path = "农事无忧UITests";
+			sourceTree = "<group>";
+		};
+		0433E1921D7E8E4100E015D3 /* Logon */ = {
+			isa = PBXGroup;
+			children = (
+				0433E1931D7E8E5600E015D3 /* NXHLogon.h */,
+				0433E1941D7E8E5600E015D3 /* NXHLogon.m */,
+				0433E1981D7E8EB700E015D3 /* NXHLogon.xib */,
+			);
+			path = Logon;
 			sourceTree = "<group>";
 		};
 		80713C5FD59DD03E6BC908E2 /* Pods */ = {
@@ -1054,6 +1070,7 @@
 				04231F2E1D7E79EC0015EC53 /* 太阳.png in Resources */,
 				04231F581D7E79EC0015EC53 /* Contents.json in Resources */,
 				04231F471D7E79EC0015EC53 /* indicator_1_unfocused.png in Resources */,
+				0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */,
 				04231F571D7E79EC0015EC53 /* guide_go_btn.png in Resources */,
 				04231F301D7E79EC0015EC53 /* 太阳副本 2.png in Resources */,
 				04231F231D7E79EC0015EC53 /* main_bottom_more.png in Resources */,
@@ -1243,6 +1260,7 @@
 				0433E1881D7E823200E015D3 /* AppDelegate.m in Sources */,
 				0433E1871D7E822300E015D3 /* NXHpageControl.m in Sources */,
 				0433E1861D7E821700E015D3 /* NXHNewFeatureCell.m in Sources */,
+				0433E1961D7E8E5600E015D3 /* NXHLogon.m in Sources */,
 				0433E1851D7E820A00E015D3 /* NXHNFViewController.m in Sources */,
 				0433E1841D7E820200E015D3 /* NXHNewFeatureViewController.m in Sources */,
 				0433E1831D7E81F900E015D3 /* NXHMessageViewController.m in Sources */,

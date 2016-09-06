@@ -7,6 +7,7 @@ target '农事无忧' do
 pod ‘CYLTabBarController’
 pod ‘MJRefresh’
 pod ‘SVProgressHUD’, :git => ‘https://github.com/SVProgressHUD/SVProgressHUD.git’
+pod ‘AFNetworking’, ‘~> 3.0’
 # Pods for 农事无忧
 
 target '农事无忧Tests' do

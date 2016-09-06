@@ -9,6 +9,7 @@
 #import "NXHLoginViewController.h"
 #import "SVProgressHUD.h"
 //#import "NXHRegister.h"
+#import "NXHLogon.h"
 
 
 @interface NXHLoginViewController ()<UITextFieldDelegate>
@@ -63,8 +64,8 @@
  *  @param sender <#sender description#>
  */
 - (IBAction)registry:(UIButton *)sender {
-//    NXHRegister * r = [[NXHRegister alloc]init];
-//    [self presentViewController:r animated:YES completion:nil];
+    NXHLogon * r = [[NXHLogon alloc]init];
+    [self presentViewController:r animated:YES completion:nil];
     
 }
 

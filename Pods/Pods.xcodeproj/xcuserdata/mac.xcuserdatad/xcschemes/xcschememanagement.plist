@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CYLTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,11 +47,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D08D43CF164DF1A9FC106EE188D3725</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4C6216729A3DB75ABB09B8C4E9F80C6C</key>
 		<dict>
 			<key>primary</key>
@@ -57,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>679DCD4B04177ABF9A2A1E24A5404CAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>70BC44266C6FFE30D2C57129458E070B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C04250AA2F6CD856511FF8D6CFEBBCE</key>
+		<key>8EAF97B073EA0FB123DF3DE89E838DEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>928353533005A4198EBDA5B700D37B64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
