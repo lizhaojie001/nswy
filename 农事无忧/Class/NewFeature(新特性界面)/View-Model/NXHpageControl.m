@@ -40,8 +40,7 @@
     [super layoutSubviews];
     
     CGFloat w = self.width;
-    CGFloat h = self.height;
-    
+       
     CGFloat VX = 0;
     CGFloat VY = 0;
     CGFloat VW = w / self.picArr.count;

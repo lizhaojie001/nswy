@@ -27,4 +27,5 @@
 
 #import "UIView+Frame.h"
 #import "UIImage+Image.h"
+#define  MustNumber @"0123456789"
 #endif /* _____pch */

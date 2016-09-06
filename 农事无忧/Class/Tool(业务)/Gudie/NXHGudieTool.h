@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface NXHGudieTool : NSObject
-+ (UIViewController *)chooseRootViewController;
++ (void)guideRootViewController:(UIWindow*)window;
 @end
