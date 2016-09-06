@@ -9,6 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NXHLogon">
             <connections>
                 <outlet property="Captcha" destination="BtT-rw-Rcl" id="EG5-rf-YOS"/>
+                <outlet property="CaptchaBtn" destination="8s1-R6-Rik" id="Svf-fJ-858"/>
                 <outlet property="PhoneNumber" destination="n8L-kv-O8Y" id="t9k-ql-lWf"/>
                 <outlet property="pwd" destination="fgi-se-eOu" id="XUl-OS-ew3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
