@@ -1,0 +1,27 @@
+PODS:
+  - CYLTabBarController (1.6.0)
+  - MJRefresh (3.1.12)
+  - SVProgressHUD (2.0.3)
+
+DEPENDENCIES:
+  - CYLTabBarController
+  - MJRefresh
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: cc5f7d68fe76afdb79e215b8ff00133575fafacc
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  CYLTabBarController: efbdd574772be17f17965acd7ee993f5972ff02f
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+
+PODFILE CHECKSUM: acc9a5ac3508f4ed866e6a948de1b07d427aa905
+
+COCOAPODS: 1.0.1
