@@ -68,7 +68,7 @@
     [self.navigationController pushViewController:r animated:YES];
     
 }
-
+#pragma mark - 找回密码
 - (IBAction)findPWD:(UIButton *)sender {
 }
 

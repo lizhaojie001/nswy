@@ -11,10 +11,20 @@
 #import "NXHSettingViewController.h"
 
 @interface NXHMeViewController ()
+/**是否登录*/
+@property (nonatomic) BOOL isLogin;
 
 @end
 
 @implementation NXHMeViewController
+
+-(BOOL)isLogin{
+    if (!_isLogin) {
+        _isLogin = [EMClient sharedClient].isLoggedIn;
+    }
+    
+    return _isLogin;
+}
 //- (instancetype)initWithStyle:(UITableViewStyle)style{
 //    if (self = [super initWithStyle:style] ) {
 //        self = [[NXHMeViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -45,21 +55,25 @@ static NSString * const cell1 = @"cell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 3;
+    return self.isLogin?0:3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    switch (section) {
-        case 0:
-            return 1;
-          
-        case 1:
-            return 2;
-        default:
-            return 1;
+    if (self.isLogin) {
+        switch (section) {
+            case 0:
+                return 1;
+                
+            case 1:
+                return 2;
+            default:
+                return 1;
+        }
+
     }
-}
+    return 0;
+   }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

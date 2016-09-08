@@ -99,6 +99,9 @@
 		0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433E1981D7E8EB700E015D3 /* NXHLogon.xib */; };
 		0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */; };
 		0433E1B71D7FD85000E015D3 /* NXHEreg.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B61D7FD85000E015D3 /* NXHEreg.m */; };
+		048284081D80FADC0002C0EC /* 未登录Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048284071D80FADC0002C0EC /* 未登录Setting.plist */; };
+		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
+		048284121D8114460002C0EC /* NXHFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048284111D8114460002C0EC /* NXHFunctionView.m */; };
 		157252BFE04E57ED36E961E3 /* libPods-农事无忧UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */; };
 		7647BFAFDD51A5F87D491997 /* libPods-农事无忧.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84389CBDC87229FA6D6F9D53 /* libPods-农事无忧.a */; };
 		9045776B09475E7345E910F4 /* libPods-农事无忧Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A46B0ADD176888D3AED0CD2 /* libPods-农事无忧Tests.a */; };
@@ -282,6 +285,11 @@
 		0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NXHColor.m"; sourceTree = "<group>"; };
 		0433E1B51D7FD85000E015D3 /* NXHEreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHEreg.h; sourceTree = "<group>"; };
 		0433E1B61D7FD85000E015D3 /* NXHEreg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHEreg.m; sourceTree = "<group>"; };
+		048284071D80FADC0002C0EC /* 未登录Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "未登录Setting.plist"; sourceTree = "<group>"; };
+		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
+		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
+		048284101D8114460002C0EC /* NXHFunctionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHFunctionView.h; sourceTree = "<group>"; };
+		048284111D8114460002C0EC /* NXHFunctionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHFunctionView.m; sourceTree = "<group>"; };
 		3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B0DB95506BEF009C8ABB9A /* Pods-农事无忧Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧Tests/Pods-农事无忧Tests.release.xcconfig"; sourceTree = "<group>"; };
 		64273C7015BB8B1CBC133341 /* Pods-农事无忧.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧/Pods-农事无忧.release.xcconfig"; sourceTree = "<group>"; };
@@ -597,6 +605,7 @@
 				04231EBE1D7E79EC0015EC53 /* NXHSettingViewController.h */,
 				04231EBF1D7E79EC0015EC53 /* NXHSettingViewController.m */,
 				04231EC01D7E79EC0015EC53 /* Setting.plist */,
+				048284071D80FADC0002C0EC /* 未登录Setting.plist */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -648,6 +657,8 @@
 		04231ECC1D7E79EC0015EC53 /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
+				048284101D8114460002C0EC /* NXHFunctionView.h */,
+				048284111D8114460002C0EC /* NXHFunctionView.m */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -754,6 +765,8 @@
 		04231EEE1D7E79EC0015EC53 /* Categoty */ = {
 			isa = PBXGroup;
 			children = (
+				0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */,
+				0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */,
 				04231EEF1D7E79EC0015EC53 /* UIImage+Image.h */,
 				04231EF01D7E79EC0015EC53 /* UIImage+Image.m */,
 				04231EF11D7E79EC0015EC53 /* UIView+Frame.h */,
@@ -1088,6 +1101,7 @@
 				04231F2E1D7E79EC0015EC53 /* 太阳.png in Resources */,
 				04231F581D7E79EC0015EC53 /* Contents.json in Resources */,
 				04231F471D7E79EC0015EC53 /* indicator_1_unfocused.png in Resources */,
+				048284081D80FADC0002C0EC /* 未登录Setting.plist in Resources */,
 				0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */,
 				04231F571D7E79EC0015EC53 /* guide_go_btn.png in Resources */,
 				04231F301D7E79EC0015EC53 /* 太阳副本 2.png in Resources */,
@@ -1274,6 +1288,7 @@
 				0433E18C1D7E82C900E015D3 /* NXHGudieTool.m in Sources */,
 				0433E18B1D7E825900E015D3 /* main.m in Sources */,
 				0433E18A1D7E824A00E015D3 /* UIView+Frame.m in Sources */,
+				048284121D8114460002C0EC /* NXHFunctionView.m in Sources */,
 				0433E1891D7E823E00E015D3 /* UIImage+Image.m in Sources */,
 				0433E1881D7E823200E015D3 /* AppDelegate.m in Sources */,
 				0433E1871D7E822300E015D3 /* NXHpageControl.m in Sources */,
@@ -1291,6 +1306,7 @@
 				0433E17D1D7E81C100E015D3 /* NXHHomeViewController.m in Sources */,
 				0433E17C1D7E81B600E015D3 /* MJDIYHeader.m in Sources */,
 				0433E17B1D7E81AE00E015D3 /* NXHDiscoverViewController.m in Sources */,
+				0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */,
 				0433E17A1D7E81A400E015D3 /* NXHNaviController.m in Sources */,
 				0433E1791D7E819D00E015D3 /* NXHMainViewController.m in Sources */,
 				0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */,
