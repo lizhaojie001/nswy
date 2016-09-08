@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x519c;&#x4e8b;&#x65e0;&#x5fe7;/Class/Tool(&#x4e1a;&#x52a1;)/Gudie/NXHGudieTool.m"
-            timestampString = "494242181.483649"
+            timestampString = "494934829.486646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "+chooseRootViewController"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "+guideRootViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,7 +12,7 @@
 #import "NXHLogon.h"
 
 
-@interface NXHLoginViewController ()<UITextFieldDelegate>
+@interface NXHLoginViewController ()<UITextFieldDelegate,UIApplicationDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
 - (IBAction)registry:(UIButton *)sender;
@@ -65,7 +65,7 @@
  */
 - (IBAction)registry:(UIButton *)sender {
     NXHLogon * r = [[NXHLogon alloc]init];
-    [self presentViewController:r animated:YES completion:nil];
+    [self.navigationController pushViewController:r animated:YES];
     
 }
 

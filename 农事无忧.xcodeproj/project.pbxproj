@@ -97,6 +97,8 @@
 		0433E18E1D7E82E600E015D3 /* NXHLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04231F0D1D7E79EC0015EC53 /* NXHLoginViewController.m */; };
 		0433E1961D7E8E5600E015D3 /* NXHLogon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1941D7E8E5600E015D3 /* NXHLogon.m */; };
 		0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433E1981D7E8EB700E015D3 /* NXHLogon.xib */; };
+		0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */; };
+		0433E1B71D7FD85000E015D3 /* NXHEreg.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B61D7FD85000E015D3 /* NXHEreg.m */; };
 		157252BFE04E57ED36E961E3 /* libPods-农事无忧UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */; };
 		7647BFAFDD51A5F87D491997 /* libPods-农事无忧.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84389CBDC87229FA6D6F9D53 /* libPods-农事无忧.a */; };
 		9045776B09475E7345E910F4 /* libPods-农事无忧Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A46B0ADD176888D3AED0CD2 /* libPods-农事无忧Tests.a */; };
@@ -255,7 +257,7 @@
 		04231F0E1D7E79EC0015EC53 /* NXHLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHLoginViewController.xib; sourceTree = "<group>"; };
 		04231F141D7E79EC0015EC53 /* NXHSaveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSaveTool.h; sourceTree = "<group>"; };
 		04231F151D7E79EC0015EC53 /* NXHSaveTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHSaveTool.m; sourceTree = "<group>"; };
-		04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		04243B011D75179800809AC5 /* 农事无忧.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "农事无忧.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B1A1D75179900809AC5 /* 农事无忧Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "农事无忧Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B1E1D75179900809AC5 /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
@@ -276,6 +278,10 @@
 		0433E1931D7E8E5600E015D3 /* NXHLogon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHLogon.h; sourceTree = "<group>"; };
 		0433E1941D7E8E5600E015D3 /* NXHLogon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHLogon.m; sourceTree = "<group>"; };
 		0433E1981D7E8EB700E015D3 /* NXHLogon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHLogon.xib; sourceTree = "<group>"; };
+		0433E1B11D7FC14500E015D3 /* UIColor+NXHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NXHColor.h"; sourceTree = "<group>"; };
+		0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NXHColor.m"; sourceTree = "<group>"; };
+		0433E1B51D7FD85000E015D3 /* NXHEreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHEreg.h; sourceTree = "<group>"; };
+		0433E1B61D7FD85000E015D3 /* NXHEreg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHEreg.m; sourceTree = "<group>"; };
 		3661510B56A3C47C50395E5C /* libPods-农事无忧UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B0DB95506BEF009C8ABB9A /* Pods-农事无忧Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧Tests/Pods-农事无忧Tests.release.xcconfig"; sourceTree = "<group>"; };
 		64273C7015BB8B1CBC133341 /* Pods-农事无忧.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧/Pods-农事无忧.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,7 +338,6 @@
 				04231E5B1D7E79EC0015EC53 /* 3rd */,
 				04231E861D7E79EC0015EC53 /* Assets.xcassets */,
 				04231E871D7E79EC0015EC53 /* Class */,
-				04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */,
 			);
 			path = "农事无忧";
 			sourceTree = "<group>";
@@ -735,12 +740,13 @@
 		04231EEB1D7E79EC0015EC53 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				04231EEE1D7E79EC0015EC53 /* Categoty */,
 				04231EEC1D7E79EC0015EC53 /* AppDelegate.h */,
 				04231EED1D7E79EC0015EC53 /* AppDelegate.m */,
-				04231EEE1D7E79EC0015EC53 /* Categoty */,
 				04231EF31D7E79EC0015EC53 /* Info.plist */,
 				04231EF41D7E79EC0015EC53 /* main.m */,
 				04231EF51D7E79EC0015EC53 /* 农事无忧.pch */,
+				04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -752,6 +758,8 @@
 				04231EF01D7E79EC0015EC53 /* UIImage+Image.m */,
 				04231EF11D7E79EC0015EC53 /* UIView+Frame.h */,
 				04231EF21D7E79EC0015EC53 /* UIView+Frame.m */,
+				0433E1B11D7FC14500E015D3 /* UIColor+NXHColor.h */,
+				0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */,
 			);
 			path = Categoty;
 			sourceTree = "<group>";
@@ -759,6 +767,7 @@
 		04231EF61D7E79EC0015EC53 /* Tool(业务) */ = {
 			isa = PBXGroup;
 			children = (
+				0433E1B41D7FD83B00E015D3 /* Ereg(正则表达式) */,
 				0433E1921D7E8E4100E015D3 /* Logon */,
 				04231EF71D7E79EC0015EC53 /* Gudie */,
 				04231F0B1D7E79EC0015EC53 /* Login */,
@@ -903,6 +912,15 @@
 				0433E1981D7E8EB700E015D3 /* NXHLogon.xib */,
 			);
 			path = Logon;
+			sourceTree = "<group>";
+		};
+		0433E1B41D7FD83B00E015D3 /* Ereg(正则表达式) */ = {
+			isa = PBXGroup;
+			children = (
+				0433E1B51D7FD85000E015D3 /* NXHEreg.h */,
+				0433E1B61D7FD85000E015D3 /* NXHEreg.m */,
+			);
+			path = "Ereg(正则表达式)";
 			sourceTree = "<group>";
 		};
 		80713C5FD59DD03E6BC908E2 /* Pods */ = {
@@ -1264,6 +1282,7 @@
 				0433E1851D7E820A00E015D3 /* NXHNFViewController.m in Sources */,
 				0433E1841D7E820200E015D3 /* NXHNewFeatureViewController.m in Sources */,
 				0433E1831D7E81F900E015D3 /* NXHMessageViewController.m in Sources */,
+				0433E1B71D7FD85000E015D3 /* NXHEreg.m in Sources */,
 				0433E1821D7E81EF00E015D3 /* NXHMeGroup1Cell.m in Sources */,
 				0433E1811D7E81E500E015D3 /* NXHMeModel.m in Sources */,
 				0433E1801D7E81DD00E015D3 /* NXHSettingViewController.m in Sources */,
@@ -1274,6 +1293,7 @@
 				0433E17B1D7E81AE00E015D3 /* NXHDiscoverViewController.m in Sources */,
 				0433E17A1D7E81A400E015D3 /* NXHNaviController.m in Sources */,
 				0433E1791D7E819D00E015D3 /* NXHMainViewController.m in Sources */,
+				0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

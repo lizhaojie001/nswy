@@ -8,14 +8,13 @@
 
 #import "AppDelegate.h"
 #import "NXHGudieTool.h"
-#import "NXHMainViewController.h"
-#import "CYLTabBarController.h"
-#import "NXHDiscoverViewController.h"
-#import "NXHHomeViewController.h"
-#import "NXHMessageViewController.h"
-#import "NXHMeViewController.h"
+
+
+
+
 #import "EMSDK.h"
 #import "NXHLoginViewController.h"
+#import "NXHNaviController.h"
 
 @interface AppDelegate ()
  
@@ -61,8 +60,13 @@
     self.window =window;
    // window.backgroundColor = [UIColor redColor];
 #warning  暂时 修改
-    //[NXHGudieTool guideRootViewController:window];
-    self.window.rootViewController = [[NXHLoginViewController alloc]initWithNibName:nil bundle:nil];
+  //   [NXHGudieTool guideRootViewController:window];
+    NXHLoginViewController *login=
+     [[NXHLoginViewController alloc]initWithNibName:nil bundle:nil];
+    NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:login];
+    
+    self.window.rootViewController = navi;
+   
     [window makeKeyAndVisible];
   
     return YES;
