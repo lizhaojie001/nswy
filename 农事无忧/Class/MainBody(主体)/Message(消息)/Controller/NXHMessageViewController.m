@@ -8,6 +8,11 @@
 
 #import "NXHMessageViewController.h"
 #import "UISearchBar+FMAdd.h"
+#import "NXHButton.h"
+#import "EaseUsersListViewController.h"
+
+
+
 
 
 @interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
@@ -17,6 +22,10 @@
 
 /**图片*/
 @property (nonatomic,strong) NSArray<UIImage *>* imageArr;
+
+/**文字*/
+@property (nonatomic,strong) NSArray <NSString*> * strArr;
+
 
 @end
 
@@ -77,47 +86,51 @@
     
     [self setSearchBar];
     [self setupButton];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     // Do any additional setup after loading the view.
+
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 - (void)setupButton{
-    CGFloat W = (self.view.width-40)/4;
-    CGFloat H = W;
+    CGFloat W = (self.view.width)/4;
+    
     for (int i =0; i <4; i++) {
-        UIButton  * button = [UIButton buttonWithType:UIButtonTypeCustom];
-       // button.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.8];
-        button.frame = CGRectMake(i*W+20, self.customSearchBar.y+self.customSearchBar.height, W-10, H-10);
-        //[button setTitle:@"点击" forState:UIControlStateNormal];
+        NXHButton  * button = [NXHButton buttonWithType:UIButtonTypeCustom];
+       // button.backgroundColor = 
+        button.frame = CGRectMake(i*W, self.customSearchBar.y+self.customSearchBar.height, W, 48);
+        [button setTitle:self.strArr[i] forState:UIControlStateNormal];
        // button.titleLabel.font = [UIFont systemFontOfSize:12];
         [button setTitleColor:ThemeColor forState:UIControlStateNormal];
         UIImage *image = self.imageArr[i];
                   [button setImage: image forState:UIControlStateNormal];
         button.tag = i;
-         button.titleEdgeInsets = UIEdgeInsetsMake(25, 25, 25, 25);
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = ThemeColor.CGColor;
-//        button.layer.cornerRadius =(W)/2;
-//        [button.layer masksToBounds];
-//         button.titleEdgeInsets = UIEdgeInsetsMake(0, -80, -50, 0);
+    
        
         [button addTarget:self action:@selector(click:)  forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
+   
     }
+    
 }
 - (void)click:(UIButton*)btn{
     switch (btn.tag) {
         case 0:
-           
-            
             break;
+        case 1:{
+            EaseUsersListViewController* list = [[EaseUsersListViewController alloc]init];
+            list.title = @"好友列表";
+            [self.navigationController pushViewController:list animated:YES];
+            break;
+        }
             
         default:
             break;
     }
-    UIViewController *vc = [[UIViewController alloc]init];
-    vc.view.backgroundColor = ThemeColor;
-     [self.navigationController pushViewController:vc animated:YES];
+//    UIViewController *vc = [[UIViewController alloc]init];
+//    vc.view.backgroundColor = ThemeColor;
+//     [self.navigationController pushViewController:vc animated:YES];
     MYLog(@"%s",__func__);
 }
 - (void)didReceiveMemoryWarning {
@@ -144,14 +157,30 @@
 }
 #pragma mark - <UITabbleViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
+    return 56;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    cell.textLabel.text = @"123";
+
+    return cell;
+}
 #pragma mark 懒加载
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+        CGFloat Y =self.customSearchBar.y+self.customSearchBar.height+48;
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,Y , ScreenSize.size.width, ScreenSize.size.height-Y) style:UITableViewStylePlain];
+        [self.view addSubview:_tableView];
+        _tableView.backgroundColor =RandomColor;
+        _tableView.bounces=NO;
     }
     return _tableView;
 }
@@ -165,5 +194,14 @@
 	}
 	return _imageArr;
 }
+
+- (NSArray <NSString*> *)strArr {
+	if(_strArr == nil) {
+        _strArr = @[@"群组",@"通讯录",@"公众号",@"通知"];
+    }
+	return _strArr;
+}
+
+
 
 @end

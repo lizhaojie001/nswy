@@ -15,17 +15,17 @@
 #ifndef EMSDK_h
 #define EMSDK_h
 
-#if TARGET_OS_IPHONE
+//#if TARGET_OS_IPHONE
 
 #import "EMClient.h"
 #import "EMClientDelegate.h"
 
-#else
-
-#import <HyphenateSDK/EMClient.h>
-#import <HyphenateSDK/EMClientDelegate.h>
-
-#endif
+//#else
+//
+//#import <HyphenateSDK/EMClient.h>
+//#import <HyphenateSDK/EMClientDelegate.h>
+//
+//#endif
 
 
 #endif /* EMSDK_h */

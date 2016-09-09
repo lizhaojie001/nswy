@@ -11,16 +11,19 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+//防止导入非oc文件
+#ifdef __OBJC__
 #define NXHKeyWindow [UIApplication sharedApplication].keyWindow
 #define NXHScreenBounds [UIScreen mainScreen].bounds
 #define NXHScreenW NXHScreenBounds.size.width
 #define NXHScreenH NXHScreenBounds.size.height
 #define NXHColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
-
+//随机颜色
+#define RandomColor [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:0.8]
 //主题颜色
 #define ThemeColor [UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:0.8]
-
+//屏幕大小
+#define ScreenSize [UIScreen mainScreen].bounds
 
 #ifdef DEBUG  //调试阶段
 #define MYLog(...)  NSLog(__VA_ARGS__)
@@ -33,6 +36,12 @@
 #define  MustNumber @"0123456789"
 #define PWDMustCarter @"123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+//是否登录
+#define LOGEDIN [EMClient sharedClient].isLoggedIn
 
-#import "EMClient.h"
+//环信
+#import "EaseUI.h"
+#import "EMSDK.h"
+
 #endif /* _____pch */
+#endif

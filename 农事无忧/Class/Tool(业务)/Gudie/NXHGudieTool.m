@@ -62,8 +62,7 @@
     NXHHomeViewController*Home =  [[NXHHomeViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
     UIViewController *Navi1 = [[NXHNaviController alloc]
                                initWithRootViewController:Home];
-    //Navi1.title = @"123";
-    
+  
     NXHDiscoverViewController *Discover = [[NXHDiscoverViewController alloc] initWithStyle:UITableViewStyleGrouped];
     UIViewController *Navi3 = [[NXHNaviController alloc]
                                initWithRootViewController:Discover];
@@ -88,7 +87,7 @@
 }
 
 #pragma mark 未登录时的控制器样式
-+(UIViewController*)setupViewControllersONLogin {
++(UIViewController*)setupViewControllersNoLogin {
     NXHHomeViewController*Home =  [[NXHHomeViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
     UIViewController *Navi1 = [[NXHNaviController alloc]
                                initWithRootViewController:Home];

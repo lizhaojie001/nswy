@@ -55,7 +55,7 @@ static NSString * const cell1 = @"cell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return self.isLogin?0:3;
+    return self.isLogin?3:0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
