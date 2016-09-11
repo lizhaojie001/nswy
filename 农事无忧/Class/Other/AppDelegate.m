@@ -52,12 +52,7 @@
     EMOptions *options = [EMOptions optionsWithAppkey:@"zyl#nswy"];
     options.apnsCertName = @"Test";
     [[EMClient sharedClient] initializeSDKWithOptions:options];
-    
-    EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
-    if (!error) {
-        NSLog(@"登录成功");
-    }
-    MYLog(@"%u",[EMClient sharedClient].isLoggedIn);
+      MYLog(@"%u",[EMClient sharedClient].isLoggedIn);
    // [NSThread sleepForTimeInterval:0.5];
     UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen  ].bounds];
     self.window =window;

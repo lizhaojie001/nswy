@@ -25,11 +25,26 @@
 @end
 
 @implementation NXHLoginViewController
+static id instance_;
+
++ (instancetype)sharedInstance
+{
+
+
+        instance_ = [[self alloc] init];
+
+    return instance_;
+}
+
+
+
+
 -(void)viewWillAppear:(BOOL)animated{
     self.UserName.leftViewMode = UITextFieldViewModeAlways;
-    self.UserName.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"太阳副本 6"]];
+    self.UserName.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"手机(1)"]];
+    self.UserName.leftView.contentMode = UIViewContentModeScaleAspectFit;
     self.Password.leftViewMode = UITextFieldViewModeAlways;
-    self.Password.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"太阳副本 6"]];
+    self.Password.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"钥匙"]];
                               
     
 }
@@ -37,11 +52,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   // self.UserName.delegate = self;
-  //  self.Password.delegate = self;
-    // Do any additional setup after loading the view from its nib.
+    self.UserName.delegate = self;
+    self.Password.delegate = self;
+//     Do any additional setup after loading the view from its nib.
+    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popVc)];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName  , nil] forState:UIControlStateNormal];
 }
-
+- (void)popVc{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,11 +97,28 @@
     [SVProgressHUD  showWithStatus:@"登陆中"];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // time-consuming task
-        sleep(1);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [SVProgressHUD dismiss];
-        });
+
+        EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
+        if (!error) {
+            MYLog(@"登录成功");
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+                [self popVc];
+
+            });
+        }else{
+            [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SVProgressHUD dismiss];
+
+
+            });
+        }
+
+
     });
+
 
 }
 

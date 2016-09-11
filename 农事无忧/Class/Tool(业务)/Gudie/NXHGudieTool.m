@@ -43,7 +43,7 @@
         //创建窗口根控制器
         //UITabbleController控制器的view不是懒加载,在创建控制器的时候就会加载
         
-        window.rootViewController = [self setupViewControllers];
+        window.rootViewController = [[NXHMainViewController alloc]init];
         
     }else{
         //最新版本号,进入新特性界面,保存当前版本号的最细版本号
@@ -51,7 +51,7 @@
         [NXHUserDefaults synchronize];
         
 
-        //collectionVc必须初始化的时候设置布局参数
+        // 必须初始化的时候设置布局参数
         window.rootViewController = [[NXHNFViewController alloc] init];
         
     }

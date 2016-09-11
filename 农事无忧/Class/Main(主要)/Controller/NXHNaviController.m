@@ -8,9 +8,7 @@
 
 #import "NXHNaviController.h"
 
-@interface NXHNaviController ()<UINavigationControllerDelegate>
-/**保存临时代理*/
-@property (nonatomic,strong) id Delegate;
+@interface NXHNaviController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -18,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _Delegate = self.interactivePopGestureRecognizer.delegate;
-    self.delegate =self;
+    self.interactivePopGestureRecognizer.delegate= self;
+
  
 }
 
@@ -59,16 +57,9 @@
     [self popViewControllerAnimated:YES];
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
 
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if (viewController == self.viewControllers[0]) { // 是根控制器
-        
-        self.interactivePopGestureRecognizer.delegate = nil;
-        
-    }else{ // 非根控制器
-        self.interactivePopGestureRecognizer.delegate = _Delegate;
-        
-    }
+    return self.viewControllers.count>1;
 }
+
 @end

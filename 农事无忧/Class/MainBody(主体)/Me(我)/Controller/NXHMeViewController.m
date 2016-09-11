@@ -9,22 +9,17 @@
 #import "NXHMeViewController.h"
 #import "NXHMeGroup1Cell.h"
 #import "NXHSettingViewController.h"
+#import "NXHLoginViewController.h"
+#import "NXHNaviController.h"
 
 @interface NXHMeViewController ()
-/**是否登录*/
-@property (nonatomic) BOOL isLogin;
+
 
 @end
 
 @implementation NXHMeViewController
 
--(BOOL)isLogin{
-    if (!_isLogin) {
-        _isLogin = [EMClient sharedClient].isLoggedIn;
-    }
-    
-    return _isLogin;
-}
+ 
 //- (instancetype)initWithStyle:(UITableViewStyle)style{
 //    if (self = [super initWithStyle:style] ) {
 //        self = [[NXHMeViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -55,12 +50,12 @@ static NSString * const cell1 = @"cell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return self.isLogin?3:0;
+    return  3 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    if (self.isLogin) {
+
         switch (section) {
             case 0:
                 return 1;
@@ -71,8 +66,8 @@ static NSString * const cell1 = @"cell";
                 return 1;
         }
 
-    }
-    return 0;
+
+
    }
 
 
@@ -87,15 +82,15 @@ static NSString * const cell1 = @"cell";
         }
          case 1:
             if (indexPath.row ==0) {
-                cell.imageView.image = [UIImage imageNamed:@"太阳副本 5"];
+                cell.imageView.image = [UIImage imageNamed:@"img_trends"];
                 cell.textLabel.text = @"动态";
             }else{
-                cell.imageView.image = [UIImage imageNamed:@"太阳副本 6"];
+                cell.imageView.image = [UIImage imageNamed:@"img_collect"];
                 cell.textLabel.text = @"收藏";
             }
             break;
         default:
-            cell.imageView.image = [UIImage imageNamed: @"太阳副本 6" ];
+            cell.imageView.image = [UIImage imageNamed: @"img_set" ];
             cell.textLabel.text = @"设置";
             break;
     }
@@ -118,7 +113,17 @@ static NSString * const cell1 = @"cell";
 
 #pragma mark - <UITableViewDelegate>
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 2) {
+    if (!LOGEDIN) {
+        switch (indexPath.row) {
+            case 0:{
+                UINavigationController * navi =[[NXHNaviController alloc]initWithRootViewController:[NXHLoginViewController sharedInstance] ];
+                [self presentViewController:navi animated:YES completion:nil];
+                break;
+            }
+            default:
+                break;
+        }
+    }else if (indexPath.section == 2 ) {
         NXHSettingViewController *  VC = [[NXHSettingViewController alloc]init];
         [self.navigationController pushViewController:VC animated:YES];
     }

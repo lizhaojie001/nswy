@@ -134,7 +134,7 @@
         // 默认按钮的尺寸跟背景图片一样大
         // sizeToFit:默认会根据按钮的背景图片或者image和文字计算出按钮的最合适的尺寸
         [btn sizeToFit];
-    btn.frame =CGRectMake(self.scrollView.contentSize.width -self.scrollView.width+60, self.view.height-130, self.view.width-120,  (self.view.width-120)/3.8);
+    btn.frame =CGRectMake(self.scrollView.contentSize.width -self.scrollView.width+60, self.pageControl.y-20-(self.view.width-120)/3.8 , self.view.width-120,  (self.view.width-120)/3.8);
     [self.scrollView addSubview:btn];
         
     

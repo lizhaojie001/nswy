@@ -23,7 +23,7 @@
 }
 - (NSDictionary *)dataDict {
     if (!_dataDict) {
-       _dataDict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Setting" ofType:@"plist"]];
+       _dataDict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:LOGEDIN? @"Setting":@"1未登录Setting" ofType:@"plist"]];
 
     }
     return _dataDict;

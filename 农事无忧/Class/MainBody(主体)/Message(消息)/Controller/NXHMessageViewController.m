@@ -30,6 +30,7 @@
 @end
 
 @implementation NXHMessageViewController
+#pragma mark - 自定义searchBar
 -(UISearchBar *)customSearchBar{
     if (!_customSearchBar) {
         _customSearchBar = [[UISearchBar alloc]initWithFrame: CGRectMake(0, 64, self.view.width, 40) ];

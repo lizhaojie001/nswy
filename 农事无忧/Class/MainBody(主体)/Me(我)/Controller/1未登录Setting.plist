@@ -2,19 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>修改密码</key>
-	<string>太阳</string>
-	<key>修改手机号</key>
-	<string>太阳</string>
-	<key>清空记录</key>
-	<string>太阳</string>
 	<key>更新版本</key>
 	<string>太阳</string>
 	<key>意见反馈</key>
 	<string>太阳</string>
 	<key>关于我们</key>
-	<string>太阳</string>
-	<key>退出</key>
 	<string>太阳</string>
 </dict>
 </plist>
