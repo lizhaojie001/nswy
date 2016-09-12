@@ -11,4 +11,10 @@
 // 快速拉伸图片
 + (instancetype)imageWithStretchableImageName:(NSString *)imageName;
 
+/**
+ *  压缩图片
+ */
+- (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size;
+
+- (UIImage *)imageByScalingAndCroppingForSize:(CGSize)targetSize;
 @end

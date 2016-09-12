@@ -8,6 +8,9 @@
 
 #import "NXHSettingViewController.h"
 
+
+ 
+
 @interface NXHSettingViewController ()
 /**设置数据项*/
 @property (nonatomic,strong) NSArray * settingArr;
@@ -21,24 +24,25 @@
 - (BOOL)hidesBottomBarWhenPushed{
     return YES;
 }
-- (NSDictionary *)dataDict {
-    if (!_dataDict) {
-       _dataDict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:LOGEDIN? @"Setting":@"1未登录Setting" ofType:@"plist"]];
-
-    }
-    return _dataDict;
-}
--(NSArray *)settingArr{
-    
-        if(!_settingArr) {
-            
-            
-            _settingArr = [self.dataDict allKeys];
-        }
-        
-        return _settingArr;
-        
-    }
+//- (NSDictionary *)dataDict {
+//    if (!_dataDict) {
+//       _dataDict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:LOGEDIN? @"Setting":@"1未登录Setting" ofType:@"plist"]];
+//
+//    }
+//    return _dataDict;
+//}
+//-(NSArray *)settingArr{
+//    
+//        if(!_settingArr) {
+//            
+//            
+//            _settingArr = [self.dataDict allKeys];
+//          
+//        }
+//        
+//        return _settingArr;
+//        
+//    }
 
 static NSString * const Cell = @"Cell";
 - (void)viewDidLoad {
@@ -61,25 +65,82 @@ static NSString * const Cell = @"Cell";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Incomplete implementation, return the number of sections
-    return  1;
+    return  2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return self.settingArr.count;
+    return section == 0?5:2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell];
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.dataDict[self.settingArr[indexPath.row]]]];
-    cell.imageView.image = image;
-    cell.textLabel.text = self.settingArr[indexPath.row];
-    
+    cell.textLabel.font = [UIFont systemFontOfSize:13];
+    UIImage *image = nil;
+    switch (indexPath.section) {
+        case 0:
+        {
+            switch (indexPath.row) {
+                case 0:
+                    image = [UIImage imageNamed:@"img_change_password"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text = @"修改密码";
+                    break;
+                case 1:
+                    image = [UIImage imageNamed:@"img_change_tel"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text =@"修改手机号";
+                    break;
+                    case 2:
+                    image = [UIImage imageNamed:@"img_clear_record" ];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text = @"清空记录";
+                    break;
+                    case 3:
+                    image = [UIImage imageNamed:@"img_update"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text = @"更新版本";
+                    break;
+                case 4:
+                    image = [UIImage imageNamed:@"img_feed_back"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text =@"意见反馈";
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+
+        default:
+
+            switch (indexPath.row) {
+                case 0:
+                    image = [UIImage imageNamed:@"img_about_us"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text = @"关于我们";
+                    break;
+                    case 1:
+                    image = [UIImage imageNamed:@"img_logout"];
+                    cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+                    cell.textLabel.text = @"退出";
+                    break;
+                default:
+                    break;
+            }
+            break;
+    }
+
+
+    MYLog(@"%ld %ld",(long)indexPath.row ,(long)indexPath.section);
     return cell;
 }
 
-
+#pragma mark <UITableViewData>
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 5;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

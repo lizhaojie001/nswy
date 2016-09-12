@@ -70,7 +70,7 @@
     UIViewController *Navi2 = [[NXHNaviController alloc]
                                initWithRootViewController:Message];
     
-    NXHMeViewController *Me = [[NXHMeViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    NXHMeViewController *Me =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Me"] ;
     UIViewController *Navi4 = [[NXHNaviController alloc]
                                initWithRootViewController:Me];
     

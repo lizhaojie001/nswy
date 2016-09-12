@@ -24,6 +24,8 @@
 #define ThemeColor [UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:0.8]
 //屏幕大小
 #define ScreenSize [UIScreen mainScreen].bounds
+//打印方法
+#define NXHMyLogFunction   MYLog(@"%s",__FUNCTION__)
 
 #ifdef DEBUG  //调试阶段
 #define MYLog(...)  NSLog(__VA_ARGS__)
@@ -33,15 +35,18 @@
 
 #import "UIView+Frame.h"
 #import "UIImage+Image.h"
+
 #define  MustNumber @"0123456789"
 #define PWDMustCarter @"123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 //是否登录
 #define LOGEDIN [EMClient sharedClient].isLoggedIn
 
-//环信
+
 #import "EaseUI.h"
 #import "EMSDK.h"
 
+//保存到本地数据
+#import "NXHSaveTool.h"
 #endif /* _____pch */
 #endif

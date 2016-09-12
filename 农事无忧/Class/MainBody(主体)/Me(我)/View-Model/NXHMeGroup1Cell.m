@@ -9,18 +9,9 @@
 #import "NXHMeGroup1Cell.h"
 #import "NXHMeModel.h"
 @interface NXHMeGroup1Cell()
+
 /**模型*/
 @property (nonatomic,strong) NXHMeModel * Model;
-
-/**头像*/
-@property (nonatomic,strong) UIImageView * Icon;
-/**昵称*/
-@property (nonatomic,strong) UILabel * Nickname;
-/**账号*/
-@property (nonatomic,strong) UILabel * ID;
-/**二维码*/
-@property (nonatomic,strong) UIButton * QRCode;
-
 
 @end
 @implementation NXHMeGroup1Cell

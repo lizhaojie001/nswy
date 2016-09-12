@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>修改密码</key>
-	<string>太阳</string>
+	<string>img_change_password</string>
 	<key>修改手机号</key>
-	<string>太阳</string>
+	<string>img_change_tel</string>
 	<key>清空记录</key>
-	<string>太阳</string>
+	<string>img_clear_record</string>
 	<key>更新版本</key>
-	<string>太阳</string>
+	<string>img_update</string>
 	<key>意见反馈</key>
-	<string>太阳</string>
+	<string>img_feed_back</string>
 	<key>关于我们</key>
-	<string>太阳</string>
+	<string>img_about_us</string>
 	<key>退出</key>
-	<string>太阳</string>
+	<string>img_logout</string>
 </dict>
 </plist>

@@ -36,19 +36,25 @@
         
         viewController.hidesBottomBarWhenPushed = YES;
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundImage:[[UIImage imageNamed:@"太阳"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+//        [btn setTitle:@"返回" forState:UIControlStateNormal];
+//        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]forState:UIControlStateNormal];
     
-        [btn setFrame:CGRectMake(0, 0, 40, 40)];
+        [btn sizeToFit];
         
         [btn addTarget:self action:@selector(popToPre) forControlEvents:UIControlEventTouchUpInside];
         
 
         UIBarButtonItem *left = [[UIBarButtonItem  alloc]initWithCustomView:btn];
+//        btn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         // 设置导航条的按钮
         viewController.navigationItem.leftBarButtonItem = left;
+        viewController.hidesBottomBarWhenPushed = YES;
+
            }
     
     [super pushViewController:viewController animated:animated];
+
     
 }
  

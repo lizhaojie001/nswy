@@ -12,4 +12,7 @@
 + (id)objectForKey:(NSString *)defaultName;
 
 + (void)setObject:(id)value forKey:(NSString *)defaultName;
+
++ (void)saveImageToDomainsWithDirectorystringByAppendingPathComponent:(NSString *)suffix WithImage:(UIImage*)image;//后缀
++ (UIImage *)fetchImageWithDirectorystringByAppendingPathComponent:(NSString *)suffix;
 @end

@@ -98,7 +98,8 @@
     NXHDiscoverViewController * Discover = [[NXHDiscoverViewController alloc]init];
     [self setupVc:Discover andImage:[UIImage imageNamed:@"main_bottom_more"] HightlightImage:[UIImage imageNamed:@"main_bottom_more_selected"] andTitle:@"发现"];
     
-    NXHMeViewController *Me = [[   NXHMeViewController alloc]init];
+    NXHMeViewController *Me =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Me"] ;
+    
     [self setupVc:Me  andImage:[UIImage imageNamed: @"main_bottom_personcenter" ]HightlightImage:[UIImage imageNamed:@"main_bottom_personcenter_selected"] andTitle:@"我"];
 
 

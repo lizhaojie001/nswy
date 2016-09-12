@@ -62,6 +62,8 @@
 		04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */; };
 		04243B1F1D75179900809AC5 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B1E1D75179900809AC5 /* ____Tests.m */; };
 		04243B2A1D75179900809AC5 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04243B291D75179900809AC5 /* ____UITests.m */; };
+		04336C491D863C56009669D8 /* NSArray+NXHDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 04336C481D863C56009669D8 /* NSArray+NXHDescription.m */; };
+		04336C531D864A98009669D8 /* NXHPersonSetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04336C511D864A98009669D8 /* NXHPersonSetController.m */; };
 		0433E1641D7E809C00E015D3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0433E1631D7E809C00E015D3 /* CoreMedia.framework */; };
 		0433E1661D7E80AF00E015D3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0433E1651D7E80AF00E015D3 /* AudioToolbox.framework */; };
 		0433E1681D7E80BA00E015D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0433E1671D7E80BA00E015D3 /* AVFoundation.framework */; };
@@ -253,6 +255,7 @@
 		04F24DA81D82689200C8DBCA /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F24D971D82689200C8DBCA /* UIWebView+AFNetworking.m */; };
 		04F2528B1D85808F00E3C0E7 /* 手机(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 04F252891D85808F00E3C0E7 /* 手机(1).png */; };
 		04F2528C1D85808F00E3C0E7 /* 钥匙.png in Resources */ = {isa = PBXBuildFile; fileRef = 04F2528A1D85808F00E3C0E7 /* 钥匙.png */; };
+		04F805FB1D864F1900FA29B8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */; };
 		84C86A31CBDD2E4A662BD6C8 /* libPods-农事无忧Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D74D15E42FC712DCD10DABA /* libPods-农事无忧Tests.a */; };
 		943300780806DC6C5BEDB522 /* libPods-农事无忧.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F145D0DA88256CB50B9E13CD /* libPods-农事无忧.a */; };
 		E47412A14B46C1DA167E483E /* libPods-农事无忧UITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B3EB46682E8D05183589BC /* libPods-农事无忧UITests.a */; };
@@ -418,6 +421,10 @@
 		04243B251D75179900809AC5 /* 农事无忧UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "农事无忧UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04243B291D75179900809AC5 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		04243B2B1D75179900809AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04336C471D863C56009669D8 /* NSArray+NXHDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+NXHDescription.h"; sourceTree = "<group>"; };
+		04336C481D863C56009669D8 /* NSArray+NXHDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+NXHDescription.m"; sourceTree = "<group>"; };
+		04336C501D864A98009669D8 /* NXHPersonSetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHPersonSetController.h; sourceTree = "<group>"; };
+		04336C511D864A98009669D8 /* NXHPersonSetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHPersonSetController.m; sourceTree = "<group>"; };
 		0433E1631D7E809C00E015D3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		0433E1651D7E80AF00E015D3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		0433E1671D7E80BA00E015D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -755,6 +762,7 @@
 		04F24D971D82689200C8DBCA /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		04F252891D85808F00E3C0E7 /* 手机(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手机(1).png"; sourceTree = "<group>"; };
 		04F2528A1D85808F00E3C0E7 /* 钥匙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "钥匙.png"; sourceTree = "<group>"; };
+		04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		38346BB9C87A38036A904ED3 /* Pods-农事无忧.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧/Pods-农事无忧.release.xcconfig"; sourceTree = "<group>"; };
 		3D74D15E42FC712DCD10DABA /* libPods-农事无忧Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B3EB46682E8D05183589BC /* libPods-农事无忧UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1076,6 +1084,9 @@
 				04231EBD1D7E79EC0015EC53 /* NXHMeViewController.m */,
 				04231EBE1D7E79EC0015EC53 /* NXHSettingViewController.h */,
 				04231EBF1D7E79EC0015EC53 /* NXHSettingViewController.m */,
+				04336C501D864A98009669D8 /* NXHPersonSetController.h */,
+				04336C511D864A98009669D8 /* NXHPersonSetController.m */,
+				04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */,
 				04231EC01D7E79EC0015EC53 /* 1未登录Setting.plist */,
 				048284071D80FADC0002C0EC /* Setting.plist */,
 			);
@@ -1245,6 +1256,8 @@
 				04231EF21D7E79EC0015EC53 /* UIView+Frame.m */,
 				0433E1B11D7FC14500E015D3 /* UIColor+NXHColor.h */,
 				0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */,
+				04336C471D863C56009669D8 /* NSArray+NXHDescription.h */,
+				04336C481D863C56009669D8 /* NSArray+NXHDescription.m */,
 			);
 			path = Categoty;
 			sourceTree = "<group>";
@@ -1252,22 +1265,24 @@
 		04231EF61D7E79EC0015EC53 /* Tool(业务) */ = {
 			isa = PBXGroup;
 			children = (
+				04336C4A1D86459F009669D8 /* Retrieve password (找回密码) */,
 				0433E1B41D7FD83B00E015D3 /* Ereg(正则表达式) */,
-				0433E1921D7E8E4100E015D3 /* Logon */,
-				04231EF71D7E79EC0015EC53 /* Gudie */,
-				04231F0B1D7E79EC0015EC53 /* Login */,
-				04231F131D7E79EC0015EC53 /* Save */,
+				0433E1921D7E8E4100E015D3 /* Logon(注册) */,
+				04231EF71D7E79EC0015EC53 /* Gudie(导航图) */,
+				04231F0B1D7E79EC0015EC53 /* Login(登录) */,
+				04231F131D7E79EC0015EC53 /* Save(存储) */,
 			);
 			path = "Tool(业务)";
 			sourceTree = "<group>";
 		};
-		04231EF71D7E79EC0015EC53 /* Gudie */ = {
+		04231EF71D7E79EC0015EC53 /* Gudie(导航图) */ = {
 			isa = PBXGroup;
 			children = (
 				04231EF81D7E79EC0015EC53 /* GudieImage */,
 				04231F091D7E79EC0015EC53 /* NXHGudieTool.h */,
 				04231F0A1D7E79EC0015EC53 /* NXHGudieTool.m */,
 			);
+			name = "Gudie(导航图)";
 			path = Gudie;
 			sourceTree = "<group>";
 		};
@@ -1329,7 +1344,7 @@
 			path = guide_two.imageset;
 			sourceTree = "<group>";
 		};
-		04231F0B1D7E79EC0015EC53 /* Login */ = {
+		04231F0B1D7E79EC0015EC53 /* Login(登录) */ = {
 			isa = PBXGroup;
 			children = (
 				04F252891D85808F00E3C0E7 /* 手机(1).png */,
@@ -1338,15 +1353,17 @@
 				04231F0D1D7E79EC0015EC53 /* NXHLoginViewController.m */,
 				04231F0E1D7E79EC0015EC53 /* NXHLoginViewController.xib */,
 			);
+			name = "Login(登录)";
 			path = Login;
 			sourceTree = "<group>";
 		};
-		04231F131D7E79EC0015EC53 /* Save */ = {
+		04231F131D7E79EC0015EC53 /* Save(存储) */ = {
 			isa = PBXGroup;
 			children = (
 				04231F141D7E79EC0015EC53 /* NXHSaveTool.h */,
 				04231F151D7E79EC0015EC53 /* NXHSaveTool.m */,
 			);
+			name = "Save(存储)";
 			path = Save;
 			sourceTree = "<group>";
 		};
@@ -1391,13 +1408,21 @@
 			path = "农事无忧UITests";
 			sourceTree = "<group>";
 		};
-		0433E1921D7E8E4100E015D3 /* Logon */ = {
+		04336C4A1D86459F009669D8 /* Retrieve password (找回密码) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Retrieve password (找回密码)";
+			sourceTree = "<group>";
+		};
+		0433E1921D7E8E4100E015D3 /* Logon(注册) */ = {
 			isa = PBXGroup;
 			children = (
 				0433E1931D7E8E5600E015D3 /* NXHLogon.h */,
 				0433E1941D7E8E5600E015D3 /* NXHLogon.m */,
 				0433E1981D7E8EB700E015D3 /* NXHLogon.xib */,
 			);
+			name = "Logon(注册)";
 			path = Logon;
 			sourceTree = "<group>";
 		};
@@ -2323,6 +2348,7 @@
 				049F45431D82A3A60009C7ED /* MJRefresh.bundle in Resources */,
 				04231F601D7E79EC0015EC53 /* NXHLoginViewController.xib in Resources */,
 				04231F401D7E79EC0015EC53 /* guide_one.jpg in Resources */,
+				04F805FB1D864F1900FA29B8 /* Storyboard.storyboard in Resources */,
 				04231F201D7E79EC0015EC53 /* main_bottom_home@2x.png in Resources */,
 				04231F271D7E79EC0015EC53 /* main_bottom_personcenter.png in Resources */,
 				04231F4B1D7E79EC0015EC53 /* indicator_3_unfocused.png in Resources */,
@@ -2488,6 +2514,7 @@
 				049F454A1D82A3A60009C7ED /* MWGridViewController.m in Sources */,
 				0433E18E1D7E82E600E015D3 /* NXHLoginViewController.m in Sources */,
 				049F45931D82A3A60009C7ED /* EaseChatToolbar.m in Sources */,
+				04336C491D863C56009669D8 /* NSArray+NXHDescription.m in Sources */,
 				0433E18D1D7E82D800E015D3 /* NXHSaveTool.m in Sources */,
 				0433E18C1D7E82C900E015D3 /* NXHGudieTool.m in Sources */,
 				049F45421D82A3A60009C7ED /* MJRefreshStateHeader.m in Sources */,
@@ -2555,6 +2582,7 @@
 				049F45551D82A3A60009C7ED /* EMSDWebImageDownloaderOperation.m in Sources */,
 				0433E1851D7E820A00E015D3 /* NXHNFViewController.m in Sources */,
 				049F454D1D82A3A60009C7ED /* MWTapDetectingImageView.m in Sources */,
+				04336C531D864A98009669D8 /* NXHPersonSetController.m in Sources */,
 				049F45731D82A3A60009C7ED /* NSDate+Category.m in Sources */,
 				04F24D591D82688600C8DBCA /* README.md in Sources */,
 				0433E1841D7E820200E015D3 /* NXHNewFeatureViewController.m in Sources */,
