@@ -86,12 +86,13 @@
     
 
 }
+#pragma mark - 设置自控制器
 - (void)setupAllVc{
     NXHHomeViewController * Home = [[NXHHomeViewController alloc]initWithCollectionViewLayout: [[UICollectionViewFlowLayout alloc]init] ];
     
     [self setupVc:Home andImage:[UIImage imageNamed: @"main_bottom_home"]HightlightImage:[UIImage imageNamed:@"main_bottom_home_selected"] andTitle:@"首页"];
     
-    NXHMessageViewController * Message = [[NXHMessageViewController alloc]init];
+    NXHMessageViewController * Message = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"NXHMessageViewController"];
     [self setupVc:Message andImage:[UIImage imageNamed:@"main_bottom_comm" ]HightlightImage:[UIImage imageNamed:@"main_bottom_comm_selected"] andTitle:@"消息"];
     
     

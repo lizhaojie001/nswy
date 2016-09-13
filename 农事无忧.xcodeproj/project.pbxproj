@@ -100,6 +100,11 @@
 		0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433E1981D7E8EB700E015D3 /* NXHLogon.xib */; };
 		0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */; };
 		0433E1B71D7FD85000E015D3 /* NXHEreg.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B61D7FD85000E015D3 /* NXHEreg.m */; };
+		045414571D8788F50009ECF8 /* ShowResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414561D8788F50009ECF8 /* ShowResultTableViewController.m */; };
+		0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414591D87908C0009ECF8 /* NXHSearchViewController.m */; };
+		0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454145E1D87CD940009ECF8 /* NXHContactListCell.m */; };
+		045414621D87DE250009ECF8 /* NXHHeaderVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414611D87DE250009ECF8 /* NXHHeaderVIew.m */; };
+		045414641D87E4600009ECF8 /* NXHHeaderVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */; };
 		048284081D80FADC0002C0EC /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048284071D80FADC0002C0EC /* Setting.plist */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
 		048284121D8114460002C0EC /* NXHFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048284111D8114460002C0EC /* NXHFunctionView.m */; };
@@ -442,6 +447,15 @@
 		0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NXHColor.m"; sourceTree = "<group>"; };
 		0433E1B51D7FD85000E015D3 /* NXHEreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHEreg.h; sourceTree = "<group>"; };
 		0433E1B61D7FD85000E015D3 /* NXHEreg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHEreg.m; sourceTree = "<group>"; };
+		045414551D8788F50009ECF8 /* ShowResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultTableViewController.h; sourceTree = "<group>"; };
+		045414561D8788F50009ECF8 /* ShowResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultTableViewController.m; sourceTree = "<group>"; };
+		045414581D87908C0009ECF8 /* NXHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSearchViewController.h; sourceTree = "<group>"; };
+		045414591D87908C0009ECF8 /* NXHSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHSearchViewController.m; sourceTree = "<group>"; };
+		0454145D1D87CD940009ECF8 /* NXHContactListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHContactListCell.h; sourceTree = "<group>"; };
+		0454145E1D87CD940009ECF8 /* NXHContactListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHContactListCell.m; sourceTree = "<group>"; };
+		045414601D87DE250009ECF8 /* NXHHeaderVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHHeaderVIew.h; sourceTree = "<group>"; };
+		045414611D87DE250009ECF8 /* NXHHeaderVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHHeaderVIew.m; sourceTree = "<group>"; };
+		045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHHeaderVIew.xib; sourceTree = "<group>"; };
 		048284071D80FADC0002C0EC /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
@@ -762,7 +776,7 @@
 		04F24D971D82689200C8DBCA /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		04F252891D85808F00E3C0E7 /* 手机(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "手机(1).png"; sourceTree = "<group>"; };
 		04F2528A1D85808F00E3C0E7 /* 钥匙.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "钥匙.png"; sourceTree = "<group>"; };
-		04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = "../MainBody(主体)/Me(我)/Controller/Storyboard.storyboard"; sourceTree = "<group>"; };
 		38346BB9C87A38036A904ED3 /* Pods-农事无忧.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-农事无忧.release.xcconfig"; path = "Pods/Target Support Files/Pods-农事无忧/Pods-农事无忧.release.xcconfig"; sourceTree = "<group>"; };
 		3D74D15E42FC712DCD10DABA /* libPods-农事无忧Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B3EB46682E8D05183589BC /* libPods-农事无忧UITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-农事无忧UITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1086,7 +1100,6 @@
 				04231EBF1D7E79EC0015EC53 /* NXHSettingViewController.m */,
 				04336C501D864A98009669D8 /* NXHPersonSetController.h */,
 				04336C511D864A98009669D8 /* NXHPersonSetController.m */,
-				04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */,
 				04231EC01D7E79EC0015EC53 /* 1未登录Setting.plist */,
 				048284071D80FADC0002C0EC /* Setting.plist */,
 			);
@@ -1126,6 +1139,10 @@
 			children = (
 				04231EC91D7E79EC0015EC53 /* NXHMessageViewController.h */,
 				04231ECA1D7E79EC0015EC53 /* NXHMessageViewController.m */,
+				045414581D87908C0009ECF8 /* NXHSearchViewController.h */,
+				045414591D87908C0009ECF8 /* NXHSearchViewController.m */,
+				045414551D8788F50009ECF8 /* ShowResultTableViewController.h */,
+				045414561D8788F50009ECF8 /* ShowResultTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1142,6 +1159,11 @@
 			children = (
 				048284101D8114460002C0EC /* NXHFunctionView.h */,
 				048284111D8114460002C0EC /* NXHFunctionView.m */,
+				0454145D1D87CD940009ECF8 /* NXHContactListCell.h */,
+				0454145E1D87CD940009ECF8 /* NXHContactListCell.m */,
+				045414601D87DE250009ECF8 /* NXHHeaderVIew.h */,
+				045414611D87DE250009ECF8 /* NXHHeaderVIew.m */,
+				045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -1240,6 +1262,7 @@
 				04231EF31D7E79EC0015EC53 /* Info.plist */,
 				04231EF41D7E79EC0015EC53 /* main.m */,
 				04231EF51D7E79EC0015EC53 /* 农事无忧.pch */,
+				04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */,
 				04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */,
 			);
 			path = Other;
@@ -2333,6 +2356,7 @@
 				04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */,
 				04231F241D7E79EC0015EC53 /* main_bottom_more@2x.png in Resources */,
 				04231F5B1D7E79EC0015EC53 /* guide_three.jpg in Resources */,
+				045414641D87E4600009ECF8 /* NXHHeaderVIew.xib in Resources */,
 				04231F591D7E79EC0015EC53 /* guide_one.jpg in Resources */,
 				04231F3F1D7E79EC0015EC53 /* guide_go_btn.png in Resources */,
 				04231F1B1D7E79EC0015EC53 /* main_bottom_comm.png in Resources */,
@@ -2530,6 +2554,7 @@
 				04F24DA01D82689200C8DBCA /* AFAutoPurgingImageCache.m in Sources */,
 				049F458A1D82A3A60009C7ED /* EaseMessageTimeCell.m in Sources */,
 				049F45821D82A3A60009C7ED /* EaseMessageViewController.m in Sources */,
+				045414621D87DE250009ECF8 /* NXHHeaderVIew.m in Sources */,
 				049F45721D82A3A60009C7ED /* EaseUserModel.m in Sources */,
 				04F24D5A1D82688600C8DBCA /* SVIndefiniteAnimatedView.m in Sources */,
 				049F45371D82A3A60009C7ED /* MJRefreshComponent.m in Sources */,
@@ -2549,6 +2574,7 @@
 				049F457D1D82A3A60009C7ED /* EaseEmotionEscape.m in Sources */,
 				049F454C1D82A3A60009C7ED /* MWPhotoBrowser.m in Sources */,
 				049F456C1D82A3A60009C7ED /* PSTGridLayoutRow.m in Sources */,
+				0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */,
 				04F24DA61D82689200C8DBCA /* UIProgressView+AFNetworking.m in Sources */,
 				049F45951D82A3A60009C7ED /* EaseImageView.m in Sources */,
 				0433E1891D7E823E00E015D3 /* UIImage+Image.m in Sources */,
@@ -2566,6 +2592,7 @@
 				049F456F1D82A3A60009C7ED /* EaseSDKHelper.m in Sources */,
 				049F45521D82A3A60009C7ED /* EMSDWebImageCompat.m in Sources */,
 				0433E1871D7E822300E015D3 /* NXHpageControl.m in Sources */,
+				0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */,
 				049F45861D82A3A60009C7ED /* EaseUserCell.m in Sources */,
 				04F24DA21D82689200C8DBCA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				049F453A1D82A3A60009C7ED /* MJRefreshAutoGifFooter.m in Sources */,
@@ -2603,6 +2630,7 @@
 				049F458B1D82A3A60009C7ED /* EaseBubbleView+File.m in Sources */,
 				049F45871D82A3A60009C7ED /* EaseBaseMessageCell.m in Sources */,
 				0433E1821D7E81EF00E015D3 /* NXHMeGroup1Cell.m in Sources */,
+				045414571D8788F50009ECF8 /* ShowResultTableViewController.m in Sources */,
 				0433E1811D7E81E500E015D3 /* NXHMeModel.m in Sources */,
 				049F45741D82A3A60009C7ED /* NSDateFormatter+Category.m in Sources */,
 				049F452B1D82A3A60009C7ED /* EMCDDeviceManager+ProximitySensor.m in Sources */,

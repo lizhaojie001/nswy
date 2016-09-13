@@ -27,7 +27,7 @@
  */
 +(void)saveImageToDomainsWithDirectorystringByAppendingPathComponent:(NSString *)suffix WithImage:(UIImage *)image{
     //JEPG格式
-
+//压缩图片
      NSData *imagedata=UIImageJPEGRepresentation(image,1.0);
 
     NSArray*paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
