@@ -21,9 +21,10 @@
 
 @interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate ,UIGestureRecognizerDelegate  >
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView1;
-
+@property (weak, nonatomic) IBOutlet NXHHeaderVIew *functionBtn;
+ 
 @property (weak, nonatomic) IBOutlet UITableView *tableView2;
+@property (weak, nonatomic) IBOutlet UIView *searchView;
 
 
 /**全部临时会话列表*/
@@ -45,30 +46,33 @@
 @property (nonatomic,strong) NSArray <NSString*> * strArr;
 
 /**头视图*/
-@property (nonatomic,strong) NXHHeaderVIew * sectionHeaderView;
+@property (nonatomic,weak)IBOutlet NXHHeaderVIew * sectionHeaderView;
 
-@end
+
+#pragma mark 功能按钮
+ @end
 
 @implementation NXHMessageViewController
 
 #pragma mark -UIGestureRecognizerDelegate  添加手势
 
-//- (void)addGestureRecognizer{
-//
-//    UITapGestureRecognizer * pan = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupList)];
-//    pan.numberOfTouchesRequired =1;
-//    [self.Group addGestureRecognizer:pan];
-//    UITapGestureRecognizer * pan1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(AddressBookList)];
-//     pan1.numberOfTouchesRequired =1;
-//    [self.AddressBook addGestureRecognizer:pan1];
-//    UITapGestureRecognizer * pan2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(emsCnplList)];
-//     pan2.numberOfTouchesRequired =1;
-//    [self.emsCnpl addGestureRecognizer:pan2];
-//    UITapGestureRecognizer * pan3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(NoticeList)];
-//     pan3.numberOfTouchesRequired =1;
-//    [self.Notice addGestureRecognizer:pan3];
-//
-//}
+- (void)addGestureRecognizer{
+
+    UITapGestureRecognizer * pan = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupList)];
+    pan.delegate = self;
+    pan.numberOfTouchesRequired =1;
+    [self.functionBtn.Group addGestureRecognizer:pan];
+    UITapGestureRecognizer * pan1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(AddressBookList)];
+     pan1.numberOfTouchesRequired =1;
+    [self.functionBtn.AddressBook addGestureRecognizer:pan1];
+    UITapGestureRecognizer * pan2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(emsCnplList)];
+     pan2.numberOfTouchesRequired =1;
+    [self.functionBtn.emsCnpl addGestureRecognizer:pan2];
+    UITapGestureRecognizer * pan3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(NoticeList)];
+     pan3.numberOfTouchesRequired =1;
+    [self.functionBtn.Notice addGestureRecognizer:pan3];
+
+}
 #pragma mark -手势方法
 #pragma mark - NXHHeaderVIewDelegate
 -(void)GroupList{
@@ -99,10 +103,17 @@
 
     //设置搜索条中的分段类别
     self.searchController.searchBar.scopeButtonTitles=@[@"设备",@"软件",@"其他"];
-
+    [self.searchController.searchBar setTintColor:ThemeColor];
+    // self.searchController.searchBar.barTintColor = ThemeColor;
+//    for (UIView * view in self.searchController.searchBar.subviews) {
+//        if ([view isKindOfClass:NSClassFromString(@"_UISearchBarSearchFieldBackgroundView")]) {
+//            view.backgroundColor = ThemeColor;
+//        }
+//    }
 
     //为当前表透视图添加searchBar
-    self.tableView1.tableHeaderView=self.searchController.searchBar;
+     [self.searchView addSubview: self.searchController.searchBar];
+
 
     //设置搜索控制器的结果更新代理对象
     self.searchController.searchResultsUpdater=self;
@@ -177,11 +188,9 @@
     [super viewDidLoad];
     self.navigationItem.title = @"会话";
     self.tableView2.delegate = self;
-    self.tableView1.delegate = self;
-    self.tableView1.bounces = NO;
-    self.tableView2.frame = CGRectMake(0, 189, self.view.width, 125);
-    //[self addGestureRecognizer];
-     
+
+    [self addGestureRecognizer];
+
 
 }
 
@@ -246,19 +255,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if ([tableView isEqual:self.tableView1]) {
-        return 1;
-    }
+
     return 56;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([tableView isEqual:self.tableView1]) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HeaderCell" forIndexPath:indexPath];
-        return cell;
-
-    }
-   NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"ContactListCell"];
+       NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"ContactListCell"];
      
 
     return cell;
@@ -282,9 +284,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if ([tableView isEqual:self.tableView1]) {
-        return 81;
-    }
+
     return 60;
 }
 

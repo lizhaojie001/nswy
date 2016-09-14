@@ -105,6 +105,10 @@
 		0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454145E1D87CD940009ECF8 /* NXHContactListCell.m */; };
 		045414621D87DE250009ECF8 /* NXHHeaderVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414611D87DE250009ECF8 /* NXHHeaderVIew.m */; };
 		045414641D87E4600009ECF8 /* NXHHeaderVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */; };
+		045414901D88DEAE0009ECF8 /* NXHCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454148E1D88DEAE0009ECF8 /* NXHCollectionViewCell.m */; };
+		045414911D88DEAE0009ECF8 /* NXHCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454148F1D88DEAE0009ECF8 /* NXHCollectionViewCell.xib */; };
+		0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414981D88F2930009ECF8 /* WEBViewController.m */; };
+		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
 		048284081D80FADC0002C0EC /* Setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 048284071D80FADC0002C0EC /* Setting.plist */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
 		048284121D8114460002C0EC /* NXHFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 048284111D8114460002C0EC /* NXHFunctionView.m */; };
@@ -456,6 +460,12 @@
 		045414601D87DE250009ECF8 /* NXHHeaderVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHHeaderVIew.h; sourceTree = "<group>"; };
 		045414611D87DE250009ECF8 /* NXHHeaderVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHHeaderVIew.m; sourceTree = "<group>"; };
 		045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHHeaderVIew.xib; sourceTree = "<group>"; };
+		0454148D1D88DEAE0009ECF8 /* NXHCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHCollectionViewCell.h; sourceTree = "<group>"; };
+		0454148E1D88DEAE0009ECF8 /* NXHCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHCollectionViewCell.m; sourceTree = "<group>"; };
+		0454148F1D88DEAE0009ECF8 /* NXHCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHCollectionViewCell.xib; sourceTree = "<group>"; };
+		045414971D88F2930009ECF8 /* WEBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEBViewController.h; sourceTree = "<group>"; };
+		045414981D88F2930009ECF8 /* WEBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEBViewController.m; sourceTree = "<group>"; };
+		045414991D88F2930009ECF8 /* WEBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEBViewController.xib; sourceTree = "<group>"; };
 		048284071D80FADC0002C0EC /* Setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Setting.plist; sourceTree = "<group>"; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
@@ -1047,6 +1057,9 @@
 				04231EAB1D7E79EC0015EC53 /* MJDIYHeader.m */,
 				04231EAC1D7E79EC0015EC53 /* NXHHomeViewController.h */,
 				04231EAD1D7E79EC0015EC53 /* NXHHomeViewController.m */,
+				045414971D88F2930009ECF8 /* WEBViewController.h */,
+				045414981D88F2930009ECF8 /* WEBViewController.m */,
+				045414991D88F2930009ECF8 /* WEBViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1077,6 +1090,9 @@
 			children = (
 				04231EB81D7E79EC0015EC53 /* NXHCollectionReusableView.h */,
 				04231EB91D7E79EC0015EC53 /* NXHCollectionReusableView.m */,
+				0454148D1D88DEAE0009ECF8 /* NXHCollectionViewCell.h */,
+				0454148E1D88DEAE0009ECF8 /* NXHCollectionViewCell.m */,
+				0454148F1D88DEAE0009ECF8 /* NXHCollectionViewCell.xib */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -2355,6 +2371,7 @@
 				04231F551D7E79EC0015EC53 /* guide_four.jpg in Resources */,
 				04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */,
 				04231F241D7E79EC0015EC53 /* main_bottom_more@2x.png in Resources */,
+				045414911D88DEAE0009ECF8 /* NXHCollectionViewCell.xib in Resources */,
 				04231F5B1D7E79EC0015EC53 /* guide_three.jpg in Resources */,
 				045414641D87E4600009ECF8 /* NXHHeaderVIew.xib in Resources */,
 				04231F591D7E79EC0015EC53 /* guide_one.jpg in Resources */,
@@ -2374,6 +2391,7 @@
 				04231F401D7E79EC0015EC53 /* guide_one.jpg in Resources */,
 				04F805FB1D864F1900FA29B8 /* Storyboard.storyboard in Resources */,
 				04231F201D7E79EC0015EC53 /* main_bottom_home@2x.png in Resources */,
+				0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */,
 				04231F271D7E79EC0015EC53 /* main_bottom_personcenter.png in Resources */,
 				04231F4B1D7E79EC0015EC53 /* indicator_3_unfocused.png in Resources */,
 				04231F1E1D7E79EC0015EC53 /* main_bottom_comm_selected@2x.png in Resources */,
@@ -2557,6 +2575,7 @@
 				045414621D87DE250009ECF8 /* NXHHeaderVIew.m in Sources */,
 				049F45721D82A3A60009C7ED /* EaseUserModel.m in Sources */,
 				04F24D5A1D82688600C8DBCA /* SVIndefiniteAnimatedView.m in Sources */,
+				0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */,
 				049F45371D82A3A60009C7ED /* MJRefreshComponent.m in Sources */,
 				049F45361D82A3A60009C7ED /* MJRefreshBackFooter.m in Sources */,
 				049F45461D82A3A60009C7ED /* UIScrollView+MJRefresh.m in Sources */,
@@ -2644,6 +2663,7 @@
 				049F454B1D82A3A60009C7ED /* MWPhoto.m in Sources */,
 				049F45911D82A3A60009C7ED /* EaseBubbleView+Voice.m in Sources */,
 				04F24DA81D82689200C8DBCA /* UIWebView+AFNetworking.m in Sources */,
+				045414901D88DEAE0009ECF8 /* NXHCollectionViewCell.m in Sources */,
 				049F45701D82A3A60009C7ED /* EaseConversationModel.m in Sources */,
 				049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */,
 				049F45A21D82ACF20009C7ED /* ChatViewController.m in Sources */,

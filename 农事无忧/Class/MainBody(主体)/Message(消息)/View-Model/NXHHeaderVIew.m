@@ -8,10 +8,6 @@
 
 #import "NXHHeaderVIew.h"
 @interface NXHHeaderVIew()
-@property (weak, nonatomic) IBOutlet UIView *Group;
-@property (weak, nonatomic) IBOutlet UIView *AddressBook;
-@property (weak, nonatomic) IBOutlet UIView *emsCnpl;
-@property (weak, nonatomic) IBOutlet UIView *Notice;
 
 
 

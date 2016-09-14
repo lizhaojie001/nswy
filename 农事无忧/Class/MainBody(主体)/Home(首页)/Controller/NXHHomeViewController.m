@@ -9,13 +9,18 @@
 #import "NXHHomeViewController.h"
 #import "NXHCollectionReusableView.h"
 #import "MJDIYHeader.h"
+#import "NXHCollectionViewCell.h"
+#import "WEBViewController.h"
 
 
 
 @interface NXHHomeViewController ()
-/**GIF*/
-@property (nonatomic,strong) NSMutableArray * imageArr;
 
+/**itemImages*/
+@property (nonatomic,strong) NSArray * itemImageArr;
+
+/**urlArr*/
+@property (nonatomic,strong) NSArray * urlArr;
 
 @end
 
@@ -57,7 +62,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     self.collectionView.backgroundColor = [UIColor whiteColor];
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib: [UINib nibWithNibName:@"NXHCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
     
     
     // Do any additional setup after loading the view.
@@ -96,10 +101,13 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    NXHCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.layer.cornerRadius = 5;
     // Configure the cell
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1  ];
+   // cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1  ];
+    UIImage * image = [UIImage imageNamed: self.itemImageArr[indexPath.row]];
+    cell.imageView.image =image;
+
     return cell;
 }
 
@@ -195,27 +203,14 @@ static NSString * const reuseIdentifier = @"Cell";
     return headerView;
 }
 
-//点击item方法
+#pragma mark  点击item方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    MYLog(@"点击✅%ld",(long)indexPath.item);
-}
+    WEBViewController * web = [[WEBViewController alloc]initWithNibName:nil bundle:nil];
+    web.urlStr = self.urlArr[indexPath.row];
+       [self.navigationController pushViewController:web animated:YES];
+     }
 
-- (NSMutableArray *)imageArr{
-    if (!_imageArr)
-    {
-        for (int i =0; i <4; i++)
-        {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"太阳副本 %d",i]];
-            [_imageArr addObject:image];
-        }
-        
-    }
-        return _imageArr;
-        
-     
-}
 #pragma mark - 旋转的抬太阳<UIScrollviewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     MYLog(@"验证");
@@ -228,6 +223,37 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
-    
+#pragma mark - 懒加载
+- (NSArray *)itemImageArr {
+	if(_itemImageArr == nil) {
+        NSMutableArray  *arr = [NSMutableArray arrayWithCapacity:10];
+        for (NSInteger i =0; i <10 ; i ++) {
+            [arr addObject:[NSString stringWithFormat:@"图层-%ld",(long)i+1]];
+        }
+        _itemImageArr  = arr;
+	}
+	return _itemImageArr;
+}
+
+- (NSArray *)urlArr {
+	if(_urlArr == nil) {
+        _urlArr=@[@"http://www.ns51.cn/Species/Species/List",
+                  @"http://www.ns51.cn/Species/ConsultInfo/List",
+                  @"http://www.ns51.cn/Species/PolicyInfo/List",
+                  @"http://www.ns51.cn/Species/ExpertInfo/List",
+                  @"http://www.ns51.cn/Species/ServiceInfo/List",
+                  @"http://www.ns51.cn/Species/OrganInfo/List",
+                  @"http://www.ns51.cn/Product",
+
+                  @"http://www.ns51.cn/Species/LoreInfo/List",
+
+
+
+                  @"http://www.ns51.cn/Personal/Space/SpaceFriend/FriendQuery?noWorryId=&type=1" ,
+                   @"http://www.ns51.cn/Species/CompanyInfo/ListMore"];
+    }
+	return _urlArr;
+}
+
 @end
 

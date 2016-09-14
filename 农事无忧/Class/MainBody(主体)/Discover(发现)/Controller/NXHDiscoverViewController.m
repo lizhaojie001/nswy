@@ -53,16 +53,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     if (indexPath.section ==0) {
-        cell.imageView.image = [UIImage imageNamed:@"太阳副本 5"];
+        cell.imageView.image = [UIImage imageNamed:@"img_sns"];
         cell.textLabel.text = @"关系圈";
     }else{
         switch (indexPath.row) {
             case 0:
-                cell.imageView.image = [UIImage imageNamed:@"太阳副本 6"];
+                cell.imageView.image = [UIImage imageNamed:@"img_rev"];
                 cell.textLabel.text =@"追溯";
                 break;
             default:
-                cell.imageView.image = [UIImage imageNamed:@"太阳副本 6"];
+                cell.imageView.image = [UIImage imageNamed:@"img_app"];
                 cell.textLabel.text =@"应用";
                 break;
         }
