@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NXHContactListCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *avatarHeaderImage;
+@property (weak, nonatomic) IBOutlet UILabel *nickName;
+@property (weak, nonatomic) IBOutlet UILabel *lastMessage;
+
+@property (weak, nonatomic) IBOutlet UILabel *lastTime;
 
 @end

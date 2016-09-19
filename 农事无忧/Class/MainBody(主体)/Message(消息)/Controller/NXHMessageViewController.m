@@ -14,14 +14,15 @@
 #import "NXHSearchViewController.h"
 #import "NXHContactListCell.h"
 #import "NXHHeaderVIew.h"
+#import "NXHHeaderBtn.h"
 
 
 
 
 
-@interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate ,UIGestureRecognizerDelegate  >
+@interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate , EMContactManagerDelegate  >
 
-@property (weak, nonatomic) IBOutlet NXHHeaderVIew *functionBtn;
+@property (weak, nonatomic) IBOutlet UIView *functionBtn;
  
 @property (weak, nonatomic) IBOutlet UITableView *tableView2;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
@@ -34,7 +35,9 @@
 /**展示搜索结果控制器*/
 @property (nonatomic,strong)  ShowResultTableViewController* showResultVC;
 
-
+/**暂存接受信息*/
+@property (nonatomic,strong) NSString  * str;
+@property (nonnull,nonatomic,strong) UIView * badge;
  
 
 @property (strong, nonatomic)   UISearchBar *customSearchBar;
@@ -44,9 +47,8 @@
 
 /**文字*/
 @property (nonatomic,strong) NSArray <NSString*> * strArr;
+ 
 
-/**头视图*/
-@property (nonatomic,weak)IBOutlet NXHHeaderVIew * sectionHeaderView;
 
 
 #pragma mark 功能按钮
@@ -54,8 +56,47 @@
 
 @implementation NXHMessageViewController
 
-#pragma mark -UIGestureRecognizerDelegate  添加手势
+- (void)addviews{
+    CGFloat W = self.functionBtn.width/4;
+    CGFloat H = self.functionBtn.height;
 
+    for (int i =0; i < 4; i ++) {
+
+        UIView * v = [[UIView alloc]initWithFrame:CGRectMake(i*W, 0, H>W?W:H, H)];
+
+        v.centetX = W/2*(i*2+1);
+        
+        NXHHeaderBtn * btn = [[NXHHeaderBtn alloc]initWithFrame:v.bounds];
+    //    [btn setBackgroundImage: [UIImage imageNamed:@"bg_ffffff"] forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor whiteColor]];
+        [btn setImage:self.imageArr[i] forState:UIControlStateNormal];
+        [btn setTitle:self.strArr[i] forState:UIControlStateNormal];
+        [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+        btn.tag = i;
+        v.tag = i;
+        [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [v addSubview:btn];
+
+
+        if (i==3) {
+            _badge = [[UIView alloc]init];
+            NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+            NSLayoutConstraint * c1 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
+            NSLayoutConstraint * c2 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_badge attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+            _badge.backgroundColor = [UIColor redColor];
+            _badge.hidden = YES;
+            [v addConstraints:@[c,c1,c2]];
+            [v addSubview:_badge];
+        }
+
+
+        [self.functionBtn addSubview:v];
+    }
+
+}
+
+#pragma mark -UIGestureRecognizerDelegate  添加手势
+/*
 - (void)addGestureRecognizer{
 
     UITapGestureRecognizer * pan = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupList)];
@@ -73,25 +114,10 @@
     [self.functionBtn.Notice addGestureRecognizer:pan3];
 
 }
-#pragma mark -手势方法
-#pragma mark - NXHHeaderVIewDelegate
--(void)GroupList{
-    NXHMyLogFunction;
-}
-- (void)AddressBookList{
-    EaseUsersListViewController* list = [[EaseUsersListViewController alloc]init];
-    list.title = @"好友列表";
-    [self.navigationController pushViewController:list animated:YES];
 
-    NXHMyLogFunction;
-}
-- (void)emsCnplList{
-    NXHMyLogFunction;
-}
-- (void)NoticeList{
-    NXHMyLogFunction;
-}
-#pragma mark - 设置searcherVC
+ */
+
+ #pragma mark - 设置searcherVC
 - (void)setUpSearchVC{
     //创建用于展示搜索结果的表Vc的实例
     self.showResultVC=[[ShowResultTableViewController alloc]init];
@@ -182,62 +208,46 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self setUpSearchVC];
-}
+   }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpSearchVC];
+    [self addviews];
+    //注册好友回调
+    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
     self.navigationItem.title = @"会话";
     self.tableView2.delegate = self;
 
-    [self addGestureRecognizer];
+     [self.tableView2 registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
+        //[self addGestureRecognizer];
 
 
-}
+
+   }
 
 
-#pragma mark -设置按钮
-/*
-- (void)setupButton{
-    CGFloat W = (self.view.width)/4;
-    
-    for (int i =0; i <4; i++) {
-        NXHButton  * button = [NXHButton buttonWithType:UIButtonTypeCustom];
-       // button.backgroundColor = 
-        button.frame = CGRectMake(i*W, self.customSearchBar.y+self.customSearchBar.height, W, 48);
-        [button setTitle:self.strArr[i] forState:UIControlStateNormal];
-       // button.titleLabel.font = [UIFont systemFontOfSize:12];
-        [button setTitleColor:ThemeColor forState:UIControlStateNormal];
-        UIImage *image = self.imageArr[i];
-                  [button setImage: image forState:UIControlStateNormal];
-        button.tag = i;
-    
-       
-        [button addTarget:self action:@selector(click:)  forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-   
-    }
-    
-}
+
 - (void)click:(UIButton*)btn{
     switch (btn.tag) {
         case 0:
             break;
         case 1:{
-            EaseUsersListViewController* list = [[EaseUsersListViewController alloc]init];
-            list.title = @"好友列表";
+            EaseUsersListViewController* list = [[EaseUsersListViewController alloc]initWithStyle:UITableViewStylePlain];
+            list.showSearchBar = YES;
+           list.title = @"好友列表";
             [self.navigationController pushViewController:list animated:YES];
             break;
         }
-            
+        case 2:
+            break;
         default:
+            
             break;
     }
-//    UIViewController *vc = [[UIViewController alloc]init];
-//    vc.view.backgroundColor = ThemeColor;
-//     [self.navigationController pushViewController:vc animated:YES];
+
     MYLog(@"%s",__func__);
 }
-*/
+
 
 
 #pragma mark - (UISearchBar)
@@ -256,12 +266,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 56;
+    return self.allConversationList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-       NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"ContactListCell"];
-     
+       NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    EMConversation *conversation  = self.allConversationList[indexPath.row];
+    cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.timestamp];
+    cell.nickName.text =  conversation.latestMessage.from ;
+    
 
     return cell;
 }
@@ -277,7 +290,9 @@
 //    return self.sectionHeaderView;
 //}
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+
     if ([tableView isEqual:self.tableView2]) {
+
         return @"会话";
     }
     return nil;
@@ -285,27 +300,21 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
-    return 60;
+    return 100;
 }
 
 #pragma mark 懒加载
-//- (UITableView *)tableView{
-//    if (!_tableView) {
-//        CGFloat Y =self.customSearchBar.y+self.customSearchBar.height+48;
-//        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,Y , ScreenSize.size.width, ScreenSize.size.height-Y) style:UITableViewStylePlain];
-//        [self.view addSubview:_tableView];
-//        _tableView.backgroundColor =RandomColor;
-//        _tableView.bounces=NO;
-//    }
-//    return _tableView;
-//}
 
 
 
 
 - (NSArray<UIImage *> *)imageArr {
 	if(_imageArr == nil) {
-		_imageArr = @[[UIImage imageNamed:@"comm_group"],[UIImage imageNamed:@"comm_txl"],[UIImage imageNamed:@"comm_open"  ],[UIImage imageNamed:@"comm_notice"] ];
+		_imageArr = @[[UIImage imageNamed:@"comm_group"],
+                      [UIImage imageNamed:@"comm_txl"],
+                      [UIImage imageNamed:@"comm_open"  ],
+                      [UIImage imageNamed:@"comm_notice"]
+                      ];
 	}
 	return _imageArr;
 }
@@ -321,4 +330,42 @@
 
  
 
+- (NSArray *)allConversationList {
+	if(_allConversationList == nil) {
+
+
+        _allConversationList = [[EMClient sharedClient].chatManager getAllConversations];
+
+
+        
+	}
+	return _allConversationList;
+}
+
+
+#pragma mark -监听回调
+
+/**
+ * 当监听到object的keyPath属性发生了改变
+ */
+
+
+- (void)didReceiveFriendInvitationFromUsername:(NSString *)aUsername
+                                       message:(NSString *)aMessage{
+    self.str = aUsername;
+    for (UIView * v in self.functionBtn.subviews) {
+        if (v.tag == 3) {
+            for (NXHHeaderBtn *btn in v.subviews) {
+              //  btn.badge.hidden = NO;
+                [ btn layoutSubviews];
+            }
+                     }
+    }
+    MYLog(@"%@",aMessage);
+}
+-(void)dealloc{
+
+    //移除好友回调
+    [[EMClient sharedClient].contactManager removeDelegate:self];
+}
 @end

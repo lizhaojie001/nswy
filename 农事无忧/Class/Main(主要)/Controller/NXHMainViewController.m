@@ -57,12 +57,13 @@
         for (int i = 0; i < self.viewControllers.count -2; i ++) {
             NXHButton* button = [[NXHButton alloc]
                                  initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
-            UIImage *image=      self.viewControllers[i+1].tabBarItem.image;
-            UIImage * selectedImage = self.viewControllers[i+1].tabBarItem.selectedImage;
-            [button setImage:image forState:UIControlStateNormal];
-            [button setImage:selectedImage forState:UIControlStateSelected];
-            [button setTitle:self.viewControllers[i].title forState:UIControlStateNormal];
-            [button setTitleColor:ThemeColor forState:UIControlStateSelected];
+            [button setBackgroundColor:[UIColor clearColor]];
+          //  UIImage *image=      self.viewControllers[i+1].tabBarItem.image;
+         //   UIImage * selectedImage = self.viewControllers[i+1].tabBarItem.selectedImage;
+          //  [button setImage:image forState:UIControlStateNormal];
+          //  [button setImage:selectedImage forState:UIControlStateSelected];
+           // [button setTitle:self.viewControllers[i].title forState:UIControlStateNormal];
+         //   [button setTitleColor:ThemeColor forState:UIControlStateSelected];
           //  button.backgroundColor= [UIColor redColor];
             [button addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
             [self.tabBar addSubview:button];
@@ -90,18 +91,18 @@
 - (void)setupAllVc{
     NXHHomeViewController * Home = [[NXHHomeViewController alloc]initWithCollectionViewLayout: [[UICollectionViewFlowLayout alloc]init] ];
     
-    [self setupVc:Home andImage:[UIImage imageNamed: @"main_bottom_home"]HightlightImage:[UIImage imageNamed:@"main_bottom_home_selected"] andTitle:@"首页"];
+    [self setupVc:Home andImage:[UIImage imageNamed:@"首页"]HightlightImage:[UIImage imageNamed:@"首页1"] andTitle:@"首页"];
     
     NXHMessageViewController * Message = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"NXHMessageViewController"];
-    [self setupVc:Message andImage:[UIImage imageNamed:@"main_bottom_comm" ]HightlightImage:[UIImage imageNamed:@"main_bottom_comm_selected"] andTitle:@"消息"];
+    [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
     
     
     NXHDiscoverViewController * Discover = [[NXHDiscoverViewController alloc]init];
-    [self setupVc:Discover andImage:[UIImage imageNamed:@"main_bottom_more"] HightlightImage:[UIImage imageNamed:@"main_bottom_more_selected"] andTitle:@"发现"];
+    [self setupVc:Discover andImage:[UIImage imageNamed:@"发现"] HightlightImage:[UIImage imageNamed:@"发现1"] andTitle:@"发现"];
     
     NXHMeViewController *Me =  [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Me"] ;
     
-    [self setupVc:Me  andImage:[UIImage imageNamed: @"main_bottom_personcenter" ]HightlightImage:[UIImage imageNamed:@"main_bottom_personcenter_selected"] andTitle:@"我"];
+    [self setupVc:Me  andImage:[UIImage imageNamed: @"我" ]HightlightImage:[UIImage imageNamed:@"我的-(1)2"] andTitle:@"我"];
 
 
 

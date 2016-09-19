@@ -15,6 +15,7 @@
 #import "UIViewController+HUD.h"
 #import "EaseMessageViewController.h"
 #import "ChatViewController.h"
+#import "NXHAddFriendsController.h"
 
 @interface EaseUsersListViewController ()
 
@@ -28,7 +29,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+
     }
     return self;
 }
@@ -36,15 +37,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self tableViewDidTriggerHeaderRefresh];
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [button setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:button];
+  [button addTarget:self action:@selector(addFriends) forControlEvents:UIControlEventTouchUpInside];
+
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"add"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]style:UIBarButtonItemStylePlain target:self action:@selector(addFriends)];
+
+    [self.view addSubview: self.searchBar];
+    self.tableView.frame = CGRectMake(0, self.searchBar.y+self.searchBar.height, self.view.width, self.view.height - self.searchBar.y - self.searchBar.height);
+    self.tableView.bounces = NO;
+         [self tableViewDidTriggerHeaderRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)addFriends{
+    NXHAddFriendsController * add = [[NXHAddFriendsController alloc]init];
+    add.title = @"添加好友";
+    [self.navigationController pushViewController:add animated:YES];
+}
 #pragma mark - setter
 
 - (void)setShowSearchBar:(BOOL)showSearchBar
@@ -178,6 +192,15 @@
 
 - (void)dealloc
 {
+}
+
+
+
+- (UISearchBar *)searchBar {
+	if(_searchBar == nil) {
+		_searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+	}
+	return _searchBar;
 }
 
 @end

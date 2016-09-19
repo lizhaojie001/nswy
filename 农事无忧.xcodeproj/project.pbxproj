@@ -100,6 +100,12 @@
 		0433E1991D7E8EB700E015D3 /* NXHLogon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0433E1981D7E8EB700E015D3 /* NXHLogon.xib */; };
 		0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */; };
 		0433E1B71D7FD85000E015D3 /* NXHEreg.m in Sources */ = {isa = PBXBuildFile; fileRef = 0433E1B61D7FD85000E015D3 /* NXHEreg.m */; };
+		04425A771D8F7D5A004D804A /* NXHHeaderBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A761D8F7D5A004D804A /* NXHHeaderBtn.m */; };
+		04425A7B1D8FC691004D804A /* NXHContactListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A7A1D8FC691004D804A /* NXHContactListCell.xib */; };
+		04425A7F1D8FCC44004D804A /* NXHNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A7D1D8FCC44004D804A /* NXHNoticeViewController.m */; };
+		04425A801D8FCC44004D804A /* NXHNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A7E1D8FCC44004D804A /* NXHNoticeViewController.xib */; };
+		04425A841D8FD694004D804A /* NXHAddFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A821D8FD694004D804A /* NXHAddFriendsController.m */; };
+		04425A851D8FD694004D804A /* NXHAddFriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A831D8FD694004D804A /* NXHAddFriendsController.xib */; };
 		045414571D8788F50009ECF8 /* ShowResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414561D8788F50009ECF8 /* ShowResultTableViewController.m */; };
 		0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414591D87908C0009ECF8 /* NXHSearchViewController.m */; };
 		0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454145E1D87CD940009ECF8 /* NXHContactListCell.m */; };
@@ -451,6 +457,15 @@
 		0433E1B21D7FC14500E015D3 /* UIColor+NXHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NXHColor.m"; sourceTree = "<group>"; };
 		0433E1B51D7FD85000E015D3 /* NXHEreg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHEreg.h; sourceTree = "<group>"; };
 		0433E1B61D7FD85000E015D3 /* NXHEreg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHEreg.m; sourceTree = "<group>"; };
+		04425A751D8F7D5A004D804A /* NXHHeaderBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHHeaderBtn.h; sourceTree = "<group>"; };
+		04425A761D8F7D5A004D804A /* NXHHeaderBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHHeaderBtn.m; sourceTree = "<group>"; };
+		04425A7A1D8FC691004D804A /* NXHContactListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHContactListCell.xib; sourceTree = "<group>"; };
+		04425A7C1D8FCC44004D804A /* NXHNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHNoticeViewController.h; sourceTree = "<group>"; };
+		04425A7D1D8FCC44004D804A /* NXHNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHNoticeViewController.m; sourceTree = "<group>"; };
+		04425A7E1D8FCC44004D804A /* NXHNoticeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHNoticeViewController.xib; sourceTree = "<group>"; };
+		04425A811D8FD694004D804A /* NXHAddFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAddFriendsController.h; sourceTree = "<group>"; };
+		04425A821D8FD694004D804A /* NXHAddFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAddFriendsController.m; sourceTree = "<group>"; };
+		04425A831D8FD694004D804A /* NXHAddFriendsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAddFriendsController.xib; sourceTree = "<group>"; };
 		045414551D8788F50009ECF8 /* ShowResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultTableViewController.h; sourceTree = "<group>"; };
 		045414561D8788F50009ECF8 /* ShowResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultTableViewController.m; sourceTree = "<group>"; };
 		045414581D87908C0009ECF8 /* NXHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSearchViewController.h; sourceTree = "<group>"; };
@@ -1155,10 +1170,16 @@
 			children = (
 				04231EC91D7E79EC0015EC53 /* NXHMessageViewController.h */,
 				04231ECA1D7E79EC0015EC53 /* NXHMessageViewController.m */,
+				04425A7C1D8FCC44004D804A /* NXHNoticeViewController.h */,
+				04425A7D1D8FCC44004D804A /* NXHNoticeViewController.m */,
+				04425A7E1D8FCC44004D804A /* NXHNoticeViewController.xib */,
 				045414581D87908C0009ECF8 /* NXHSearchViewController.h */,
 				045414591D87908C0009ECF8 /* NXHSearchViewController.m */,
 				045414551D8788F50009ECF8 /* ShowResultTableViewController.h */,
 				045414561D8788F50009ECF8 /* ShowResultTableViewController.m */,
+				04425A811D8FD694004D804A /* NXHAddFriendsController.h */,
+				04425A821D8FD694004D804A /* NXHAddFriendsController.m */,
+				04425A831D8FD694004D804A /* NXHAddFriendsController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1177,9 +1198,12 @@
 				048284111D8114460002C0EC /* NXHFunctionView.m */,
 				0454145D1D87CD940009ECF8 /* NXHContactListCell.h */,
 				0454145E1D87CD940009ECF8 /* NXHContactListCell.m */,
+				04425A7A1D8FC691004D804A /* NXHContactListCell.xib */,
 				045414601D87DE250009ECF8 /* NXHHeaderVIew.h */,
 				045414611D87DE250009ECF8 /* NXHHeaderVIew.m */,
 				045414631D87E4600009ECF8 /* NXHHeaderVIew.xib */,
+				04425A751D8F7D5A004D804A /* NXHHeaderBtn.h */,
+				04425A761D8F7D5A004D804A /* NXHHeaderBtn.m */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -2298,6 +2322,7 @@
 				TargetAttributes = {
 					04243B001D75179800809AC5 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = WV5UP98J28;
 					};
 					04243B191D75179900809AC5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2338,6 +2363,7 @@
 				04231F381D7E79EC0015EC53 /* 1未登录Setting.plist in Resources */,
 				04231F291D7E79EC0015EC53 /* main_bottom_personcenter_selected.png in Resources */,
 				04231F3E1D7E79EC0015EC53 /* guide_four.jpg in Resources */,
+				04425A851D8FD694004D804A /* NXHAddFriendsController.xib in Resources */,
 				04F24D701D82688D00C8DBCA /* LICENSE in Resources */,
 				04231F311D7E79EC0015EC53 /* 太阳副本 3.png in Resources */,
 				04231F5C1D7E79EC0015EC53 /* Contents.json in Resources */,
@@ -2371,6 +2397,7 @@
 				04231F551D7E79EC0015EC53 /* guide_four.jpg in Resources */,
 				04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */,
 				04231F241D7E79EC0015EC53 /* main_bottom_more@2x.png in Resources */,
+				04425A7B1D8FC691004D804A /* NXHContactListCell.xib in Resources */,
 				045414911D88DEAE0009ECF8 /* NXHCollectionViewCell.xib in Resources */,
 				04231F5B1D7E79EC0015EC53 /* guide_three.jpg in Resources */,
 				045414641D87E4600009ECF8 /* NXHHeaderVIew.xib in Resources */,
@@ -2378,6 +2405,7 @@
 				04231F3F1D7E79EC0015EC53 /* guide_go_btn.png in Resources */,
 				04231F1B1D7E79EC0015EC53 /* main_bottom_comm.png in Resources */,
 				04F2528C1D85808F00E3C0E7 /* 钥匙.png in Resources */,
+				04425A801D8FCC44004D804A /* NXHNoticeViewController.xib in Resources */,
 				04F2528B1D85808F00E3C0E7 /* 手机(1).png in Resources */,
 				04231F531D7E79EC0015EC53 /* Contents.json in Resources */,
 				04231F2F1D7E79EC0015EC53 /* 太阳副本 1.png in Resources */,
@@ -2595,6 +2623,7 @@
 				049F456C1D82A3A60009C7ED /* PSTGridLayoutRow.m in Sources */,
 				0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */,
 				04F24DA61D82689200C8DBCA /* UIProgressView+AFNetworking.m in Sources */,
+				04425A771D8F7D5A004D804A /* NXHHeaderBtn.m in Sources */,
 				049F45951D82A3A60009C7ED /* EaseImageView.m in Sources */,
 				0433E1891D7E823E00E015D3 /* UIImage+Image.m in Sources */,
 				04F24DA11D82689200C8DBCA /* AFImageDownloader.m in Sources */,
@@ -2618,6 +2647,7 @@
 				049F43851D8297CC0009C7ED /* NXHButton.m in Sources */,
 				049F45711D82A3A60009C7ED /* EaseMessageModel.m in Sources */,
 				049F45631D82A3A60009C7ED /* PSTCollectionViewCell.m in Sources */,
+				04425A7F1D8FCC44004D804A /* NXHNoticeViewController.m in Sources */,
 				049F455B1D82A3A60009C7ED /* UIImage+EMGIF.m in Sources */,
 				0433E1861D7E821700E015D3 /* NXHNewFeatureCell.m in Sources */,
 				049F45621D82A3A60009C7ED /* PSTCollectionView.m in Sources */,
@@ -2667,6 +2697,7 @@
 				049F45701D82A3A60009C7ED /* EaseConversationModel.m in Sources */,
 				049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */,
 				049F45A21D82ACF20009C7ED /* ChatViewController.m in Sources */,
+				04425A841D8FD694004D804A /* NXHAddFriendsController.m in Sources */,
 				049F45811D82A3A60009C7ED /* EaseLocationViewController.m in Sources */,
 				049F45541D82A3A60009C7ED /* EMSDWebImageDownloader.m in Sources */,
 				049F45401D82A3A60009C7ED /* MJRefreshGifHeader.m in Sources */,
@@ -2851,6 +2882,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
@@ -2864,6 +2896,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2874,6 +2907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
@@ -2887,6 +2921,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NXHContactListCell">
+            <rect key="frame" x="0.0" y="0.0" width="494" height="93"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Upa-9o-Hol">
+                    <rect key="frame" x="5" y="5" width="83" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Upa-9o-Hol" secondAttribute="height" multiplier="77:77" id="SmV-8l-JFx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVH-YN-2wi">
+                    <rect key="frame" x="93" y="15" width="34" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="sbd-DB-fu4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lastMessage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="97" translatesAutoresizingMaskIntoConstraints="NO" id="XTH-iV-bWO">
+                    <rect key="frame" x="93" y="58" width="97" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="V11-Cj-WCt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7j-FQ-p1v">
+                    <rect key="frame" x="462" y="5" width="27" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="oZo-Qo-ARK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="h7j-FQ-p1v" secondAttribute="trailing" constant="5" id="4nk-bP-oIJ"/>
+                <constraint firstItem="XTH-iV-bWO" firstAttribute="leading" secondItem="MVH-YN-2wi" secondAttribute="leading" id="CqU-AL-rge"/>
+                <constraint firstItem="Upa-9o-Hol" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="MMf-Sa-K9L"/>
+                <constraint firstItem="Upa-9o-Hol" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="Q6p-Xl-cht"/>
+                <constraint firstItem="MVH-YN-2wi" firstAttribute="leading" secondItem="Upa-9o-Hol" secondAttribute="trailing" constant="5" id="ULc-wN-R7M"/>
+                <constraint firstAttribute="bottom" secondItem="Upa-9o-Hol" secondAttribute="bottom" constant="5" id="gCk-uh-bHh"/>
+                <constraint firstItem="h7j-FQ-p1v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="oZd-2q-9rd"/>
+                <constraint firstAttribute="bottom" secondItem="XTH-iV-bWO" secondAttribute="bottom" constant="15" id="qUU-jX-sjp"/>
+                <constraint firstItem="MVH-YN-2wi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="uVy-CJ-EPK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarHeaderImage" destination="Upa-9o-Hol" id="2sz-LS-pH0"/>
+                <outlet property="lastMessage" destination="XTH-iV-bWO" id="Imy-jH-Ofx"/>
+                <outlet property="lastTime" destination="h7j-FQ-p1v" id="E21-Ku-Bxl"/>
+                <outlet property="nickName" destination="MVH-YN-2wi" id="6Zu-KJ-NWP"/>
+            </connections>
+            <point key="canvasLocation" x="181" y="293.5"/>
+        </view>
+    </objects>
+</document>
