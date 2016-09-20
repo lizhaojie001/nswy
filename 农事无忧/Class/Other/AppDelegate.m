@@ -18,7 +18,7 @@
 #import "HWPopTool.h"
 #import "NXHPopupView.h"
 
-@interface AppDelegate ()<EMClientDelegate>
+@interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate>
  
 /**弹窗*/
 @property (nonatomic,strong)  NXHPopupView * contentView;
@@ -53,6 +53,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[EMClient sharedClient] addDelegate:self];
+    //注册好友回调
+    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
     //AppKey:注册的AppKey，详细见下面注释。
 //    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
     EMOptions *options = [EMOptions optionsWithAppkey:@"zyl#nswy"];
@@ -135,5 +137,8 @@
 
 -(void)dealloc{
     [[EMClient sharedClient] removeDelegate:self];
+    //移除好友回调
+    [[EMClient sharedClient].contactManager removeDelegate:self];
+
 }
 @end

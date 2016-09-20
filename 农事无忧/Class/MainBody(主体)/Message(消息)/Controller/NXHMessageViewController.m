@@ -13,14 +13,13 @@
 #import "ShowResultTableViewController.h"
 #import "NXHSearchViewController.h"
 #import "NXHContactListCell.h"
-#import "NXHHeaderVIew.h"
 #import "NXHHeaderBtn.h"
 
 
 
 
 
-@interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate , EMContactManagerDelegate  >
+@interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate   >
 
 @property (weak, nonatomic) IBOutlet UIView *functionBtn;
  
@@ -193,8 +192,7 @@
     [super viewDidLoad];
     [self setUpSearchVC];
     [self addviews];
-    //注册好友回调
-    [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
+  
     self.navigationItem.title = @"会话";
     self.tableView2.delegate = self;
 
@@ -343,9 +341,5 @@
     }
     MYLog(@"%@",aMessage);
 }
--(void)dealloc{
-
-    //移除好友回调
-    [[EMClient sharedClient].contactManager removeDelegate:self];
-}
+ 
 @end
