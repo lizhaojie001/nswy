@@ -95,30 +95,59 @@ static id instance_;
     MYLog(@"登录") ;
     [self.Password resignFirstResponder];
     [SVProgressHUD  showWithStatus:@"登陆中"];
+    BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
+ if (!isAutoLogin) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // time-consuming task
 
-        EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
-        if (!error) {
-            MYLog(@"登录成功");
+            EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
+            if (!error) {
+                MYLog(@"登录成功 设置自动登录");
+                //设置自动登录
+              
+                [[EMClient sharedClient].options setIsAutoLogin:YES];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    [self popVc];
 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-                [self popVc];
-
-            });
-        }else{
-            [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [SVProgressHUD dismiss];
-
-
-            });
-        }
+                });
+            }else{
+                [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    
+                    
+                });
+            }
 
 
     });
+ }else{
+     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+         // time-consuming task
 
+         EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
+         if (!error) {
+             MYLog(@"登录成功");
+
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [SVProgressHUD dismiss];
+                 [self popVc];
+
+             });
+         }else{
+             [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [SVProgressHUD dismiss];
+
+
+             });
+         }
+
+
+     });
+
+ }
 
 }
 

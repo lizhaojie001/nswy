@@ -100,6 +100,9 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - 回调
+//异地登录回调
 - (void)userAccountDidLoginFromOtherDevice{
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您的账号在其他设备登录,请注意账号安全" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -108,6 +111,11 @@
     [alert addAction:action];
     [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
 }
+//自动登录回调
+- (void)didAutoLoginWithError:(EMError *)aError{
+    NXHMyLogFunction;
+}
+
 
 
 
