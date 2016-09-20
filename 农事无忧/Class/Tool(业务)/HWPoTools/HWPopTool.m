@@ -315,8 +315,8 @@ static CGFloat const kDefaultCloseButtonPadding = 17.0f;
     self = [super initWithFrame:(CGRect){0, 0, 32, 32}];
     if (self) {
         
-        [self setBackgroundImage:[UIImage imageNamed:@"red_packge_close"] forState:UIControlStateNormal];
-        //        self.backgroundColor = [UIColor greenColor];
+        //[self setBackgroundImage:[UIImage imageNamed:@"太阳"] forState:UIControlStateNormal];
+               self.backgroundColor = [UIColor greenColor];
     }
     return self;
 }

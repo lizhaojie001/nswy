@@ -16,11 +16,12 @@
 #import "NXHLoginViewController.h"
 #import "NXHNaviController.h"
 #import "HWPopTool.h"
+#import "NXHPopupView.h"
 
 @interface AppDelegate ()<EMClientDelegate>
  
 /**弹窗*/
-@property (nonatomic,strong) UIView * contentView;
+@property (nonatomic,strong)  NXHPopupView * contentView;
 
 @end
 
@@ -100,32 +101,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 - (void)userAccountDidLoginFromOtherDevice{
-    [self popViewShow];
-}
-
-
-- (void)popViewShow {
-    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
-    _contentView.backgroundColor = [UIColor whiteColor];
-
-//    UIImageView *imageV = [[UIImageView alloc]initWithFrame:_contentView.bounds];
-//    imageV.image = [UIImage imageNamed:@"agriculture_news"];
-    //[_contentView addSubview:imageV];
-    //    看看pop效果把下面这一句加上
-    //    [_contentView addSubview:_popBtn];
-
-    [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeSolid;
-    [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
-    [[HWPopTool sharedInstance] showWithPresentView:_contentView animated:YES];
-
-}
-
-- (void)closeAndBack {
-    [[HWPopTool sharedInstance] closeWithBlcok:^{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您的账号在其他设备登录,请注意账号安全" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NXHMyLogFunction;
-
     }];
+    [alert addAction:action];
+    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
 }
+
+
+
+
+
 -(void)dealloc{
     [[EMClient sharedClient] removeDelegate:self];
 }

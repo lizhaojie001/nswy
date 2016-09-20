@@ -11,5 +11,8 @@
 @interface NXHPopupView : UIView
 /**image*/
 @property (nonatomic,strong) UIImage * image;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIView *blankView;
 
 @end
