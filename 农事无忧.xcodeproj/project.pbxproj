@@ -106,6 +106,9 @@
 		04425A801D8FCC44004D804A /* NXHNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A7E1D8FCC44004D804A /* NXHNoticeViewController.xib */; };
 		04425A841D8FD694004D804A /* NXHAddFriendsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A821D8FD694004D804A /* NXHAddFriendsController.m */; };
 		04425A851D8FD694004D804A /* NXHAddFriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A831D8FD694004D804A /* NXHAddFriendsController.xib */; };
+		04425A891D90E803004D804A /* HWPopTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A881D90E803004D804A /* HWPopTool.m */; };
+		04425A8D1D90EE83004D804A /* NXHPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A8C1D90EE83004D804A /* NXHPopupView.m */; };
+		04425A911D90F652004D804A /* NXHPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A901D90F652004D804A /* NXHPopupView.xib */; };
 		045414571D8788F50009ECF8 /* ShowResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414561D8788F50009ECF8 /* ShowResultTableViewController.m */; };
 		0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414591D87908C0009ECF8 /* NXHSearchViewController.m */; };
 		0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454145E1D87CD940009ECF8 /* NXHContactListCell.m */; };
@@ -466,6 +469,11 @@
 		04425A811D8FD694004D804A /* NXHAddFriendsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAddFriendsController.h; sourceTree = "<group>"; };
 		04425A821D8FD694004D804A /* NXHAddFriendsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAddFriendsController.m; sourceTree = "<group>"; };
 		04425A831D8FD694004D804A /* NXHAddFriendsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAddFriendsController.xib; sourceTree = "<group>"; };
+		04425A871D90E803004D804A /* HWPopTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWPopTool.h; sourceTree = "<group>"; };
+		04425A881D90E803004D804A /* HWPopTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWPopTool.m; sourceTree = "<group>"; };
+		04425A8B1D90EE83004D804A /* NXHPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHPopupView.h; sourceTree = "<group>"; };
+		04425A8C1D90EE83004D804A /* NXHPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHPopupView.m; sourceTree = "<group>"; };
+		04425A901D90F652004D804A /* NXHPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHPopupView.xib; sourceTree = "<group>"; };
 		045414551D8788F50009ECF8 /* ShowResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultTableViewController.h; sourceTree = "<group>"; };
 		045414561D8788F50009ECF8 /* ShowResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultTableViewController.m; sourceTree = "<group>"; };
 		045414581D87908C0009ECF8 /* NXHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSearchViewController.h; sourceTree = "<group>"; };
@@ -1328,6 +1336,7 @@
 		04231EF61D7E79EC0015EC53 /* Tool(业务) */ = {
 			isa = PBXGroup;
 			children = (
+				04425A861D90E803004D804A /* HWPoTools(弹窗) */,
 				04336C4A1D86459F009669D8 /* Retrieve password (找回密码) */,
 				0433E1B41D7FD83B00E015D3 /* Ereg(正则表达式) */,
 				0433E1921D7E8E4100E015D3 /* Logon(注册) */,
@@ -1496,6 +1505,26 @@
 				0433E1B61D7FD85000E015D3 /* NXHEreg.m */,
 			);
 			path = "Ereg(正则表达式)";
+			sourceTree = "<group>";
+		};
+		04425A861D90E803004D804A /* HWPoTools(弹窗) */ = {
+			isa = PBXGroup;
+			children = (
+				04425A871D90E803004D804A /* HWPopTool.h */,
+				04425A881D90E803004D804A /* HWPopTool.m */,
+			);
+			name = "HWPoTools(弹窗)";
+			path = HWPoTools;
+			sourceTree = "<group>";
+		};
+		04425A8A1D90EE26004D804A /* 自定义弹窗视图 */ = {
+			isa = PBXGroup;
+			children = (
+				04425A8B1D90EE83004D804A /* NXHPopupView.h */,
+				04425A8C1D90EE83004D804A /* NXHPopupView.m */,
+				04425A901D90F652004D804A /* NXHPopupView.xib */,
+			);
+			name = "自定义弹窗视图";
 			sourceTree = "<group>";
 		};
 		049F43821D8297CC0009C7ED /* buttonItem */ = {
@@ -2098,6 +2127,7 @@
 		04F24D411D82553700C8DBCA /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				04425A8A1D90EE26004D804A /* 自定义弹窗视图 */,
 				049F43821D8297CC0009C7ED /* buttonItem */,
 			);
 			path = CustomUI;
@@ -2378,6 +2408,7 @@
 				04231F2A1D7E79EC0015EC53 /* main_bottom_personcenter_selected@2x.png in Resources */,
 				04231F1C1D7E79EC0015EC53 /* main_bottom_comm@2x.png in Resources */,
 				04231F4A1D7E79EC0015EC53 /* indicator_3_focused.png in Resources */,
+				04425A911D90F652004D804A /* NXHPopupView.xib in Resources */,
 				04231F2E1D7E79EC0015EC53 /* 太阳.png in Resources */,
 				04231F581D7E79EC0015EC53 /* Contents.json in Resources */,
 				04231F471D7E79EC0015EC53 /* indicator_1_unfocused.png in Resources */,
@@ -2634,6 +2665,7 @@
 				049F452E1D82A3A60009C7ED /* amrFileCodec.mm in Sources */,
 				04F24D5D1D82688600C8DBCA /* SVProgressHUD.m in Sources */,
 				049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */,
+				04425A891D90E803004D804A /* HWPopTool.m in Sources */,
 				049F45941D82A3A60009C7ED /* EaseChatToolbarItem.m in Sources */,
 				04F24D981D82689200C8DBCA /* AFHTTPSessionManager.m in Sources */,
 				04F24D5E1D82688600C8DBCA /* SVRadialGradientLayer.m in Sources */,
@@ -2659,6 +2691,7 @@
 				0433E1851D7E820A00E015D3 /* NXHNFViewController.m in Sources */,
 				049F454D1D82A3A60009C7ED /* MWTapDetectingImageView.m in Sources */,
 				04336C531D864A98009669D8 /* NXHPersonSetController.m in Sources */,
+				04425A8D1D90EE83004D804A /* NXHPopupView.m in Sources */,
 				049F45731D82A3A60009C7ED /* NSDate+Category.m in Sources */,
 				04F24D591D82688600C8DBCA /* README.md in Sources */,
 				0433E1841D7E820200E015D3 /* NXHNewFeatureViewController.m in Sources */,
@@ -2886,7 +2919,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2911,7 +2944,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

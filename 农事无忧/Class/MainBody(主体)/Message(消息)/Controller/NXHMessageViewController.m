@@ -80,8 +80,8 @@
 
         if (i==3) {
             _badge = [[UIView alloc]init];
-            NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
-            NSLayoutConstraint * c1 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
+            NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+            NSLayoutConstraint * c1 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
             NSLayoutConstraint * c2 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_badge attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
             _badge.backgroundColor = [UIColor redColor];
             _badge.hidden = YES;
@@ -95,27 +95,7 @@
 
 }
 
-#pragma mark -UIGestureRecognizerDelegate  添加手势
-/*
-- (void)addGestureRecognizer{
-
-    UITapGestureRecognizer * pan = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(GroupList)];
-    pan.delegate = self;
-    pan.numberOfTouchesRequired =1;
-    [self.functionBtn.Group addGestureRecognizer:pan];
-    UITapGestureRecognizer * pan1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(AddressBookList)];
-     pan1.numberOfTouchesRequired =1;
-    [self.functionBtn.AddressBook addGestureRecognizer:pan1];
-    UITapGestureRecognizer * pan2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(emsCnplList)];
-     pan2.numberOfTouchesRequired =1;
-    [self.functionBtn.emsCnpl addGestureRecognizer:pan2];
-    UITapGestureRecognizer * pan3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(NoticeList)];
-     pan3.numberOfTouchesRequired =1;
-    [self.functionBtn.Notice addGestureRecognizer:pan3];
-
-}
-
- */
+ 
 
  #pragma mark - 设置searcherVC
 - (void)setUpSearchVC{

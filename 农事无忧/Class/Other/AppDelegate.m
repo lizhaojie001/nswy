@@ -15,14 +15,17 @@
 #import "EMSDK.h"
 #import "NXHLoginViewController.h"
 #import "NXHNaviController.h"
+#import "HWPopTool.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<EMClientDelegate>
  
+/**弹窗*/
+@property (nonatomic,strong) UIView * contentView;
 
 @end
 
 @implementation AppDelegate
-
+//初始化设置
 +(void)initialize{
     
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
@@ -48,6 +51,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[EMClient sharedClient] addDelegate:self];
     //AppKey:注册的AppKey，详细见下面注释。
 //    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
     EMOptions *options = [EMOptions optionsWithAppkey:@"zyl#nswy"];
@@ -60,6 +64,7 @@
  window.backgroundColor = [UIColor whiteColor];
 #warning  暂时 修改
   [NXHGudieTool guideRootViewController:window];
+    
    // NXHLoginViewController *login=
 //     [[NXHLoginViewController alloc]initWithNibName:nil bundle:nil];
 //    NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:login];
@@ -70,23 +75,22 @@
   
     return YES;
 }
+//APP进入后台
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[EMClient sharedClient] applicationDidEnterBackground:application];
+}
 
+// APP将要从后台返回
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    
-     [[EMClient sharedClient] applicationDidEnterBackground:application];
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[EMClient sharedClient] applicationWillEnterForeground:application];
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -95,5 +99,34 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (void)userAccountDidLoginFromOtherDevice{
+    [self popViewShow];
+}
 
+
+- (void)popViewShow {
+    _contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 300)];
+    _contentView.backgroundColor = [UIColor whiteColor];
+
+//    UIImageView *imageV = [[UIImageView alloc]initWithFrame:_contentView.bounds];
+//    imageV.image = [UIImage imageNamed:@"agriculture_news"];
+    //[_contentView addSubview:imageV];
+    //    看看pop效果把下面这一句加上
+    //    [_contentView addSubview:_popBtn];
+
+    [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeSolid;
+    [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
+    [[HWPopTool sharedInstance] showWithPresentView:_contentView animated:YES];
+
+}
+
+- (void)closeAndBack {
+    [[HWPopTool sharedInstance] closeWithBlcok:^{
+        NXHMyLogFunction;
+
+    }];
+}
+-(void)dealloc{
+    [[EMClient sharedClient] removeDelegate:self];
+}
 @end

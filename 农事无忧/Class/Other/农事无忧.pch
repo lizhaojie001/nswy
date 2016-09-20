@@ -41,7 +41,7 @@
 
 //是否登录
 #define LOGEDIN [EMClient sharedClient].isLoggedIn
-
+#import "NXHLoginViewController.h"
 
 #import "EaseUI.h"
 #import "EMSDK.h"

@@ -14,13 +14,59 @@
 #import "NXHDiscoverViewController.h"
 #import "NXHButton.h"
 #import "NXHLoginViewController.h"
-
+#import  <objc/runtime.h>
 @interface NXHMainViewController ()
+/**两个button*/
+@property (nonatomic,strong) UIButton * btn1;
+/**两个button*/
+@property (nonatomic,strong) UIButton * btn2;
+
 
 
 @end
 
 @implementation NXHMainViewController
+//-(void)switchViewFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
+//    if (fromVC!=nil) {
+//        [fromVC willMoveToParentViewController:nil];
+//        [fromVC.view removeFromSuperview];
+//        [fromVC removeFromParentViewController];
+//    }
+//    if (toVC!=nil) {
+//        [self addChildViewController:toVC];
+//        [self.view insertSubview:toVC.view atIndex:0];
+//        [toVC didMoveToParentViewController:self];
+//    }
+//}
+#pragma mark - 魔法指针的使用
++(void)load{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class class = [self class];
+        // When swizzling a class method, use the following:
+        // Class class = object_getClass((id)self);
+        SEL originalSelector = @selector(tabBar:didSelectItem:);
+        SEL swizzledSeldctor = @selector(zj_tabBar:didSelectItem:);
+        Method originalMethod =class_getClassMethod(class, originalSelector);
+        Method swizzledMethod = class_getClassMethod(class, swizzledSeldctor);
+        BOOL didAddMethod =class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
+                                           if (didAddMethod) {
+                                               class_replaceMethod(class, swizzledSeldctor, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+                                           }else{
+                                               method_exchangeImplementations(originalMethod, swizzledMethod);
+
+                                           }
+    });
+}
+#pragma mark - Method Swizzling
+- (void)zj_tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
+    if (LOGEDIN) {
+        [self zj_tabBar:tabBar didSelectItem:item];
+    }else{
+        [self pushLoginView];
+    }
+}
+ 
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }
@@ -32,41 +78,49 @@
 
 
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-
-    if (!LOGEDIN ) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [self setButton];
-        });
-
-    }else if (LOGEDIN){
-        for (UIView* view in self.tabBar.subviews) {
-            if ([view isKindOfClass:[NXHButton class]]) {
-                [view removeFromSuperview];
-            }
-        }
-    }
-}
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//
+//    if (!LOGEDIN ) {
+//        static dispatch_once_t onceToken;
+//        dispatch_once(&onceToken, ^{
+//            [self setButton];
+//        });
+//        if (LOGEDIN){
+//            for (UIView* view in self.tabBar.subviews) {
+//                if ([view isKindOfClass:[UIButton class]]) {
+//                    [self.tabBar  insertSubview:view atIndex:1];
+//                }
+//            }
+//        }
+//    }
+//}
+//-(void)viewWillDisappear:(BOOL)animated{
+//
+//}
 - (void)setButton{
     CGFloat  W = self.view.width/self.viewControllers.count;
     CGFloat H = self.tabBar.height;
 
 
-        for (int i = 0; i < self.viewControllers.count -2; i ++) {
-            NXHButton* button = [[NXHButton alloc]
-                                 initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
-            [button setBackgroundColor:[UIColor clearColor]];
-          //  UIImage *image=      self.viewControllers[i+1].tabBarItem.image;
-         //   UIImage * selectedImage = self.viewControllers[i+1].tabBarItem.selectedImage;
-          //  [button setImage:image forState:UIControlStateNormal];
-          //  [button setImage:selectedImage forState:UIControlStateSelected];
-           // [button setTitle:self.viewControllers[i].title forState:UIControlStateNormal];
-         //   [button setTitleColor:ThemeColor forState:UIControlStateSelected];
-          //  button.backgroundColor= [UIColor redColor];
-            [button addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
-            [self.tabBar addSubview:button];
+        for (int i = 0; i <2; i ++) {
+            if (i==0) {
+                _btn1= [[UIButton alloc]
+                                     initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
+                [_btn1 setBackgroundColor:[UIColor clearColor]];
+          
+                [_btn1 addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
+                [self.tabBar addSubview:_btn1];
+            }else
+            {
+                _btn2= [[UIButton alloc]
+                        initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
+                [_btn2 setBackgroundColor:[UIColor clearColor]];
+
+                [_btn2 addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
+                [self.tabBar addSubview:_btn2];
+            }
+
         }
 
 }

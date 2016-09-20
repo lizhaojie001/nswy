@@ -18,19 +18,38 @@
 @property (weak, nonatomic) IBOutlet UIImageView *Avatar;
 @property (weak, nonatomic) IBOutlet UILabel *nickName;
 @property (weak, nonatomic) IBOutlet UILabel *ID;
+@property (weak, nonatomic) IBOutlet UILabel *loginLabel;
  
+@property (weak, nonatomic) IBOutlet UIButton *QRbutton;
 
 @end
 
 @implementation NXHMeViewController
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+
+
     if ([NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]&&LOGEDIN) {
+        self.loginLabel.hidden = YES;
+
         self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"];
+        self.nickName.text = [EMClient sharedClient].currentUsername;
+        self.ID.text =self.nickName.text;
+        self.QRbutton.hidden = NO;
+
     }
-    if (LOGEDIN) {
+    if (!LOGEDIN) {
 #warning 根据登录状态来设置未登录时的图片和ID /昵称
-    }
+
+        
+                 self.Avatar.image = [UIImage imageNamed:@"icon_user_logo"];
+        self.nickName.text = @"";
+        self.ID.text = @"";
+        self.loginLabel.hidden = NO;
+        self.QRbutton.hidden = YES;
+        
+
+           }
 
 }
  
@@ -145,7 +164,7 @@
         if (indexPath.section == 0) {
 
             UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-
+ 
           NXHPersonSetController   *vc = [storyboard instantiateViewControllerWithIdentifier:@"NXHPersonSetController"];
             __weak __typeof__(self) weakSelf = self;
 

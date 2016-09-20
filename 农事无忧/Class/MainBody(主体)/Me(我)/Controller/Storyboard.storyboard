@@ -293,9 +293,16 @@
                                                     </constraints>
                                                     <state key="normal" image="img_me_code"/>
                                                 </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GK-CX-qEq">
+                                                    <rect key="frame" x="113" y="30" width="51" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Gh8-ta-gr2" firstAttribute="leading" secondItem="8yj-bS-pLu" secondAttribute="leading" id="3jK-66-zGr"/>
+                                                <constraint firstItem="1GK-CX-qEq" firstAttribute="centerY" secondItem="64a-0i-gbp" secondAttribute="centerY" id="AA9-Qn-qM3"/>
                                                 <constraint firstItem="eoO-Cc-bq1" firstAttribute="top" secondItem="64a-0i-gbp" secondAttribute="top" constant="15" id="Fvl-wW-Py2"/>
                                                 <constraint firstItem="8yj-bS-pLu" firstAttribute="top" secondItem="64a-0i-gbp" secondAttribute="top" constant="25" id="Mua-1T-QHW"/>
                                                 <constraint firstAttribute="trailing" secondItem="m33-fn-trY" secondAttribute="trailing" constant="15" id="a4e-zC-v31"/>
@@ -303,7 +310,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="eoO-Cc-bq1" secondAttribute="bottom" constant="15" id="eFZ-5s-9Jf"/>
                                                 <constraint firstItem="m33-fn-trY" firstAttribute="centerY" secondItem="64a-0i-gbp" secondAttribute="centerY" id="fKR-vd-D4s"/>
                                                 <constraint firstItem="eoO-Cc-bq1" firstAttribute="leading" secondItem="64a-0i-gbp" secondAttribute="leading" constant="15" id="iJ3-Jj-dbp"/>
+                                                <constraint firstItem="1GK-CX-qEq" firstAttribute="leading" secondItem="eoO-Cc-bq1" secondAttribute="trailing" constant="30" id="m4l-Nj-dG0"/>
+                                                <constraint firstItem="1GK-CX-qEq" firstAttribute="top" secondItem="64a-0i-gbp" secondAttribute="top" constant="30" id="p95-mI-uYg"/>
                                                 <constraint firstItem="Gh8-ta-gr2" firstAttribute="top" secondItem="8yj-bS-pLu" secondAttribute="bottom" constant="10" id="qG8-ZD-4b3"/>
+                                                <constraint firstAttribute="bottom" secondItem="1GK-CX-qEq" secondAttribute="bottom" constant="30" id="yOC-kz-x1c"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -390,12 +400,14 @@
                     <connections>
                         <outlet property="Avatar" destination="eoO-Cc-bq1" id="Vdn-Rn-s7o"/>
                         <outlet property="ID" destination="Gh8-ta-gr2" id="oSy-DW-eoR"/>
+                        <outlet property="QRbutton" destination="m33-fn-trY" id="6NI-OR-zP5"/>
+                        <outlet property="loginLabel" destination="1GK-CX-qEq" id="8bK-SI-hRq"/>
                         <outlet property="nickName" destination="8yj-bS-pLu" id="zRn-FT-aDX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pjz-Yk-zKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.5" y="133.5"/>
+            <point key="canvasLocation" x="822.5" y="-14.5"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="SzX-RI-8Nn">
@@ -453,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0z-gU-FTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983" y="25"/>
+            <point key="canvasLocation" x="1096" y="20"/>
         </scene>
     </scenes>
     <resources>

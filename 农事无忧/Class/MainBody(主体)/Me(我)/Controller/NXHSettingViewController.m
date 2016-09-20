@@ -7,11 +7,13 @@
 //
 
 #import "NXHSettingViewController.h"
+#import "NXHNaviController.h"
+#import "NXHMainViewController.h"
 
 
  
 
-@interface NXHSettingViewController ()
+@interface NXHSettingViewController ()<UIAlertViewDelegate>
 /**设置数据项*/
 @property (nonatomic,strong) NSArray * settingArr;
 /**保存plist数据*/
@@ -140,6 +142,59 @@ static NSString * const Cell = @"Cell";
 #pragma mark <UITableViewData>
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 5;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.section) {
+        case 0:
+            switch (indexPath.row) {
+                case 0:
+
+                    break;
+                    
+                default:
+                    break;
+            }
+            break;
+
+        default:
+            switch (indexPath.row) {
+                case 0:
+
+                    break;
+                    
+                default:{
+                    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定退出账户吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                   
+                    [alert show];
+                    break;
+                }
+                }
+            break;
+    }
+}
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 0:
+            //不做操作
+            NXHMyLogFunction;
+            break;
+
+        default:{
+            //退出登录
+            EMError *error = [[EMClient sharedClient] logout:YES];
+            if (!error) {
+                MYLog(@"退出成功");
+                MYLog(@"%i",[EMClient sharedClient].isLoggedIn);
+                [self.navigationController popToRootViewControllerAnimated:YES];
+
+            }
+        }
+            break;
+    }
 }
 /*
 // Override to support conditional editing of the table view.

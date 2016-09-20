@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NXHMainViewController : UITabBarController
-
+//-(void)switchViewFromViewController:(UIViewController*)fromVC toViewController:(UIViewController *)toVC;
 @end
