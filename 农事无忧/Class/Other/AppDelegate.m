@@ -116,7 +116,19 @@
     NXHMyLogFunction;
 }
 
-
+/*!
+ *  SDK连接服务器的状态变化时会接收到该回调
+ *
+ *  有以下几种情况，会引起该方法的调用：
+ *  1. 登录成功后，手机无法上网时，会调用该回调
+ *  2. 登录成功后，网络状态变化时，会调用该回调
+ *
+ *  @param aConnectionState 当前状态
+ */
+- (void)didConnectionStateChanged:(EMConnectionState)aConnectionState{
+    NXHMyLogFunction;
+    MYLog(@"%u",aConnectionState);
+}
 
 
 
