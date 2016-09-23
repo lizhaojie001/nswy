@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 //#import "NXHRegister.h"
 #import "NXHLogon.h"
+#import "NXHMainViewController.h"
 
 
 @interface NXHLoginViewController ()<UITextFieldDelegate,UIApplicationDelegate>
@@ -61,6 +62,7 @@ static id instance_;
 - (void)popVc{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+ 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

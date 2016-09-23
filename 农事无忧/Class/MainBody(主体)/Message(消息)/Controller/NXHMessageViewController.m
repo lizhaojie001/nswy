@@ -187,6 +187,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+
+
    }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -341,5 +343,8 @@
     }
     MYLog(@"%@",aMessage);
 }
- 
+
+-(void)dealloc{
+    NXHMyLogFunction;
+}
 @end

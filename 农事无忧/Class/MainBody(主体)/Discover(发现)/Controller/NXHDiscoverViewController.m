@@ -7,16 +7,17 @@
 //
 
 #import "NXHDiscoverViewController.h"
+#import "NXHLoginViewController.h"
 
 @interface NXHDiscoverViewController ()
 
 @end
 
 @implementation NXHDiscoverViewController
-
+ 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"发现";
+       self.navigationItem.title = @"发现";
     self.tableView.backgroundColor = [UIColor whiteColor];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

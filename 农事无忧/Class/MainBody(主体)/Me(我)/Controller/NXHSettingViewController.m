@@ -9,6 +9,7 @@
 #import "NXHSettingViewController.h"
 #import "NXHNaviController.h"
 #import "NXHMainViewController.h"
+#import "NXHAboutUsController.h"
 
 
  
@@ -162,7 +163,12 @@ static NSString * const Cell = @"Cell";
         default:
             switch (indexPath.row) {
                 case 0:
+                {
 
+                    NXHAboutUsController* about = [[NXHAboutUsController alloc]init];
+
+                    [self.navigationController pushViewController:about animated:YES];
+                }
                     break;
                     
                 default:{
