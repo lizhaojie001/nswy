@@ -26,47 +26,7 @@
 @end
 
 @implementation NXHMainViewController
-//-(void)switchViewFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-//    if (fromVC!=nil) {
-//        [fromVC willMoveToParentViewController:nil];
-//        [fromVC.view removeFromSuperview];
-//        [fromVC removeFromParentViewController];
-//    }
-//    if (toVC!=nil) {
-//        [self addChildViewController:toVC];
-//        [self.view insertSubview:toVC.view atIndex:0];
-//        [toVC didMoveToParentViewController:self];
-//    }
-//}
-//#pragma mark - 魔法指针的使用
-//+(void)load{
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        Class class = [self class];
-//        // When swizzling a class method, use the following:
-//        // Class class = object_getClass((id)self);
-//        SEL originalSelector = @selector(tabBar:didSelectItem:);
-//        SEL swizzledSeldctor = @selector(zj_tabBar:didSelectItem:);
-//        Method originalMethod =class_getClassMethod(class, originalSelector);
-//        Method swizzledMethod = class_getClassMethod(class, swizzledSeldctor);
-//        BOOL didAddMethod =class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod),method_getTypeEncoding(swizzledMethod));
-//                                           if (didAddMethod) {
-//                                               class_replaceMethod(class, swizzledSeldctor, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-//                                           }else{
-//                                               method_exchangeImplementations(originalMethod, swizzledMethod);
-//
-//                                           }
-//    });
-//}
-//#pragma mark - Method Swizzling
-//- (void)zj_tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-//    if (LOGEDIN) {
-//        [self zj_tabBar:tabBar didSelectItem:item];
-//    }else{
-//        [self pushLoginView];
-//    }
-//}
-// 
+ 
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }

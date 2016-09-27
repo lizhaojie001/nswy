@@ -8,6 +8,7 @@
 
 #import "NXHDiscoverViewController.h"
 #import "NXHLoginViewController.h"
+#import "NXHTraceController.h"
 
 @interface NXHDiscoverViewController ()
 
@@ -81,6 +82,13 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 5;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1&&indexPath.row==0) {
+
+        UIViewController * tVc = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Trace"];
+        [self.navigationController pushViewController:tVc animated:YES];
+    }
 }
 /*
 // Override to support conditional editing of the table view.

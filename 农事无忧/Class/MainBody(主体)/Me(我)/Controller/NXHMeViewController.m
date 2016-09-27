@@ -12,6 +12,8 @@
 #import "NXHLoginViewController.h"
 #import "NXHNaviController.h"
 #import "NXHPersonSetController.h"
+#import "DLAlertView.h"
+ 
 
 @interface NXHMeViewController ()
 /**Avatar*/
@@ -52,93 +54,21 @@
            }
 
 }
+- (IBAction)clickQR:(id)sender {
+    DLAlertView * alter = [[DLAlertView alloc]initWithWithImageName:self.nickName.text clickCallBack:nil andCloseCallBack:nil];
+    
+    [alter show];
+}
  
-//- (instancetype)initWithStyle:(UITableViewStyle)style{
-//    if (self = [super initWithStyle:style] ) {
-//        self = [[NXHMeViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//    }
-//    return  self;
-//     }
-//static NSString *const Cell = @"Cell";
-//static NSString * const cell1 = @"cell";
+ 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我";
-   // [self.tableView registerClass:[NXHMeGroup1Cell class] forCellReuseIdentifier:Cell];
-  //  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cell1];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+ 
     
 }
 
-
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return  3 ;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-////#warning Incomplete implementation, return the number of rows
-//
-//        switch (section) {
-//            case 0:
-//                return 1;
-//                
-//            case 1:
-//                return 2;
-//            default:
-//                return 1;
-//        }
-//
-//
-//
-//   }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-    UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cell1];
-    cell.textLabel.font = [UIFont systemFontOfSize:13];
-    switch (indexPath.section) {
-        case 0:{
-        NXHMeGroup1Cell *cell1 = [tableView dequeueReusableCellWithIdentifier:Cell forIndexPath:indexPath];
-            cell1.Icon = self.avator;
-            return cell1;
-        }
-         case 1:
-            if (indexPath.row ==0) {
-                cell.imageView.image = [UIImage imageNamed:@"img_trends"];
-                cell.textLabel.text = @"动态";
-            }else{
-                cell.imageView.image = [UIImage imageNamed:@"img_collect"];
-                cell.textLabel.text = @"收藏";
-            }
-            break;
-        default:
-            cell.imageView.image = [UIImage imageNamed: @"img_set" ];
-            cell.textLabel.text = @"设置";
-            break;
-    }
-        return cell;
-   
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case 0:
-            return 74;
-            
-            
-        default:
-            return 40;
-    }
-}
- */
+ 
  - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 5;
 }

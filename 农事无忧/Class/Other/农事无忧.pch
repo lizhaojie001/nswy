@@ -38,7 +38,7 @@
  
 #define  MustNumber @"0123456789"
 #define PWDMustCarter @"123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
+#define FromSB(storyBoard,ID)  [[UIStoryboard storyboardWithName:storyBoard bundle:nil] instantiateViewControllerWithIdentifier:ID]
 //是否登录
 #define LOGEDIN [EMClient sharedClient].isLoggedIn
 #import "NXHLoginViewController.h"

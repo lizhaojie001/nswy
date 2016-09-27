@@ -16,13 +16,11 @@
 #import "NXHLoginViewController.h"
 #import "NXHNaviController.h"
 #import "HWPopTool.h"
-#import "NXHPopupView.h"
+ 
 
 @interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate>
  
-/**弹窗*/
-@property (nonatomic,strong)  NXHPopupView * contentView;
-
+ 
 @end
 
 @implementation AppDelegate
@@ -30,16 +28,16 @@
 +(void)initialize{
     
     [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
-    
+
     [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
     
     [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateSelected];
      
       [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:0.8]];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
-        [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+//    [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:80/255.0 green:80/255.0 blue:80/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
         
-        [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateSelected];
+//        [[UITabBarItem appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:39/255.0 green:158/255.0 blue:76/255.0 alpha:1],NSForegroundColorAttributeName,nil]forState:UIControlStateSelected];
     
         [[UITabBar appearance] setShadowImage:[ [UIImage alloc]init] ]
          ;

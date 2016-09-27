@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NXHAboutUsController">
             <connections>
+                <outlet property="CompanyIntroduction" destination="pIO-Nd-fQQ" id="kNq-He-NTJ"/>
                 <outlet property="baseView" destination="Erc-Fj-hfO" id="E1M-m0-9cr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="GsE-LL-klW"/>
             </connections>

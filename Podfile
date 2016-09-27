@@ -2,22 +2,19 @@
 # platform :ios, '9.0'
 
 target '农事无忧' do
-# Uncomment this line if you're using Swift or would like to use dynamic frameworks
-# use_frameworks!
-pod ‘CYLTabBarController’
-pod ‘MJRefresh’
-pod ‘SVProgressHUD’, :git => ‘https://github.com/SVProgressHUD/SVProgressHUD.git’
-pod ‘AFNetworking’, ‘~> 3.0’
-# Pods for 农事无忧
+  # Uncomment this line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
 
-target '农事无忧Tests' do
-inherit! :search_paths
-# Pods for testing
-end
+  # Pods for 农事无忧
 
-target '农事无忧UITests' do
-inherit! :search_paths
-# Pods for testing
-end
+  target '农事无忧Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target '农事无忧UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end

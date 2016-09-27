@@ -21,7 +21,7 @@
 
 @interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate   >
 
-@property (weak, nonatomic) IBOutlet UIView *functionBtn;
+@property (weak, nonatomic) IBOutlet UIView *baseView;
  
 @property (weak, nonatomic) IBOutlet UITableView *tableView2;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
@@ -56,8 +56,8 @@
 @implementation NXHMessageViewController
 
 - (void)addviews{
-    CGFloat W = self.functionBtn.width/4;
-    CGFloat H = self.functionBtn.height;
+    CGFloat W = self.baseView.width/4;
+    CGFloat H = self.baseView.height;
 
     for (int i =0; i < 4; i ++) {
 
@@ -89,7 +89,7 @@
         }
 
 
-        [self.functionBtn addSubview:v];
+        [self.baseView addSubview:v];
     }
 
 }
@@ -332,17 +332,7 @@
 
 - (void)didReceiveFriendInvitationFromUsername:(NSString *)aUsername
                                        message:(NSString *)aMessage{
-    self.str = aUsername;
-    for (UIView * v in self.functionBtn.subviews) {
-        if (v.tag == 3) {
-            for (NXHHeaderBtn *btn in v.subviews) {
-              //  btn.badge.hidden = NO;
-                [ btn layoutSubviews];
-            }
-                     }
-    }
-    MYLog(@"%@",aMessage);
-}
+   }
 
 -(void)dealloc{
     NXHMyLogFunction;

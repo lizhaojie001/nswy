@@ -44,12 +44,13 @@
         
         [btn addTarget:self action:@selector(popToPre) forControlEvents:UIControlEventTouchUpInside];
         
-
+       
         UIBarButtonItem *left = [[UIBarButtonItem  alloc]initWithCustomView:btn];
-//        btn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+       //btn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         // 设置导航条的按钮
-        viewController.navigationItem.leftBarButtonItem = left;
+         viewController.navigationItem.leftBarButtonItem = left;
         viewController.hidesBottomBarWhenPushed = YES;
+        
 
            }
     
