@@ -261,6 +261,10 @@
 		049FE4C91D9A785A000B455E /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4B51D9A785A000B455E /* UIImageView+HighlightedWebCache.m */; };
 		049FE4CA1D9A785A000B455E /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4B71D9A785A000B455E /* UIImageView+WebCache.m */; };
 		049FE4CB1D9A785A000B455E /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4B91D9A785A000B455E /* UIView+WebCacheOperation.m */; };
+		049FE4D21D9B4FFD000B455E /* NXHManualImportQuery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049FE4D01D9B4FFD000B455E /* NXHManualImportQuery.xib */; };
+		049FE4D71D9B52D7000B455E /* NXHManualImportQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4D51D9B52D7000B455E /* NXHManualImportQuery.m */; };
+		049FE4DC1D9B5362000B455E /* NXHAgriculturalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4DA1D9B5362000B455E /* NXHAgriculturalQuery.m */; };
+		049FE4DD1D9B5362000B455E /* NXHAgriculturalQuery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049FE4DB1D9B5362000B455E /* NXHAgriculturalQuery.xib */; };
 		04F24D581D82688600C8DBCA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04F24D4C1D82688600C8DBCA /* LICENSE.txt */; };
 		04F24D591D82688600C8DBCA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 04F24D4D1D82688600C8DBCA /* README.md */; };
 		04F24D5A1D82688600C8DBCA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F24D501D82688600C8DBCA /* SVIndefiniteAnimatedView.m */; };
@@ -813,6 +817,12 @@
 		049FE4B71D9A785A000B455E /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		049FE4B81D9A785A000B455E /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		049FE4B91D9A785A000B455E /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		049FE4D01D9B4FFD000B455E /* NXHManualImportQuery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHManualImportQuery.xib; sourceTree = "<group>"; };
+		049FE4D41D9B52D7000B455E /* NXHManualImportQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHManualImportQuery.h; sourceTree = "<group>"; };
+		049FE4D51D9B52D7000B455E /* NXHManualImportQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHManualImportQuery.m; sourceTree = "<group>"; };
+		049FE4D91D9B5362000B455E /* NXHAgriculturalQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAgriculturalQuery.h; sourceTree = "<group>"; };
+		049FE4DA1D9B5362000B455E /* NXHAgriculturalQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAgriculturalQuery.m; sourceTree = "<group>"; };
+		049FE4DB1D9B5362000B455E /* NXHAgriculturalQuery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAgriculturalQuery.xib; sourceTree = "<group>"; };
 		04F24D4C1D82688600C8DBCA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		04F24D4D1D82688600C8DBCA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04F24D4F1D82688600C8DBCA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -1107,7 +1117,6 @@
 			isa = PBXGroup;
 			children = (
 				049FE47D1D9A25A9000B455E /* 发现 */,
-				049FE47E1D9A25B7000B455E /* 追溯 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2277,18 +2286,21 @@
 			children = (
 				04231EA41D7E79EC0015EC53 /* NXHDiscoverViewController.h */,
 				04231EA51D7E79EC0015EC53 /* NXHDiscoverViewController.m */,
+				049FE47E1D9A25B7000B455E /* 产品追溯 */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
 		};
-		049FE47E1D9A25B7000B455E /* 追溯 */ = {
+		049FE47E1D9A25B7000B455E /* 产品追溯 */ = {
 			isa = PBXGroup;
 			children = (
 				049FE47F1D9A2630000B455E /* NXHTraceController.h */,
 				049FE4801D9A2630000B455E /* NXHTraceController.m */,
-				049FE4851D9A4C3F000B455E /* 扫码 */,
+				049FE4D31D9B510A000B455E /* 农资查询 */,
+				049FE4CD1D9B4FD5000B455E /* 手工输入追溯码 */,
+				049FE4851D9A4C3F000B455E /* 扫码追溯 */,
 			);
-			name = "追溯";
+			name = "产品追溯";
 			sourceTree = "<group>";
 		};
 		049FE4841D9A4483000B455E /* 设置 */ = {
@@ -2301,7 +2313,7 @@
 			name = "设置";
 			sourceTree = "<group>";
 		};
-		049FE4851D9A4C3F000B455E /* 扫码 */ = {
+		049FE4851D9A4C3F000B455E /* 扫码追溯 */ = {
 			isa = PBXGroup;
 			children = (
 				049FE4891D9A4D1A000B455E /* QRScanView.h */,
@@ -2311,7 +2323,7 @@
 				049FE48C1D9A6364000B455E /* NXHImagePickController.h */,
 				049FE48D1D9A6364000B455E /* NXHImagePickController.m */,
 			);
-			name = "扫码";
+			name = "扫码追溯";
 			sourceTree = "<group>";
 		};
 		049FE4921D9A785A000B455E /* DLAlertView */ = {
@@ -2372,6 +2384,26 @@
 				049FE4B91D9A785A000B455E /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		049FE4CD1D9B4FD5000B455E /* 手工输入追溯码 */ = {
+			isa = PBXGroup;
+			children = (
+				049FE4D01D9B4FFD000B455E /* NXHManualImportQuery.xib */,
+				049FE4D41D9B52D7000B455E /* NXHManualImportQuery.h */,
+				049FE4D51D9B52D7000B455E /* NXHManualImportQuery.m */,
+			);
+			name = "手工输入追溯码";
+			sourceTree = "<group>";
+		};
+		049FE4D31D9B510A000B455E /* 农资查询 */ = {
+			isa = PBXGroup;
+			children = (
+				049FE4D91D9B5362000B455E /* NXHAgriculturalQuery.h */,
+				049FE4DA1D9B5362000B455E /* NXHAgriculturalQuery.m */,
+				049FE4DB1D9B5362000B455E /* NXHAgriculturalQuery.xib */,
+			);
+			name = "农资查询";
 			sourceTree = "<group>";
 		};
 		04F24D411D82553700C8DBCA /* CustomUI */ = {
@@ -2695,6 +2727,7 @@
 				04231F4D1D7E79EC0015EC53 /* indicator_4_unfocused.png in Resources */,
 				049F45431D82A3A60009C7ED /* MJRefresh.bundle in Resources */,
 				04231F601D7E79EC0015EC53 /* NXHLoginViewController.xib in Resources */,
+				049FE4D21D9B4FFD000B455E /* NXHManualImportQuery.xib in Resources */,
 				04231F401D7E79EC0015EC53 /* guide_one.jpg in Resources */,
 				04F805FB1D864F1900FA29B8 /* Storyboard.storyboard in Resources */,
 				04231F201D7E79EC0015EC53 /* main_bottom_home@2x.png in Resources */,
@@ -2706,6 +2739,7 @@
 				04F24D9E1D82689200C8DBCA /* LICENSE in Resources */,
 				04231F411D7E79EC0015EC53 /* guide_three.jpg in Resources */,
 				04231F251D7E79EC0015EC53 /* main_bottom_more_selected.png in Resources */,
+				049FE4DD1D9B5362000B455E /* NXHAgriculturalQuery.xib in Resources */,
 				04231F491D7E79EC0015EC53 /* indicator_2_unfocused.png in Resources */,
 				04231F461D7E79EC0015EC53 /* indicator_1_focused.png in Resources */,
 				04231F541D7E79EC0015EC53 /* Contents.json in Resources */,
@@ -2914,6 +2948,7 @@
 				049F452A1D82A3A60009C7ED /* EMCDDeviceManager+Microphone.m in Sources */,
 				049F45651D82A3A60009C7ED /* PSTCollectionViewData.m in Sources */,
 				049F452E1D82A3A60009C7ED /* amrFileCodec.mm in Sources */,
+				049FE4D71D9B52D7000B455E /* NXHManualImportQuery.m in Sources */,
 				04F24D5D1D82688600C8DBCA /* SVProgressHUD.m in Sources */,
 				049FE4BB1D9A785A000B455E /* NSString+SIZEOFSTRING.m in Sources */,
 				049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */,
@@ -3057,6 +3092,7 @@
 				049F455F1D82A3A60009C7ED /* UIImageView+EMWebCache.m in Sources */,
 				049F45641D82A3A60009C7ED /* PSTCollectionViewController.m in Sources */,
 				049FE4CA1D9A785A000B455E /* UIImageView+WebCache.m in Sources */,
+				049FE4DC1D9B5362000B455E /* NXHAgriculturalQuery.m in Sources */,
 				049FE4C01D9A785A000B455E /* SDWebImageDecoder.m in Sources */,
 				049F454E1D82A3A60009C7ED /* MWTapDetectingView.m in Sources */,
 			);

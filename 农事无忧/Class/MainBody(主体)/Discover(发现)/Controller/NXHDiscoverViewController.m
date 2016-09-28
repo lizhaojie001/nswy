@@ -84,10 +84,26 @@
     return 5;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1&&indexPath.row==0) {
-
-        UIViewController * tVc = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Trace"];
-        [self.navigationController pushViewController:tVc animated:YES];
+   
+    switch (indexPath.section) {
+        case 0:
+            
+            break;
+            
+        default:
+        {
+            switch (indexPath.row) {
+                case 0:{
+                    UIViewController * tVc = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"Trace"];
+                    [self.navigationController pushViewController:tVc animated:YES];
+                    break;
+                }
+                default:
+                    
+                    break;
+            }
+        }
+            break;
     }
 }
 /*

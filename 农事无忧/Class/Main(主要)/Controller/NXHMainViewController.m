@@ -15,12 +15,14 @@
 #import "NXHButton.h"
 #import "NXHLoginViewController.h"
 #import  <objc/runtime.h>
-@interface NXHMainViewController ()<UITabBarControllerDelegate>
+@interface NXHMainViewController ()<UITabBarControllerDelegate,UITabBarDelegate>
 /**两个button*/
 @property (nonatomic,strong) UIButton * btn1;
 /**两个button*/
 @property (nonatomic,strong) UIButton * btn2;
 
+/**标记*/
+@property (nonatomic,assign) NSInteger indexFlag;
 
 
 @end
@@ -34,37 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.delegate =self;
+    MYLog(@"didSelectItem:%@",   self.tabBar.delegate);  
     [self.tabBar setTintColor:[UIColor lightGrayColor]];
     [self setupAllVc];
     
      }
 
-- (void)setButton{
-    CGFloat  W = self.view.width/self.viewControllers.count;
-    CGFloat H = self.tabBar.height;
-
-
-        for (int i = 0; i <2; i ++) {
-            if (i==0) {
-                _btn1= [[UIButton alloc]
-                                     initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
-                [_btn1 setBackgroundColor:[UIColor clearColor]];
-          
-                [_btn1 addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
-                [self.tabBar addSubview:_btn1];
-            }else
-            {
-                _btn2= [[UIButton alloc]
-                        initWithFrame:CGRectMake((i+1)*W, 0, W, H)];
-                [_btn2 setBackgroundColor:[UIColor clearColor]];
-
-                [_btn2 addTarget:self action:@selector(pushLoginView) forControlEvents:UIControlEventTouchUpInside];
-                [self.tabBar addSubview:_btn2];
-            }
-
-        }
-
-}
+ 
 
 - (void)setupVc:(UIViewController *)Vc andImage:(UIImage *)image HightlightImage:(UIImage *)hightlightImage andTitle:(NSString *)title{
     
@@ -110,5 +88,35 @@
          return YES;
     }
 
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NXHMyLogFunction;
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+    
+    if (self.indexFlag != index) {
+        [self animationWithIndex:index];
+    }
+}
+// 动画
+- (void)animationWithIndex:(NSInteger) index {
+    NSMutableArray * tabbarbuttonArray = [NSMutableArray array];
+    for (UIView *tabBarButton in self.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [tabbarbuttonArray addObject:tabBarButton];
+        }
+    }
+    CABasicAnimation*pulse = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    pulse.timingFunction= [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pulse.duration = 0.08;
+    pulse.repeatCount= 1;
+    pulse.autoreverses= YES;
+    pulse.fromValue= [NSNumber numberWithFloat:0.7];
+    pulse.toValue= [NSNumber numberWithFloat:1.3];
+    [[tabbarbuttonArray[index] layer]
+     addAnimation:pulse forKey:nil];
+    
+   self.indexFlag = index;
+    
 }
 @end
