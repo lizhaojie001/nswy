@@ -66,11 +66,6 @@
 #warning  暂时 修改
   [NXHGudieTool guideRootViewController:window];
     
-   // NXHLoginViewController *login=
-//     [[NXHLoginViewController alloc]initWithNibName:nil bundle:nil];
-//    NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:login];
-//    
-//    self.window.rootViewController = navi;
    
     [window makeKeyAndVisible];
   
@@ -109,7 +104,9 @@
         NXHMyLogFunction;
     }];
     [alert addAction:action];
-    [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    [self.window.rootViewController presentViewController:alert animated:YES completion:^{
+        
+    }];
 }
 //自动登录回调
 - (void)didAutoLoginWithError:(EMError *)aError{

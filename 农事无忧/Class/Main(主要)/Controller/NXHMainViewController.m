@@ -81,8 +81,11 @@
         return YES;
     } else
     {if (![viewController isEqual:tabBarController.childViewControllers[0]] ) {
+//      NXHLoginViewController * login=  [[NXHLoginViewController alloc]init];
+//        [login show];
         NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:[[NXHLoginViewController alloc]init]];
         [((UINavigationController*)tabBarController.selectedViewController) presentViewController:navi animated:YES completion:nil];
+        
         return NO;
     }
          return YES;

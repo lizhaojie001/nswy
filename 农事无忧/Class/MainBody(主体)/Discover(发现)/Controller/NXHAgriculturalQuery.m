@@ -45,27 +45,23 @@
                 continue;
             }
         [btn setBackgroundColor:[UIColor whiteColor]];
-        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal ];
-        
+               
     }
-//    for (int i = 0; i<4; i++    ) {
-//        if ( sender.tag ==i+1   ) {
-//            [sender setBackgroundColor:ThemeColor];
-//            
-//            continue;
-//        }
-//        [self.categoryArr[i] setBackgroundColor:[UIColor whiteColor]];
-//       
-//
-//    }
-     
+  
     [UIView animateWithDuration:0.2 animations:^{
         self.indicator.centetX = sender.centetX; 
     }];
    
 }
  
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    for (UIButton * btn in self.categoryArr) {
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+        btn.layer.cornerRadius = btn.frame.size.width/2;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
   

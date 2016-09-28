@@ -86,37 +86,7 @@
     return tabBarController;
 }
 
-#pragma mark 未登录时的控制器样式
-+(UIViewController*)setupViewControllersNoLogin {
-    NXHHomeViewController*Home =  [[NXHHomeViewController alloc] initWithCollectionViewLayout:[[UICollectionViewFlowLayout alloc]init]];
-    UIViewController *Navi1 = [[NXHNaviController alloc]
-                               initWithRootViewController:Home];
-    //Navi1.title = @"123";
-    
-    NXHLoginViewController *Discover = [[NXHLoginViewController alloc] init];
-    UIViewController *Navi3 = [[NXHNaviController alloc]
-                               initWithRootViewController:Discover];
-    NXHLoginViewController *Message = [[NXHLoginViewController alloc] init];
-    UIViewController *Navi2 = [[NXHNaviController alloc]
-                               initWithRootViewController:Message];
-    
-    NXHLoginViewController *Me = [[NXHLoginViewController alloc] init];
-    UIViewController *Navi4 = [[NXHNaviController alloc]
-                               initWithRootViewController:Me];
-    
-    CYLTabBarController *tabBarController = [[CYLTabBarController alloc] init];
-    [self customizeTabBarForController:tabBarController];
-    
-    [tabBarController setViewControllers:@[
-                                           Navi1,
-                                           Navi2,
-                                           Navi3,
-                                           Navi4
-                                           ]];
-    return tabBarController;
-}
-
-/*
+ /*
  *
  在`-setViewControllers:`之前设置TabBar的属性，
  *

@@ -109,14 +109,7 @@
     //设置搜索条中的分段类别
     self.searchController.searchBar.scopeButtonTitles=@[@"设备",@"软件",@"其他"];
     [self.searchController.searchBar setTintColor:ThemeColor];
-    // self.searchController.searchBar.barTintColor = ThemeColor;
-//    for (UIView * view in self.searchController.searchBar.subviews) {
-//        if ([view isKindOfClass:NSClassFromString(@"_UISearchBarSearchFieldBackgroundView")]) {
-//            view.backgroundColor = ThemeColor;
-//        }
-//    }
-
-    //为当前表透视图添加searchBar
+     //为当前表透视图添加searchBar
      [self.searchView addSubview: self.searchController.searchBar];
 
 
@@ -199,7 +192,7 @@
     self.tableView2.delegate = self;
 
      [self.tableView2 registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
-        //[self addGestureRecognizer];
+        
 
 
 
@@ -235,7 +228,7 @@
     return YES;
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-   // [searchBar resignFirstResponder];
+   
     [self.view endEditing:YES];
 }
 #pragma mark - <UITabbleViewDelegate>
@@ -258,17 +251,7 @@
 
     return cell;
 }
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    NXHMyLogFunction;
-//    if ([tableView isEqual:self.tableView1]) {
-//        return 81;
-//    }
-//    return 45;
-//}
-//- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    NXHMyLogFunction;
-//    return self.sectionHeaderView;
-//}
+ 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
 
     if ([tableView isEqual:self.tableView2]) {

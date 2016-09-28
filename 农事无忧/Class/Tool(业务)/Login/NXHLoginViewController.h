@@ -10,4 +10,5 @@
 
 @interface NXHLoginViewController : UIViewController
 + (id)sharedInstance;
+- (void)show;
 @end

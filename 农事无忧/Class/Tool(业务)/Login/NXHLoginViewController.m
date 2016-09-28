@@ -8,7 +8,7 @@
 
 #import "NXHLoginViewController.h"
 #import "SVProgressHUD.h"
-//#import "NXHRegister.h"
+ 
 #import "NXHLogon.h"
 #import "NXHMainViewController.h"
 
@@ -16,16 +16,43 @@
 @interface NXHLoginViewController ()<UITextFieldDelegate,UIApplicationDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
 @property (weak, nonatomic) IBOutlet UITextField *Password;
+/**NewWindow*/
+@property (nonatomic,strong) UIWindow * NewWindow;
+/**previousWindow*/
+@property (nonatomic,strong) UIWindow * previousWindow;
+
 - (IBAction)registry:(UIButton *)sender;
 - (IBAction)findPWD:(UIButton *)sender;
 - (IBAction)Login:(UIButton *)sender;
 
+- (void)zj_setupNewWindow;
 
 
 
 @end
 
 @implementation NXHLoginViewController
+- (instancetype)init{
+    if (self =[super init]) {
+        [self zj_setupNewWindow];
+    }
+    return self;
+}
+-(void)zj_setupNewWindow{
+    
+    UIWindow *alertWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    alertWindow.windowLevel = UIWindowLevelAlert;
+    alertWindow.backgroundColor = [UIColor clearColor];
+    alertWindow.rootViewController = self;
+    self.NewWindow = alertWindow;
+
+}
+- (void)show{
+//    __weak typeof(self) weakSelf = self;
+    self.previousWindow = [UIApplication sharedApplication].keyWindow;
+    [self.NewWindow makeKeyAndVisible];
+   
+}
 static id instance_;
 
 + (instancetype)sharedInstance
@@ -111,12 +138,13 @@ static id instance_;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
                     [self popVc];
+                 //   [self.previousWindow makeKeyAndVisible];
 
                 });
             }else{
                 [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [SVProgressHUD dismiss];
+                   [SVProgressHUD dismiss];
                     
                     
                 });
@@ -155,23 +183,7 @@ static id instance_;
 
 
 
-//#pragma mark - <UITextFiledDalegate>
-//-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-//    return YES;
-//    
-//}// return NO to disallow editing.
-//- (void)textFieldDidBeginEditing:(UITextField *)textField{
-//    
-//}// became first responder
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-//
-//    return YES;
-//}// return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
-//- (void)textFieldDidEndEditing:(UITextField *)textField;{
-//    
-//}// may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
-//
-//限制输入字符
+ //限制输入字符
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
    
     

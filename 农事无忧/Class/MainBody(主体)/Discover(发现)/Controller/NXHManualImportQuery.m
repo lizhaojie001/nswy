@@ -9,13 +9,18 @@
 #import "NXHManualImportQuery.h"
 
 @interface NXHManualImportQuery ()
+@property (weak, nonatomic) IBOutlet UIButton *submit;
 
 @end
 
 @implementation NXHManualImportQuery
+- (IBAction)submit:(id)sender {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.submit.layer.cornerRadius = 3;
     // Do any additional setup after loading the view from its nib.
 }
 
