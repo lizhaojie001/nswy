@@ -33,6 +33,12 @@
 #define MYLog(...)
 #endif
 
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "CoreText/CoreText.h"
+#import "UIView+frameAdjust.h"
+
+
 #import "UIView+Frame.h"
 #import "UIImage+Image.h"
  

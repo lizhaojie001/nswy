@@ -265,6 +265,13 @@
 		049FE4D71D9B52D7000B455E /* NXHManualImportQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4D51D9B52D7000B455E /* NXHManualImportQuery.m */; };
 		049FE4DC1D9B5362000B455E /* NXHAgriculturalQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4DA1D9B5362000B455E /* NXHAgriculturalQuery.m */; };
 		049FE4DD1D9B5362000B455E /* NXHAgriculturalQuery.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049FE4DB1D9B5362000B455E /* NXHAgriculturalQuery.xib */; };
+		049FE4F11D9BCABC000B455E /* CoreTextData.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4E61D9BCABC000B455E /* CoreTextData.m */; };
+		049FE4F21D9BCABC000B455E /* CoreTextImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4E81D9BCABC000B455E /* CoreTextImageData.m */; };
+		049FE4F31D9BCABC000B455E /* CoreTextLinkData.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4EA1D9BCABC000B455E /* CoreTextLinkData.m */; };
+		049FE4F41D9BCABC000B455E /* CoreTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4EC1D9BCABC000B455E /* CoreTextUtils.m */; };
+		049FE4F51D9BCABC000B455E /* CTFrameParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4EE1D9BCABC000B455E /* CTFrameParser.m */; };
+		049FE4F61D9BCABC000B455E /* CTFrameParserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4F01D9BCABC000B455E /* CTFrameParserConfig.m */; };
+		049FE4F91D9BCBFB000B455E /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = 049FE4F81D9BCBFB000B455E /* UIView+frameAdjust.m */; };
 		04F24D581D82688600C8DBCA /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 04F24D4C1D82688600C8DBCA /* LICENSE.txt */; };
 		04F24D591D82688600C8DBCA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 04F24D4D1D82688600C8DBCA /* README.md */; };
 		04F24D5A1D82688600C8DBCA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F24D501D82688600C8DBCA /* SVIndefiniteAnimatedView.m */; };
@@ -823,6 +830,20 @@
 		049FE4D91D9B5362000B455E /* NXHAgriculturalQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAgriculturalQuery.h; sourceTree = "<group>"; };
 		049FE4DA1D9B5362000B455E /* NXHAgriculturalQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAgriculturalQuery.m; sourceTree = "<group>"; };
 		049FE4DB1D9B5362000B455E /* NXHAgriculturalQuery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAgriculturalQuery.xib; sourceTree = "<group>"; };
+		049FE4E51D9BCABC000B455E /* CoreTextData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextData.h; sourceTree = "<group>"; };
+		049FE4E61D9BCABC000B455E /* CoreTextData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextData.m; sourceTree = "<group>"; };
+		049FE4E71D9BCABC000B455E /* CoreTextImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextImageData.h; sourceTree = "<group>"; };
+		049FE4E81D9BCABC000B455E /* CoreTextImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextImageData.m; sourceTree = "<group>"; };
+		049FE4E91D9BCABC000B455E /* CoreTextLinkData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextLinkData.h; sourceTree = "<group>"; };
+		049FE4EA1D9BCABC000B455E /* CoreTextLinkData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextLinkData.m; sourceTree = "<group>"; };
+		049FE4EB1D9BCABC000B455E /* CoreTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextUtils.h; sourceTree = "<group>"; };
+		049FE4EC1D9BCABC000B455E /* CoreTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextUtils.m; sourceTree = "<group>"; };
+		049FE4ED1D9BCABC000B455E /* CTFrameParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParser.h; sourceTree = "<group>"; };
+		049FE4EE1D9BCABC000B455E /* CTFrameParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParser.m; sourceTree = "<group>"; };
+		049FE4EF1D9BCABC000B455E /* CTFrameParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParserConfig.h; sourceTree = "<group>"; };
+		049FE4F01D9BCABC000B455E /* CTFrameParserConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParserConfig.m; sourceTree = "<group>"; };
+		049FE4F71D9BCBFB000B455E /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
+		049FE4F81D9BCBFB000B455E /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 		04F24D4C1D82688600C8DBCA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		04F24D4D1D82688600C8DBCA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04F24D4F1D82688600C8DBCA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -948,6 +969,7 @@
 		04231E5B1D7E79EC0015EC53 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				049FE4E41D9BCABC000B455E /* Models(富文本) */,
 				049FE4971D9A785A000B455E /* Lib */,
 				049F459F1D82ACF20009C7ED /* ChatView */,
 				049F44021D82A3A60009C7ED /* EaseUI */,
@@ -2406,6 +2428,28 @@
 			name = "农资查询";
 			sourceTree = "<group>";
 		};
+		049FE4E41D9BCABC000B455E /* Models(富文本) */ = {
+			isa = PBXGroup;
+			children = (
+				049FE4F71D9BCBFB000B455E /* UIView+frameAdjust.h */,
+				049FE4F81D9BCBFB000B455E /* UIView+frameAdjust.m */,
+				049FE4E51D9BCABC000B455E /* CoreTextData.h */,
+				049FE4E61D9BCABC000B455E /* CoreTextData.m */,
+				049FE4E71D9BCABC000B455E /* CoreTextImageData.h */,
+				049FE4E81D9BCABC000B455E /* CoreTextImageData.m */,
+				049FE4E91D9BCABC000B455E /* CoreTextLinkData.h */,
+				049FE4EA1D9BCABC000B455E /* CoreTextLinkData.m */,
+				049FE4EB1D9BCABC000B455E /* CoreTextUtils.h */,
+				049FE4EC1D9BCABC000B455E /* CoreTextUtils.m */,
+				049FE4ED1D9BCABC000B455E /* CTFrameParser.h */,
+				049FE4EE1D9BCABC000B455E /* CTFrameParser.m */,
+				049FE4EF1D9BCABC000B455E /* CTFrameParserConfig.h */,
+				049FE4F01D9BCABC000B455E /* CTFrameParserConfig.m */,
+			);
+			name = "Models(富文本)";
+			path = Models;
+			sourceTree = "<group>";
+		};
 		04F24D411D82553700C8DBCA /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -2895,6 +2939,7 @@
 				049F45971D82A3A60009C7ED /* EaseFaceView.m in Sources */,
 				04F24DA51D82689200C8DBCA /* UIImageView+AFNetworking.m in Sources */,
 				049F45561D82A3A60009C7ED /* EMSDWebImageManager.m in Sources */,
+				049FE4F51D9BCABC000B455E /* CTFrameParser.m in Sources */,
 				049F454A1D82A3A60009C7ED /* MWGridViewController.m in Sources */,
 				0433E18E1D7E82E600E015D3 /* NXHLoginViewController.m in Sources */,
 				049F45931D82A3A60009C7ED /* EaseChatToolbar.m in Sources */,
@@ -2907,9 +2952,11 @@
 				049F459B1D82A3A60009C7ED /* EaseConversationCell.m in Sources */,
 				049F45481D82A3A60009C7ED /* MWCaptionView.m in Sources */,
 				049F455D1D82A3A60009C7ED /* UIImage+EMWebP.m in Sources */,
+				049FE4F11D9BCABC000B455E /* CoreTextData.m in Sources */,
 				049F455C1D82A3A60009C7ED /* UIImage+EMMultiFormat.m in Sources */,
 				04F24D6F1D82688D00C8DBCA /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				0433E18A1D7E824A00E015D3 /* UIView+Frame.m in Sources */,
+				049FE4F41D9BCABC000B455E /* CoreTextUtils.m in Sources */,
 				049F458D1D82A3A60009C7ED /* EaseBubbleView+Image.m in Sources */,
 				04F24DA01D82689200C8DBCA /* AFAutoPurgingImageCache.m in Sources */,
 				049FE4BE1D9A785A000B455E /* SDImageCache.m in Sources */,
@@ -3024,6 +3071,7 @@
 				045414901D88DEAE0009ECF8 /* NXHCollectionViewCell.m in Sources */,
 				049F45701D82A3A60009C7ED /* EaseConversationModel.m in Sources */,
 				049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */,
+				049FE4F91D9BCBFB000B455E /* UIView+frameAdjust.m in Sources */,
 				049F45A21D82ACF20009C7ED /* ChatViewController.m in Sources */,
 				04425A841D8FD694004D804A /* NXHAddFriendsController.m in Sources */,
 				049FE48B1D9A4D1A000B455E /* QRScanView.m in Sources */,
@@ -3038,6 +3086,7 @@
 				0433E17D1D7E81C100E015D3 /* NXHHomeViewController.m in Sources */,
 				0433E17C1D7E81B600E015D3 /* MJDIYHeader.m in Sources */,
 				049F459A1D82A3A60009C7ED /* EaseRecordView.m in Sources */,
+				049FE4F21D9BCABC000B455E /* CoreTextImageData.m in Sources */,
 				049F45491D82A3A60009C7ED /* MWGridCell.m in Sources */,
 				049F45981D82A3A60009C7ED /* EaseFacialView.m in Sources */,
 				049F45791D82A3A60009C7ED /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
@@ -3067,12 +3116,14 @@
 				04F24D711D82688D00C8DBCA /* README.md in Sources */,
 				049F45901D82A3A60009C7ED /* EaseBubbleView+Video.m in Sources */,
 				049F456D1D82A3A60009C7ED /* PSTGridLayoutSection.m in Sources */,
+				049FE4F31D9BCABC000B455E /* CoreTextLinkData.m in Sources */,
 				049FE4BF1D9A785A000B455E /* SDWebImageCompat.m in Sources */,
 				049FE4C21D9A785A000B455E /* SDWebImageDownloaderOperation.m in Sources */,
 				049F45751D82A3A60009C7ED /* NSString+Valid.m in Sources */,
 				049FE4C81D9A785A000B455E /* UIImage+WebP.m in Sources */,
 				0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */,
 				0433E17A1D7E81A400E015D3 /* NXHNaviController.m in Sources */,
+				049FE4F61D9BCABC000B455E /* CTFrameParserConfig.m in Sources */,
 				049F45511D82A3A60009C7ED /* EMSDImageCache.m in Sources */,
 				049F45581D82A3A60009C7ED /* MKAnnotationView+EMWebCache.m in Sources */,
 				04425A9A1D913FFF004D804A /* NXHMonitoring.m in Sources */,
