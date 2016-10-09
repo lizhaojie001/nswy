@@ -120,6 +120,7 @@
 		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
 		0482E36C1DA9D8D2006724AC /* NXHProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E36B1DA9D8D2006724AC /* NXHProfileView.m */; };
+		0482E36F1DAA4D40006724AC /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 0482E36E1DAA4D40006724AC /* content.json */; };
 		049F43851D8297CC0009C7ED /* NXHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F43841D8297CC0009C7ED /* NXHButton.m */; };
 		049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440D1D82A3A60009C7ED /* EMAudioPlayerUtil.m */; };
 		049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440F1D82A3A60009C7ED /* EMAudioRecorderUtil.m */; };
@@ -526,6 +527,7 @@
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
 		0482E36A1DA9D8D2006724AC /* NXHProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHProfileView.h; sourceTree = "<group>"; };
 		0482E36B1DA9D8D2006724AC /* NXHProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHProfileView.m; sourceTree = "<group>"; };
+		0482E36E1DAA4D40006724AC /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		049F43831D8297CC0009C7ED /* NXHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHButton.h; sourceTree = "<group>"; };
 		049F43841D8297CC0009C7ED /* NXHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHButton.m; sourceTree = "<group>"; };
 		049F44031D82A3A60009C7ED /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -1388,6 +1390,7 @@
 				04231EF31D7E79EC0015EC53 /* Info.plist */,
 				04231EF41D7E79EC0015EC53 /* main.m */,
 				04231EF51D7E79EC0015EC53 /* 农事无忧.pch */,
+				0482E36E1DAA4D40006724AC /* content.json */,
 				04F805FA1D864F1900FA29B8 /* Storyboard.storyboard */,
 				04231F161D7E79EC0015EC53 /* Launch Screen.storyboard */,
 			);
@@ -2792,6 +2795,7 @@
 				04231F491D7E79EC0015EC53 /* indicator_2_unfocused.png in Resources */,
 				04231F461D7E79EC0015EC53 /* indicator_1_focused.png in Resources */,
 				04231F541D7E79EC0015EC53 /* Contents.json in Resources */,
+				0482E36F1DAA4D40006724AC /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
