@@ -119,6 +119,7 @@
 		0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414981D88F2930009ECF8 /* WEBViewController.m */; };
 		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
+		0482E36C1DA9D8D2006724AC /* NXHProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E36B1DA9D8D2006724AC /* NXHProfileView.m */; };
 		049F43851D8297CC0009C7ED /* NXHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F43841D8297CC0009C7ED /* NXHButton.m */; };
 		049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440D1D82A3A60009C7ED /* EMAudioPlayerUtil.m */; };
 		049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440F1D82A3A60009C7ED /* EMAudioRecorderUtil.m */; };
@@ -523,6 +524,8 @@
 		045414991D88F2930009ECF8 /* WEBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEBViewController.xib; sourceTree = "<group>"; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
+		0482E36A1DA9D8D2006724AC /* NXHProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHProfileView.h; sourceTree = "<group>"; };
+		0482E36B1DA9D8D2006724AC /* NXHProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHProfileView.m; sourceTree = "<group>"; };
 		049F43831D8297CC0009C7ED /* NXHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHButton.h; sourceTree = "<group>"; };
 		049F43841D8297CC0009C7ED /* NXHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHButton.m; sourceTree = "<group>"; };
 		049F44031D82A3A60009C7ED /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -1242,6 +1245,8 @@
 			children = (
 				04231EC51D7E79EC0015EC53 /* NXHMeGroup1Cell.h */,
 				04231EC61D7E79EC0015EC53 /* NXHMeGroup1Cell.m */,
+				0482E36A1DA9D8D2006724AC /* NXHProfileView.h */,
+				0482E36B1DA9D8D2006724AC /* NXHProfileView.m */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -2985,6 +2990,7 @@
 				049F456C1D82A3A60009C7ED /* PSTGridLayoutRow.m in Sources */,
 				0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */,
 				04F24DA61D82689200C8DBCA /* UIProgressView+AFNetworking.m in Sources */,
+				0482E36C1DA9D8D2006724AC /* NXHProfileView.m in Sources */,
 				04425A771D8F7D5A004D804A /* NXHHeaderBtn.m in Sources */,
 				049FE4BA1D9A785A000B455E /* DLAlertView.m in Sources */,
 				049F45951D82A3A60009C7ED /* EaseImageView.m in Sources */,
@@ -3274,6 +3280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
@@ -3285,7 +3292,7 @@
 					"$(PROJECT_DIR)/农事无忧/3rd/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/农事无忧/3rd/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HBNXWLKJ.xxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3299,6 +3306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/Class/Other/农事无忧.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/农事无忧/Class/Other/Info.plist";
@@ -3310,7 +3318,7 @@
 					"$(PROJECT_DIR)/农事无忧/3rd/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/农事无忧/3rd/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HBNXWLKJ.----";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HBNXWLKJ.xxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
