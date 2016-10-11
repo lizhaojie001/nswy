@@ -10,6 +10,8 @@
 #import "NXHNaviController.h"
 #import "NXHMainViewController.h"
 #import "NXHAboutController.h"
+#import "NXHModifyController.h"
+#import "NXHFeedbackController.h"
 
 
  
@@ -151,10 +153,20 @@ static NSString * const Cell = @"Cell";
     switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
-                case 0:
-
+                case 1:
+                case 0:{
+                    NXHModifyController* modify = [[NXHModifyController alloc]initWithNibName:nil bundle:nil];
+                    [self.navigationController pushViewController:modify animated:YES];
                     break;
+                }
+                    case 2:
                     
+                    break;
+                case 4:{
+                    NXHFeedbackController*feedback = [[NXHFeedbackController alloc]init];
+                    [self.navigationController pushViewController:feedback animated:YES];
+                    break;
+                }
                 default:
                     break;
             }

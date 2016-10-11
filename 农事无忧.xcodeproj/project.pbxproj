@@ -123,6 +123,10 @@
 		0482E3831DAC862C006724AC /* NXHAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3811DAC862C006724AC /* NXHAboutUsCell.m */; };
 		0482E3841DAC862C006724AC /* NXHAboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482E3821DAC862C006724AC /* NXHAboutUsCell.xib */; };
 		0482E38A1DACCF2E006724AC /* NXHAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3891DACCF2E006724AC /* NXHAboutController.m */; };
+		0482E38E1DACD22B006724AC /* NXHModifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E38C1DACD22B006724AC /* NXHModifyController.m */; };
+		0482E38F1DACD22B006724AC /* NXHModifyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482E38D1DACD22B006724AC /* NXHModifyController.xib */; };
+		0482E3951DACDDEB006724AC /* NXHFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3931DACDDEB006724AC /* NXHFeedbackController.m */; };
+		0482E3961DACDDEB006724AC /* NXHFeedbackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482E3941DACDDEB006724AC /* NXHFeedbackController.xib */; };
 		049F43851D8297CC0009C7ED /* NXHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F43841D8297CC0009C7ED /* NXHButton.m */; };
 		049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440D1D82A3A60009C7ED /* EMAudioPlayerUtil.m */; };
 		049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440F1D82A3A60009C7ED /* EMAudioRecorderUtil.m */; };
@@ -534,6 +538,12 @@
 		0482E3821DAC862C006724AC /* NXHAboutUsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAboutUsCell.xib; sourceTree = "<group>"; };
 		0482E3881DACCF2E006724AC /* NXHAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAboutController.h; sourceTree = "<group>"; };
 		0482E3891DACCF2E006724AC /* NXHAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAboutController.m; sourceTree = "<group>"; };
+		0482E38B1DACD22B006724AC /* NXHModifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHModifyController.h; sourceTree = "<group>"; };
+		0482E38C1DACD22B006724AC /* NXHModifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHModifyController.m; sourceTree = "<group>"; };
+		0482E38D1DACD22B006724AC /* NXHModifyController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHModifyController.xib; sourceTree = "<group>"; };
+		0482E3921DACDDEB006724AC /* NXHFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHFeedbackController.h; sourceTree = "<group>"; };
+		0482E3931DACDDEB006724AC /* NXHFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHFeedbackController.m; sourceTree = "<group>"; };
+		0482E3941DACDDEB006724AC /* NXHFeedbackController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHFeedbackController.xib; sourceTree = "<group>"; };
 		049F43831D8297CC0009C7ED /* NXHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHButton.h; sourceTree = "<group>"; };
 		049F43841D8297CC0009C7ED /* NXHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHButton.m; sourceTree = "<group>"; };
 		049F44031D82A3A60009C7ED /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -1724,6 +1734,26 @@
 			path = "动态展示";
 			sourceTree = "<group>";
 		};
+		0482E3901DACDD78006724AC /* 修改密码手机号 */ = {
+			isa = PBXGroup;
+			children = (
+				0482E38B1DACD22B006724AC /* NXHModifyController.h */,
+				0482E38C1DACD22B006724AC /* NXHModifyController.m */,
+				0482E38D1DACD22B006724AC /* NXHModifyController.xib */,
+			);
+			name = "修改密码手机号";
+			sourceTree = "<group>";
+		};
+		0482E3911DACDD91006724AC /* 意见反馈 */ = {
+			isa = PBXGroup;
+			children = (
+				0482E3921DACDDEB006724AC /* NXHFeedbackController.h */,
+				0482E3931DACDDEB006724AC /* NXHFeedbackController.m */,
+				0482E3941DACDDEB006724AC /* NXHFeedbackController.xib */,
+			);
+			name = "意见反馈";
+			sourceTree = "<group>";
+		};
 		049F43821D8297CC0009C7ED /* buttonItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -2346,8 +2376,10 @@
 		049FE4841D9A4483000B455E /* 设置 */ = {
 			isa = PBXGroup;
 			children = (
-				04231EBF1D7E79EC0015EC53 /* NXHSettingViewController.m */,
 				04231EBE1D7E79EC0015EC53 /* NXHSettingViewController.h */,
+				04231EBF1D7E79EC0015EC53 /* NXHSettingViewController.m */,
+				0482E3911DACDD91006724AC /* 意见反馈 */,
+				0482E3901DACDD78006724AC /* 修改密码手机号 */,
 				04425AF51D93C8C7004D804A /* 关于我们 */,
 			);
 			name = "设置";
@@ -2749,6 +2781,7 @@
 				04231F221D7E79EC0015EC53 /* main_bottom_home_selected@2x.png in Resources */,
 				04231F4C1D7E79EC0015EC53 /* indicator_4_focused.png in Resources */,
 				04231F321D7E79EC0015EC53 /* 太阳副本 4.png in Resources */,
+				0482E3961DACDDEB006724AC /* NXHFeedbackController.xib in Resources */,
 				04231F2A1D7E79EC0015EC53 /* main_bottom_personcenter_selected@2x.png in Resources */,
 				04231F1C1D7E79EC0015EC53 /* main_bottom_comm@2x.png in Resources */,
 				04231F4A1D7E79EC0015EC53 /* indicator_3_focused.png in Resources */,
@@ -2771,6 +2804,7 @@
 				04231F551D7E79EC0015EC53 /* guide_four.jpg in Resources */,
 				04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */,
 				04231F241D7E79EC0015EC53 /* main_bottom_more@2x.png in Resources */,
+				0482E38F1DACD22B006724AC /* NXHModifyController.xib in Resources */,
 				04425A961D913A60004D804A /* NXHNoticeCell.xib in Resources */,
 				04425A7B1D8FC691004D804A /* NXHContactListCell.xib in Resources */,
 				045414911D88DEAE0009ECF8 /* NXHCollectionViewCell.xib in Resources */,
@@ -3012,6 +3046,7 @@
 				04F24D6E1D82688D00C8DBCA /* CYLTabBarController.m in Sources */,
 				0433E1881D7E823200E015D3 /* AppDelegate.m in Sources */,
 				049F452A1D82A3A60009C7ED /* EMCDDeviceManager+Microphone.m in Sources */,
+				0482E3951DACDDEB006724AC /* NXHFeedbackController.m in Sources */,
 				049F45651D82A3A60009C7ED /* PSTCollectionViewData.m in Sources */,
 				049F452E1D82A3A60009C7ED /* amrFileCodec.mm in Sources */,
 				049FE4D71D9B52D7000B455E /* NXHManualImportQuery.m in Sources */,
@@ -3155,6 +3190,7 @@
 				04F24D9F1D82689200C8DBCA /* README.md in Sources */,
 				049F45991D82A3A60009C7ED /* EaseChatBarMoreView.m in Sources */,
 				049F457F1D82A3A60009C7ED /* FixFopen.c in Sources */,
+				0482E38E1DACD22B006724AC /* NXHModifyController.m in Sources */,
 				049FE4BC1D9A785A000B455E /* MKAnnotationView+WebCache.m in Sources */,
 				0433E1B31D7FC14500E015D3 /* UIColor+NXHColor.m in Sources */,
 				04F24D5B1D82688600C8DBCA /* SVProgressAnimatedView.m in Sources */,
