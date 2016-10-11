@@ -109,8 +109,6 @@
 		04425A951D913A60004D804A /* NXHNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A931D913A60004D804A /* NXHNoticeCell.m */; };
 		04425A961D913A60004D804A /* NXHNoticeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425A941D913A60004D804A /* NXHNoticeCell.xib */; };
 		04425A9A1D913FFF004D804A /* NXHMonitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425A991D913FFF004D804A /* NXHMonitoring.m */; };
-		04425AF31D93C8B9004D804A /* NXHAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04425AF11D93C8B9004D804A /* NXHAboutUsController.m */; };
-		04425AF71D93CC3A004D804A /* NXHAboutUsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04425AF61D93CC3A004D804A /* NXHAboutUsController.xib */; };
 		045414571D8788F50009ECF8 /* ShowResultTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414561D8788F50009ECF8 /* ShowResultTableViewController.m */; };
 		0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414591D87908C0009ECF8 /* NXHSearchViewController.m */; };
 		0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0454145E1D87CD940009ECF8 /* NXHContactListCell.m */; };
@@ -119,8 +117,12 @@
 		0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414981D88F2930009ECF8 /* WEBViewController.m */; };
 		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
-		0482E36C1DA9D8D2006724AC /* NXHProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E36B1DA9D8D2006724AC /* NXHProfileView.m */; };
 		0482E36F1DAA4D40006724AC /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 0482E36E1DAA4D40006724AC /* content.json */; };
+		0482E3721DABA568006724AC /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3711DABA568006724AC /* CTDisplayView.m */; };
+		0482E3751DABA8CC006724AC /* MagnifiterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3741DABA8CC006724AC /* MagnifiterView.m */; };
+		0482E3831DAC862C006724AC /* NXHAboutUsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3811DAC862C006724AC /* NXHAboutUsCell.m */; };
+		0482E3841DAC862C006724AC /* NXHAboutUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0482E3821DAC862C006724AC /* NXHAboutUsCell.xib */; };
+		0482E38A1DACCF2E006724AC /* NXHAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3891DACCF2E006724AC /* NXHAboutController.m */; };
 		049F43851D8297CC0009C7ED /* NXHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F43841D8297CC0009C7ED /* NXHButton.m */; };
 		049F45271D82A3A60009C7ED /* EMAudioPlayerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440D1D82A3A60009C7ED /* EMAudioPlayerUtil.m */; };
 		049F45281D82A3A60009C7ED /* EMAudioRecorderUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 049F440F1D82A3A60009C7ED /* EMAudioRecorderUtil.m */; };
@@ -508,9 +510,6 @@
 		04425A941D913A60004D804A /* NXHNoticeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHNoticeCell.xib; sourceTree = "<group>"; };
 		04425A981D913FFF004D804A /* NXHMonitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHMonitoring.h; sourceTree = "<group>"; };
 		04425A991D913FFF004D804A /* NXHMonitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHMonitoring.m; sourceTree = "<group>"; };
-		04425AF01D93C8B9004D804A /* NXHAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAboutUsController.h; sourceTree = "<group>"; };
-		04425AF11D93C8B9004D804A /* NXHAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAboutUsController.m; sourceTree = "<group>"; };
-		04425AF61D93CC3A004D804A /* NXHAboutUsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAboutUsController.xib; sourceTree = "<group>"; };
 		045414551D8788F50009ECF8 /* ShowResultTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowResultTableViewController.h; sourceTree = "<group>"; };
 		045414561D8788F50009ECF8 /* ShowResultTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowResultTableViewController.m; sourceTree = "<group>"; };
 		045414581D87908C0009ECF8 /* NXHSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHSearchViewController.h; sourceTree = "<group>"; };
@@ -525,9 +524,16 @@
 		045414991D88F2930009ECF8 /* WEBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEBViewController.xib; sourceTree = "<group>"; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
-		0482E36A1DA9D8D2006724AC /* NXHProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHProfileView.h; sourceTree = "<group>"; };
-		0482E36B1DA9D8D2006724AC /* NXHProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHProfileView.m; sourceTree = "<group>"; };
 		0482E36E1DAA4D40006724AC /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
+		0482E3701DABA568006724AC /* CTDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDisplayView.h; sourceTree = "<group>"; };
+		0482E3711DABA568006724AC /* CTDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDisplayView.m; sourceTree = "<group>"; };
+		0482E3731DABA8CC006724AC /* MagnifiterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagnifiterView.h; sourceTree = "<group>"; };
+		0482E3741DABA8CC006724AC /* MagnifiterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagnifiterView.m; sourceTree = "<group>"; };
+		0482E3801DAC862C006724AC /* NXHAboutUsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAboutUsCell.h; sourceTree = "<group>"; };
+		0482E3811DAC862C006724AC /* NXHAboutUsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAboutUsCell.m; sourceTree = "<group>"; };
+		0482E3821DAC862C006724AC /* NXHAboutUsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXHAboutUsCell.xib; sourceTree = "<group>"; };
+		0482E3881DACCF2E006724AC /* NXHAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHAboutController.h; sourceTree = "<group>"; };
+		0482E3891DACCF2E006724AC /* NXHAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHAboutController.m; sourceTree = "<group>"; };
 		049F43831D8297CC0009C7ED /* NXHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHButton.h; sourceTree = "<group>"; };
 		049F43841D8297CC0009C7ED /* NXHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXHButton.m; sourceTree = "<group>"; };
 		049F44031D82A3A60009C7ED /* EaseUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EaseUI.h; sourceTree = "<group>"; };
@@ -1247,8 +1253,13 @@
 			children = (
 				04231EC51D7E79EC0015EC53 /* NXHMeGroup1Cell.h */,
 				04231EC61D7E79EC0015EC53 /* NXHMeGroup1Cell.m */,
-				0482E36A1DA9D8D2006724AC /* NXHProfileView.h */,
-				0482E36B1DA9D8D2006724AC /* NXHProfileView.m */,
+				0482E3701DABA568006724AC /* CTDisplayView.h */,
+				0482E3711DABA568006724AC /* CTDisplayView.m */,
+				0482E3731DABA8CC006724AC /* MagnifiterView.h */,
+				0482E3741DABA8CC006724AC /* MagnifiterView.m */,
+				0482E3801DAC862C006724AC /* NXHAboutUsCell.h */,
+				0482E3811DAC862C006724AC /* NXHAboutUsCell.m */,
+				0482E3821DAC862C006724AC /* NXHAboutUsCell.xib */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -1619,9 +1630,8 @@
 		04425AF51D93C8C7004D804A /* 关于我们 */ = {
 			isa = PBXGroup;
 			children = (
-				04425AF01D93C8B9004D804A /* NXHAboutUsController.h */,
-				04425AF11D93C8B9004D804A /* NXHAboutUsController.m */,
-				04425AF61D93CC3A004D804A /* NXHAboutUsController.xib */,
+				0482E3881DACCF2E006724AC /* NXHAboutController.h */,
+				0482E3891DACCF2E006724AC /* NXHAboutController.m */,
 			);
 			name = "关于我们";
 			sourceTree = "<group>";
@@ -2752,6 +2762,7 @@
 				04231F301D7E79EC0015EC53 /* 太阳副本 2.png in Resources */,
 				04231F231D7E79EC0015EC53 /* main_bottom_more.png in Resources */,
 				04231F1F1D7E79EC0015EC53 /* main_bottom_home.png in Resources */,
+				0482E3841DAC862C006724AC /* NXHAboutUsCell.xib in Resources */,
 				04231F421D7E79EC0015EC53 /* guide_two.jpg in Resources */,
 				04231F281D7E79EC0015EC53 /* main_bottom_personcenter@2x.png in Resources */,
 				04231F181D7E79EC0015EC53 /* Assets.xcassets in Resources */,
@@ -2784,7 +2795,6 @@
 				04F805FB1D864F1900FA29B8 /* Storyboard.storyboard in Resources */,
 				04231F201D7E79EC0015EC53 /* main_bottom_home@2x.png in Resources */,
 				0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */,
-				04425AF71D93CC3A004D804A /* NXHAboutUsController.xib in Resources */,
 				04231F271D7E79EC0015EC53 /* main_bottom_personcenter.png in Resources */,
 				04231F4B1D7E79EC0015EC53 /* indicator_3_unfocused.png in Resources */,
 				04231F1E1D7E79EC0015EC53 /* main_bottom_comm_selected@2x.png in Resources */,
@@ -2994,7 +3004,6 @@
 				049F456C1D82A3A60009C7ED /* PSTGridLayoutRow.m in Sources */,
 				0454145A1D87908C0009ECF8 /* NXHSearchViewController.m in Sources */,
 				04F24DA61D82689200C8DBCA /* UIProgressView+AFNetworking.m in Sources */,
-				0482E36C1DA9D8D2006724AC /* NXHProfileView.m in Sources */,
 				04425A771D8F7D5A004D804A /* NXHHeaderBtn.m in Sources */,
 				049FE4BA1D9A785A000B455E /* DLAlertView.m in Sources */,
 				049F45951D82A3A60009C7ED /* EaseImageView.m in Sources */,
@@ -3012,10 +3021,10 @@
 				04425A891D90E803004D804A /* HWPopTool.m in Sources */,
 				049F45941D82A3A60009C7ED /* EaseChatToolbarItem.m in Sources */,
 				04F24D981D82689200C8DBCA /* AFHTTPSessionManager.m in Sources */,
+				0482E38A1DACCF2E006724AC /* NXHAboutController.m in Sources */,
 				04F24D5E1D82688600C8DBCA /* SVRadialGradientLayer.m in Sources */,
 				049F456F1D82A3A60009C7ED /* EaseSDKHelper.m in Sources */,
 				049F45521D82A3A60009C7ED /* EMSDWebImageCompat.m in Sources */,
-				04425AF31D93C8B9004D804A /* NXHAboutUsController.m in Sources */,
 				0433E1871D7E822300E015D3 /* NXHpageControl.m in Sources */,
 				0454145F1D87CD940009ECF8 /* NXHContactListCell.m in Sources */,
 				049F45861D82A3A60009C7ED /* EaseUserCell.m in Sources */,
@@ -3092,6 +3101,7 @@
 				049F45351D82A3A60009C7ED /* MJRefreshAutoFooter.m in Sources */,
 				049F453D1D82A3A60009C7ED /* MJRefreshBackGifFooter.m in Sources */,
 				049F453E1D82A3A60009C7ED /* MJRefreshBackNormalFooter.m in Sources */,
+				0482E3721DABA568006724AC /* CTDisplayView.m in Sources */,
 				0433E17E1D7E81CA00E015D3 /* NXHCollectionReusableView.m in Sources */,
 				0433E17D1D7E81C100E015D3 /* NXHHomeViewController.m in Sources */,
 				0433E17C1D7E81B600E015D3 /* MJDIYHeader.m in Sources */,
@@ -3120,7 +3130,9 @@
 				049F45591D82A3A60009C7ED /* NSData+EMImageContentType.m in Sources */,
 				049FE4C11D9A785A000B455E /* SDWebImageDownloader.m in Sources */,
 				049F452C1D82A3A60009C7ED /* EMCDDeviceManager+Remind.m in Sources */,
+				0482E3831DAC862C006724AC /* NXHAboutUsCell.m in Sources */,
 				049F45341D82A3A60009C7ED /* MBProgressHUD.m in Sources */,
+				0482E3751DABA8CC006724AC /* MagnifiterView.m in Sources */,
 				049F455E1D82A3A60009C7ED /* UIImageView+EMHighlightedWebCache.m in Sources */,
 				049F45961D82A3A60009C7ED /* EaseTextView.m in Sources */,
 				04F24D711D82688D00C8DBCA /* README.md in Sources */,

@@ -1,10 +1,75 @@
-[{
- "type" : "prefile",
- "content" : "公司简介:""\n"
- "   北京市农信通科技有限公司(简称农信通科技,"
- "http://www.nxt.com.cn"
- ")是国内最大的涉农信息服务综合运用商,也是市场占有率最高的农业信息化建设全面解决方案提供商。"
- {
- "type" : ""
- }
- }]
+
+
+[  
+ { "color" : "black",
+ "content" : "公司简介:\n",
+ "size" : 20,
+ "type" : "txt"
+ },
+ { "color" : "default",
+ "content" : "    北京市农信通科技有限公司(简称农信通科技,",
+ "size" : 16,
+ "type" : "txt"
+ },
+ { "color" : "blue",
+ "content" : "http://www.nxt.com.cn",
+ "url" : "http://www.nxt.com.cn",
+ "type" : "link"
+ },
+ { "color" : "default",
+ "content" : ")是国内最大的涉农信息服务综合运用商,也是市场占有率最高的农业信息化建设全面解决方案提供商。 ",
+ "size" : 16,
+ "type" : "txt"
+ },
+ { "color" : "black",
+ "content" : "\n平台介绍：\n",
+ "size" : 20,
+ "type" : "txt"
+ },
+ { "color" : "default",
+ "content" : "    农事无忧主要提供最新的农业资讯、农业科技、追溯信息、物联网信息\n",
+ "size" : 16,
+ "type" : "txt"
+ },
+ { "color" : "black",
+ "content" : "客户端介绍：\n",
+ "size" : 20,
+ "type" : "txt"
+ },
+ { "color" : "default",
+ "content" : "    客户端主要针对便民、利民来设计的，包含了专家咨询、资讯信息、查询物种等功能\n",
+ "size" : 16,
+ "type" : "txt"
+ },
+ { "color" : "black",
+ "content" : "电话：",
+ "size" : 20,
+ "type" : "txt"
+ },
+ { "color" : "blue",
+ "content" : "(0392)3259222",
+ "url" : "tel:03923259222",
+ "type" : "link"
+ },
+ { "color" : "black",
+ "content" : "\n邮箱：",
+ "size" : 20,
+ "type"  : "txt"
+ },
+ { "color" : "blue",
+ "content" : "nxtchina@163.com",
+ "url" : "mailto:nxtchina@163.com",
+ "type" : "link"
+ },
+ { "color" : "black",
+ "content" : "\n地址：",
+ "size" : 20,
+ "type" : "txt"
+ },
+ { "color" : "default",
+ "content" : "\n    北京市海淀区中关村南大街6号中电信息大厦1506\n    河南省鹤壁市淇滨区职教园区中国（鹤壁）农业硅谷产业园",
+ "size" : 16,
+ "type" : "txt"
+ } 
+ 
+ ]

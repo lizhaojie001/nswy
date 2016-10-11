@@ -92,14 +92,17 @@ static CGFloat widthCallback(void* ref){
                     NSUInteger startPos = result.length;
                     NSAttributedString *as = [self parseAttributedContentFromNSDictionary:dict
                                                                                    config:config];
+                 
                     [result appendAttributedString:as];
                     // 创建 CoreTextLinkData
                     NSUInteger length = result.length - startPos;
                     NSRange linkRange = NSMakeRange(startPos, length);
                     CoreTextLinkData *linkData = [[CoreTextLinkData alloc] init];
                     linkData.title = dict[@"content"];
+                    
                     linkData.url = dict[@"url"];
                     linkData.range = linkRange;
+                    
                     [linkArray addObject:linkData];
                 }
             }
@@ -137,6 +140,10 @@ static CGFloat widthCallback(void* ref){
     UIColor *color = [self colorFromTemplate:dict[@"color"]];
     if (color) {
         attributes[(id)kCTForegroundColorAttributeName] = (id)color.CGColor;
+        if ([color isEqual:ThemeColor]) {
+             attributes[(NSString *)kCTUnderlineStyleAttributeName] =@(kCTUnderlineStyleSingle);
+        }
+        
     }
     // set font size
     CGFloat fontSize = [dict[@"size"] floatValue];
@@ -151,7 +158,7 @@ static CGFloat widthCallback(void* ref){
 
 + (UIColor *)colorFromTemplate:(NSString *)name {
     if ([name isEqualToString:@"blue"]) {
-        return [UIColor blueColor];
+        return ThemeColor;
     } else if ([name isEqualToString:@"red"]) {
         return [UIColor redColor];
     } else if ([name isEqualToString:@"black"]) {
