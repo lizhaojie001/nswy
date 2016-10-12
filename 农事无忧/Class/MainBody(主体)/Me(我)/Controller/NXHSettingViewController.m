@@ -12,6 +12,7 @@
 #import "NXHAboutController.h"
 #import "NXHModifyController.h"
 #import "NXHFeedbackController.h"
+#import "SVProgressHUD.h"
 
 
  
@@ -160,8 +161,25 @@ static NSString * const Cell = @"Cell";
                     break;
                 }
                     case 2:
-                    
-                    break;
+                {
+                    [SVProgressHUD showWithStatus:@"清理中..."];
+                  //  [SVProgressHUD dismissWithDelay:1];
+                  
+                       
+                       // [SVProgressHUD dismiss];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [SVProgressHUD showSuccessWithStatus:@"清理完成"];
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [SVProgressHUD dismiss];
+                            });
+
+                        });
+                                        
+
+                   
+                                       break;
+                     }
                 case 4:{
                     NXHFeedbackController*feedback = [[NXHFeedbackController alloc]init];
                     [self.navigationController pushViewController:feedback animated:YES];

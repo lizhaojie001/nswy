@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NXHFeedbackController">
             <connections>
+                <outlet property="ContactTextField" destination="Dyp-ku-zbL" id="ATW-os-Ube"/>
                 <outlet property="bottom" destination="H9a-ZG-VVs" id="Fel-VC-dBy"/>
+                <outlet property="contactConstraint" destination="5q3-5v-SSL" id="CVd-ha-OAb"/>
                 <outlet property="textView" destination="izr-20-NAm" id="9um-s9-M8B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
