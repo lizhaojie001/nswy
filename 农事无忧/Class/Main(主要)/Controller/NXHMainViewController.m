@@ -92,15 +92,15 @@
     }
 
 }
-
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    NXHMyLogFunction;
-    NSInteger index = [self.tabBar.items indexOfObject:item];
-    
-    if (self.indexFlag != index) {
-        [self animationWithIndex:index];
-    }
-}
+#pragma mark -开启tabar动画
+//- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+//    NXHMyLogFunction;
+//    NSInteger index = [self.tabBar.items indexOfObject:item];
+//    
+//    if (self.indexFlag != index) {
+//        [self animationWithIndex:index];
+//    }
+//}
 // 动画
 - (void)animationWithIndex:(NSInteger) index {
     NSMutableArray * tabbarbuttonArray = [NSMutableArray array];

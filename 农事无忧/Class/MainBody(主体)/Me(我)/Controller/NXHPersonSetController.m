@@ -7,21 +7,25 @@
 //
 
 #import "NXHPersonSetController.h"
+#import "DLAlertView.h"
+#import "ValuePickerView.h"
 
 @interface NXHPersonSetController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
     UIImagePickerController * _imagePickerController;
 
 }
+@property (weak, nonatomic) IBOutlet UILabel *Gender;
+@property (weak, nonatomic) IBOutlet UILabel *Account;
 @property (weak, nonatomic) IBOutlet UIImageView *Avatar;
+/**性别选择器*/
+@property (nonatomic,strong) ValuePickerView * pickView;
 
 @end
 
 @implementation NXHPersonSetController
 - (void)viewWillAppear:(BOOL)animated{
-    if ([NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]) {
-        self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"];
-    }
-
+    self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]?[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]: [UIImage imageNamed:@"icon_user_logo"];
+    self.Account.text = [EMClient sharedClient].currentUsername;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +51,7 @@
     _imagePickerController.videoMaximumDuration = 15;
 
     //相机类型（拍照、录像...）字符串需要做相应的类型转换
-    _imagePickerController.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage];
+    _imagePickerController.mediaTypes = @[(NSString *)kUTTypeImage ];
 
     //视频上传质量
     //UIImagePickerControllerQualityTypeHigh高清
@@ -57,7 +61,7 @@
     _imagePickerController.videoQuality = UIImagePickerControllerQualityTypeHigh;
 
     //设置摄像头模式（拍照，录制视频）为录像模式
-    _imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+    _imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
     [self presentViewController:_imagePickerController animated:YES completion:nil];
 }
 #pragma mark 从相册获取图片或视频
@@ -73,7 +77,7 @@
     MYLog(@"%@",info);
 
     self.Avatar.image = info[@"UIImagePickerControllerEditedImage"];
-    if ([NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"] == nil) {
+    if ( self.Avatar.image!=nil) {
           [NXHSaveTool saveImageToDomainsWithDirectorystringByAppendingPathComponent:@"Avatar.png" WithImage:self.Avatar.image];
     }
 
@@ -82,6 +86,7 @@
           
     }];
 }
+#warning 上传到服务器----未实现
 - (void)Keep{
      NXHMyLogFunction;
 }
@@ -94,22 +99,100 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
-        case 0:
-            [self selectImageFromAlbum];
+        case 0:{
+           
+            UIAlertController * alter =  [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:0];
+            UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"打开相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self selectImageFromCamera]; 
+            }];
+            UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"打开相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self selectImageFromAlbum]; 
+            }];
+            UIAlertAction * action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+              
+            }];
+            [alter addAction:action1];
+            [alter addAction:action2];
+            [alter addAction:action3];
+            [self presentViewController:alter animated:YES completion:nil];
+            
             break;
+        }
         case 1:
-
+            switch (indexPath.row) {
+                case 0:
+                {
+                    [self alterSetTitle:@"设置姓名"];
+                }
+                    break;
+                    case 1:
+                    break;
+                case 2:
+                {
+                    DLAlertView * alter = [[DLAlertView alloc]initWithWithImageName: [EMClient sharedClient].currentUsername clickCallBack:nil andCloseCallBack:nil];
+                    
+                    [alter show];
+                    break;
+                }
+                default:
+                    
+                    break;
+            }
             break;
         case 2:
-
+            switch (indexPath.row) {
+                case 0:
+                    [self alterSetTitle:@"设置地址"];
+                    break;
+                    
+                default:
+                {
+                    self.pickView.dataSource = @[@"男",@"女"];
+                    self.pickView.pickerTitle = @"性别";
+                    __weak typeof(self) WeakSelf = self;
+                    self.pickView.valueDidSelect = ^(NSString *value){
+                        NSArray * stateArr = [value componentsSeparatedByString:@"/"];
+                        WeakSelf.Gender.text =stateArr[0];
+                        
+                    };
+                    [self.pickView show];
+                }
+                    
+         
+                    
+                    break;
+            }
             break;
 
         default:
+            switch (indexPath.row) {
+                case 0:
+                    [self alterSetTitle:@"设置地区"];
+                    break;
+                    
+                default:
+                    [self alterSetTitle:@"个性签名"];
+                    break;
+            }
             break;
     }
 }
 
-
+- (void)alterSetTitle:(NSString *)title {
+    UIAlertController * alter = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alter addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+    }  ];
+    UIAlertAction * action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction * action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alter addAction:action1];
+    [alter addAction: action2];
+    [self presentViewController:alter animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 
@@ -119,5 +202,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (ValuePickerView *)pickView {
+	if(_pickView == nil) {
+		_pickView = [[ValuePickerView alloc] init];
+        
+	}
+	return _pickView;
+}
 
 @end

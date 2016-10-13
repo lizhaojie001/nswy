@@ -59,12 +59,12 @@
     for (UIButton * btn in self.categoryArr) {
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        btn.layer.cornerRadius = btn.frame.size.width/2;
+        btn.layer.cornerRadius = btn.width/2.8;
     }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+  self.navigationItem.title = @"农资查询";
     // Do any additional setup after loading the view from its nib.
 }
 

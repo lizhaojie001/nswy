@@ -7,6 +7,7 @@
 //
 
 #import "NXHFeedbackController.h"
+#import "SVProgressHUD.h"
 
 @interface NXHFeedbackController ()
 @property (weak, nonatomic) IBOutlet UITextView *textView;
@@ -26,9 +27,26 @@
 @end
 
 @implementation NXHFeedbackController
+- (IBAction)submit:(id)sender {
+ 
+        [SVProgressHUD showWithStatus:@"提交中..."];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD showSuccessWithStatus:@"成功"];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             [UIView animateWithDuration:1 animations:^{
+                 [SVProgressHUD dismiss];
+
+             }];
+                          });
+        });
+   
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.constraint2.constant = self.bottom.constant;
+    self.constraint1.constant  = self.contactConstraint.constant;
+
     self.textView.layer.cornerRadius = 5;
     // Do any additional setup after loading the view from its nib.
      
@@ -40,20 +58,8 @@
 -(void)keyboardWillShow:(NSNotification*)notification{
     CGRect _keyboardRect = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue] ;
     CGFloat H = _keyboardRect.size.height;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-            self.constraint2.constant = self.bottom.constant;
-            self.constraint1.constant  = self.contactConstraint.constant;
-        MYLog(@"%f%f",self.constraint1.constant,self.constraint2.constant);
-           
-    });
-   
-//    NSLayoutConstraint * constranit = [NSLayoutConstraint constraintWithItem:self.textView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:(NSLayoutAttributeBottom) multiplier:1 constant:-H-20];
-//    NSLayoutConstraint * ido = [self.bottom copy];
-//    self.constraint =constranit;
-//    [self.view removeConstraint:self.bottom];
-//    [self.view addConstraint:constranit];
-//    [self.view updateConstraintsIfNeeded];
+  
+ 
     if ([self.textView canBecomeFirstResponder]) {
       [UIView animateWithDuration:2 animations:^{
           self.bottom.constant =H+2;

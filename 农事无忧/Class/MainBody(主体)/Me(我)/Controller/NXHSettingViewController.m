@@ -82,6 +82,7 @@ static NSString * const Cell = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.font = [UIFont systemFontOfSize:13];
     UIImage *image = nil;
     switch (indexPath.section) {
@@ -186,6 +187,20 @@ static NSString * const Cell = @"Cell";
                     break;
                 }
                 default:
+                {
+                    
+                    [SVProgressHUD showWithStatus:@"正在检测是否有新版本"];
+                 
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [SVProgressHUD dismiss];
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"软件更新" message:@"发现程序有更新的版本?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                        alert.tag = 20;
+                        [alert show];
+                        });
+                   
+                    
+                }
+                    
                     break;
             }
             break;
@@ -203,7 +218,7 @@ static NSString * const Cell = @"Cell";
                     
                 default:{
                     UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"确定退出账户吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                   
+                    alert.tag =10;
                     [alert show];
                     break;
                 }
@@ -213,25 +228,31 @@ static NSString * const Cell = @"Cell";
 }
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 0:
-            //不做操作
-            NXHMyLogFunction;
-            break;
-
-        default:{
-            //退出登录
-            EMError *error = [[EMClient sharedClient] logout:YES];
-            if (!error) {
-                MYLog(@"退出成功");
-                MYLog(@"%i",[EMClient sharedClient].isLoggedIn);
-                [self.navigationController popToRootViewControllerAnimated:YES];
-
+    if (alertView.tag ==10) {
+        switch (buttonIndex) {
+            case 0:
+                
+                //不做操作
+                NXHMyLogFunction;
+                break;
+            default:{
+                //退出登录
+                EMError *error = [[EMClient sharedClient] logout:YES];
+                if (!error) {
+                    MYLog(@"退出成功");
+                    MYLog(@"%i",[EMClient sharedClient].isLoggedIn);
+                    [self.navigationController popToRootViewControllerAnimated:YES];
+                    
+                }
             }
+                break;
         }
-            break;
+
     }
-}
+    
+    
+    
+   }
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

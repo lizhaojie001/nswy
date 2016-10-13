@@ -16,12 +16,23 @@
  
 
 @interface NXHMeViewController ()
-/**Avatar*/
+/**Avatar头像*/
 @property (weak, nonatomic) IBOutlet UIImageView *Avatar;
+/**
+ *  昵称
+ */
 @property (weak, nonatomic) IBOutlet UILabel *nickName;
+/**
+ *  ID
+ */
 @property (weak, nonatomic) IBOutlet UILabel *ID;
+/**
+ *  登录名
+ */
 @property (weak, nonatomic) IBOutlet UILabel *loginLabel;
- 
+/**
+ *  二维码
+ */
 @property (weak, nonatomic) IBOutlet UIButton *QRbutton;
 
 @end
@@ -31,10 +42,10 @@
     [super viewWillAppear:animated];
 
 
-    if ([NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]&&LOGEDIN) {
+    if (LOGEDIN) {
         self.loginLabel.hidden = YES;
-
-        self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"];
+#warning 检查本地是否存有，没有从网络中获取
+        self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]?[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]: [UIImage imageNamed:@"icon_user_logo"];
         self.nickName.text = [EMClient sharedClient].currentUsername;
         self.ID.text =self.nickName.text;
         self.QRbutton.hidden = NO;
@@ -44,7 +55,7 @@
 #warning 根据登录状态来设置未登录时的图片和ID /昵称
 
         
-                 self.Avatar.image = [UIImage imageNamed:@"icon_user_logo"];
+        self.Avatar.image = [UIImage imageNamed:@"icon_user_logo"];
         self.nickName.text = @"";
         self.ID.text = @"";
         self.loginLabel.hidden = NO;

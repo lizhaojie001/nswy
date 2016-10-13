@@ -43,13 +43,13 @@
                                         <constraint firstAttribute="height" constant="30" id="fTz-g0-rJv"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-9H-xiy">
-                                    <rect key="frame" x="59" y="8" width="340" height="30"/>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ctV-9H-xiy">
+                                    <rect key="frame" x="59" y="3" width="340" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="2Fe-4v-q3W"/>
-                                        <constraint firstAttribute="height" constant="30" id="X21-Ae-aKp"/>
+                                        <constraint firstAttribute="height" constant="40" id="X21-Ae-aKp"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
                             </subviews>

@@ -9,6 +9,7 @@
 #import "DLAlertView.h"
 #import "NSString+SIZEOFSTRING.h"
 #import "UIImageView+WebCache.h"
+#import "NXHSaveTool.h"
 
 #define contentViewWidthRatio 0.5
 #define contentViewWidhtHeightRatio 1
@@ -139,7 +140,7 @@ typedef void (^Completion)();
     }
     return self;
 }
- 
+#pragma mark - 生成二维码
 /**
  *  生成二维码
  *
@@ -148,22 +149,29 @@ typedef void (^Completion)();
 
 -(UIImage*)GenerateQR:(NSString *)imageName{
     
-    NSString *QRCodeString = imageName;
-    if (![QRCodeString isEqualToString:@""]) {
-        NSData *data = [QRCodeString dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *QRCodeString = [imageName stringByAppendingString:@".png"];
+  UIImage* image=  [NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent: QRCodeString];
+    
+    if (!image) {
+        NSData *data = [imageName dataUsingEncoding:NSUTF8StringEncoding];
         
         CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
         [filter setValue:data forKey:@"inputMessage"];
         CIImage *outputImage = filter.outputImage;
-        
+        CIContext *context = [CIContext contextWithOptions:nil];
         CGFloat scale = CGRectGetWidth(self.view.bounds) / CGRectGetWidth(outputImage.extent);
-        CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
+        CGAffineTransform  transform = CGAffineTransformMakeScale(scale, scale);
         CIImage *transformImage = [outputImage imageByApplyingTransform:transform];
-          return  [UIImage imageWithCIImage:transformImage];
+        
+        CGImageRef newimage = [context createCGImage:transformImage fromRect:transformImage.extent];
+        MYLog(@"%@",newimage);
+        UIImage * image =[[UIImage alloc]initWithCGImage:newimage];
+        [NXHSaveTool saveImageToDomainsWithDirectorystringByAppendingPathComponent:QRCodeString WithImage:image];  
+        return   image;
     }
      
 
-    return nil;
+    return image;
     
 }
  

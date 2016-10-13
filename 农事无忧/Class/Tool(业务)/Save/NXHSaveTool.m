@@ -35,9 +35,16 @@
     NSString *documentsDirectory=[paths objectAtIndex:0];
 
     NSString *savedImagePath=[documentsDirectory stringByAppendingPathComponent:suffix];
-
+    MYLog(@"%@",savedImagePath);
     [imagedata writeToFile:savedImagePath atomically:YES];
 }
+/**
+ *  取回图片
+ *
+ *  @param suffix 图片名字
+ *
+ *  @return  
+ */
 + (UIImage *)fetchImageWithDirectorystringByAppendingPathComponent:(NSString *)suffix{
 NSString *aPath3=[NSString stringWithFormat:@"%@/Documents/%@.png",NSHomeDirectory(),suffix];
 UIImage *imgFromUrl3=[[UIImage alloc]initWithContentsOfFile:aPath3];
