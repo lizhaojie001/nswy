@@ -82,7 +82,7 @@
     self.cancelBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [self.cancelBtn addTarget:self action:@selector(canceBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-     [self.cancelBtn setTitle:@"完成" forState:UIControlStateNormal];
+    [self.cancelBtn setTitleColor:ThemeColor forState:UIControlStateNormal];
    // [self.cancelBtn setTitleColor:self.tintColor forState:UIControlStateNormal];
     [self.controllerToolBar addSubview:_cancelBtn];
     

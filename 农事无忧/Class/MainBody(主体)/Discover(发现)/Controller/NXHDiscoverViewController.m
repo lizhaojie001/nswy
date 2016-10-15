@@ -9,6 +9,7 @@
 #import "NXHDiscoverViewController.h"
 #import "NXHLoginViewController.h"
 #import "NXHTraceController.h"
+#import "WXViewController.h"
 
 @interface NXHDiscoverViewController ()
 
@@ -19,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
        self.navigationItem.title = @"发现";
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = NXHColor(240, 240, 240);
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -86,8 +87,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    
     switch (indexPath.section) {
-        case 0:
-            
+        case 0:{
+            WXViewController *wxVc = [WXViewController new];
+            [self.navigationController pushViewController:wxVc animated:YES];
+        }
             break;
             
         default:
@@ -105,6 +108,15 @@
         }
             break;
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 5;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return [UIView new];
 }
 /*
 // Override to support conditional editing of the table view.

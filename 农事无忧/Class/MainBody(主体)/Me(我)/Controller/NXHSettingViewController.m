@@ -30,26 +30,7 @@
 - (BOOL)hidesBottomBarWhenPushed{
     return YES;
 }
-//- (NSDictionary *)dataDict {
-//    if (!_dataDict) {
-//       _dataDict = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:LOGEDIN? @"Setting":@"1未登录Setting" ofType:@"plist"]];
-//
-//    }
-//    return _dataDict;
-//}
-//-(NSArray *)settingArr{
-//    
-//        if(!_settingArr) {
-//            
-//            
-//            _settingArr = [self.dataDict allKeys];
-//          
-//        }
-//        
-//        return _settingArr;
-//        
-//    }
-
+ 
 static NSString * const Cell = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,8 +63,8 @@ static NSString * const Cell = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.font = [UIFont systemFontOfSize:13];
+ //   cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.font = [UIFont systemFontOfSize:17];
     UIImage *image = nil;
     switch (indexPath.section) {
         case 0:
@@ -93,6 +74,7 @@ static NSString * const Cell = @"Cell";
                     image = [UIImage imageNamed:@"img_change_password"];
                     cell.imageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
                     cell.textLabel.text = @"修改密码";
+                
                     break;
                 case 1:
                     image = [UIImage imageNamed:@"img_change_tel"];
@@ -225,6 +207,8 @@ static NSString * const Cell = @"Cell";
                 }
             break;
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{

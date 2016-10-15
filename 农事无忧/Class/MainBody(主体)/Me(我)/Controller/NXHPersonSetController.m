@@ -11,12 +11,28 @@
 #import "ValuePickerView.h"
 
 @interface NXHPersonSetController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+    /**
+     *  图片选择器
+     */
     UIImagePickerController * _imagePickerController;
 
 }
+/**
+ *  性别
+ */
 @property (weak, nonatomic) IBOutlet UILabel *Gender;
+/**
+ *  账号
+ */
 @property (weak, nonatomic) IBOutlet UILabel *Account;
+/**
+ *  头像
+ */
 @property (weak, nonatomic) IBOutlet UIImageView *Avatar;
+/**
+ *  个性签名
+ */
+@property (weak, nonatomic) IBOutlet UILabel *Signature;
 /**性别选择器*/
 @property (nonatomic,strong) ValuePickerView * pickView;
 
@@ -176,6 +192,8 @@
             }
             break;
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
 - (void)alterSetTitle:(NSString *)title {

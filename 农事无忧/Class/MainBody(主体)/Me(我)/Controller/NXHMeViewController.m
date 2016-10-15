@@ -46,8 +46,8 @@
         self.loginLabel.hidden = YES;
 #warning 检查本地是否存有，没有从网络中获取
         self.Avatar.image =[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]?[NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:@"Avatar.png"]: [UIImage imageNamed:@"icon_user_logo"];
-        self.nickName.text = [EMClient sharedClient].currentUsername;
-        self.ID.text =self.nickName.text;
+        self.nickName.text = [NSString stringWithFormat:@"昵称:%@",[EMClient sharedClient].currentUsername];
+        self.ID.text =[NSString stringWithFormat:@"ID:%@",[EMClient sharedClient].currentUsername];
         self.QRbutton.hidden = NO;
 
     }
@@ -75,8 +75,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"我";
- 
-    
+    self.Avatar.layer.cornerRadius = 7;
+    self.Avatar.layer.borderWidth = 1;
+    self.Avatar.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.Avatar.layer.masksToBounds =YES;
 }
 
  
