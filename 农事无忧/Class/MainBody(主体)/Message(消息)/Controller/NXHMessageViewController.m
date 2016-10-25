@@ -52,7 +52,7 @@
 @property (nonatomic,strong) NSArray <NSString*> * strArr;
  
 
-
+ 
 
 #pragma mark 功能按钮
  @end
@@ -189,7 +189,7 @@
     [super viewWillAppear:animated];
     //注册消息回调
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
-
+    [self setUpBadge];
       
   
    }
@@ -199,10 +199,30 @@
     [[EMClient sharedClient].chatManager removeDelegate:self];
 
    }
-#pragma mark -- 消息回调
+#pragma mark -- 接收消息回调
 - (void)didReceiveMessages:(NSArray *)aMessages{
      [self.tableView reloadData];
+    [self setUpBadge];
+   }
+#pragma mark -- 已读消息回调
+- (void)didReceiveHasReadAcks:(NSArray *)aMessages{
+    [self setUpBadge];
+    
 }
+- (void)setUpBadge{
+    int j=0;
+    for (int i =0; i< _allConversationList.count; i ++) {
+        EMConversation * conversation = _allConversationList[i];
+        j = j + conversation.unreadMessagesCount;
+        
+    }      
+    j!=0?[self stopRefresh]: [self performSelector:@selector(stopRefresh) withObject:nil afterDelay:1];
+    self.tabBarItem.badgeValue =j==0?nil: [NSString stringWithFormat:@"%d",j];
+}
+- (void)stopRefresh{
+    [self.tableView.mj_header endRefreshing];
+}
+ 
 - (void)viewDidLoad {
     [super viewDidLoad];
        self.navigationItem.title = @"会话";
@@ -210,9 +230,14 @@
      [self.tableView registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
        self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
      [self setUpSearchVC];
-
+        MJWeakSelf;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        self.allConversationList =nil;
+        [weakSelf.tableView reloadData];
+        [weakSelf setUpBadge];
+    }]; 
     //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
-
+    [self setUpBadge];
 
    }
 
@@ -285,7 +310,7 @@
                 break;
         }   
         cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
-        cell.nickName.text =  conversation.latestMessage.from ;
+        cell.nickName.text =  conversation.latestMessage.direction?conversation.latestMessage.from :conversation.latestMessage.to;
     //    cell.lastMessage.text = 
            return cell;
     }
@@ -318,8 +343,7 @@
 }
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView * view =  [[UIView alloc]init ];//]WithFrame:CGRectMake(0, 0, 100, 100)];
-    view.backgroundColor =ThemeColor;
-    switch (section ) {
+       switch (section ) {
         case 0:
             return view;
             break;
@@ -377,11 +401,10 @@
 
 
         _allConversationList = [[EMClient sharedClient].chatManager getAllConversations];
-
-
         
-	}
-	return _allConversationList;
+    }
+        	return _allConversationList;
+    
 }
 
 
@@ -392,11 +415,11 @@
  */
 
 
-- (void)didReceiveFriendInvitationFromUsername:(NSString *)aUsername
-                                       message:(NSString *)aMessage{
+- (void)didReceiveFriendInvitationFromUsername:(NSString *)aUsername message:(NSString *)aMessage{
    }
 
 -(void)dealloc{
     NXHMyLogFunction;
 }
+    
 @end

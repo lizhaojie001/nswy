@@ -58,12 +58,18 @@
 }
 #pragma mark - 设置自控制器
 - (void)setupAllVc{
+    
+    
+    
+    NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
+    
+    
     NXHHomeViewController * Home = [[NXHHomeViewController alloc]initWithCollectionViewLayout: [[UICollectionViewFlowLayout alloc]init] ];
     
     [self setupVc:Home andImage:[UIImage imageNamed:@"首页"]HightlightImage:[UIImage imageNamed:@"首页1"] andTitle:@"首页"];
     
-    NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
-    [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
+   
     
     
     NXHDiscoverViewController * Discover = [[NXHDiscoverViewController alloc]init];
