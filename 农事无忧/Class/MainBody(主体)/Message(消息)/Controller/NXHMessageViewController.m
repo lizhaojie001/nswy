@@ -15,6 +15,7 @@
 #import "NXHContactListCell.h"
 #import "NXHHeaderBtn.h"
 #import "ChatViewController.h"
+#import "EaseConversationCell.h"
 
 
 
@@ -227,7 +228,7 @@
     [super viewDidLoad];
        self.navigationItem.title = @"会话";
     [self addviews];
-     [self.tableView registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
+    [self.tableView registerClass:[EaseConversationCell class] forCellReuseIdentifier:@"Cell"] ;
        self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
      [self setUpSearchVC];
         MJWeakSelf;
@@ -294,7 +295,7 @@
         [cell.contentView addSubview:self.baseView];
         return cell;
     }else{
-        NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        EaseConversationCell * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
         EMConversation *conversation  = self.allConversationList[indexPath.row];
         MYLog(@"--------%d",conversation.latestMessage.body.type );
         switch (conversation.latestMessage.body.type ) {
@@ -302,15 +303,16 @@
                 // 收到的文字消息
                   EMMessageBody *msgBody =conversation.lastReceivedMessage.body;
                 EMTextMessageBody *textBody = (EMTextMessageBody *)msgBody;
-              cell.lastMessage.text =  textBody.text;
+              cell.detailLabel.text =  textBody.text;
          
                 break;
             }
             default:
                 break;
         }   
-        cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
-        cell.nickName.text =  conversation.latestMessage.direction?conversation.latestMessage.from :conversation.latestMessage.to;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
+        cell.titleLabel.text =  conversation.latestMessage.direction?conversation.latestMessage.from :conversation.latestMessage.to;
+       // cell.avatarView.imageView= []
     //    cell.lastMessage.text = 
            return cell;
     }
@@ -358,11 +360,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section) {
-        NXHContactListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        EaseConversationCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
         
-        ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:cell.nickName.text conversationType:EMConversationTypeChat];
-        viewController.title = cell.nickName.text;
+        ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:cell.titleLabel.text conversationType:EMConversationTypeChat];
+        viewController.title = cell.titleLabel.text;
         [self.navigationController pushViewController:viewController animated:YES];
         
 

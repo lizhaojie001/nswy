@@ -32,7 +32,7 @@
 #else //发布阶段
 #define MYLog(...)
 #endif
- 
+#define AvatarImage  @"Avatar.png" 
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

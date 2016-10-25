@@ -100,23 +100,24 @@
 //            self.conversation.ext = newExt;
 //        }
     }
+    [self backAction];
 }
 
 #pragma mark - setup subviews
 
 - (void)_setupBarButtonItem
 {
-    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-    backButton.accessibilityIdentifier = @"back";
-    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backItem];
+//    UIButton *backButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+//    backButton.accessibilityIdentifier = @"back";
+//    [backButton setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+//    [self.navigationItem setLeftBarButtonItem:backItem];
     
     //单聊
     if (self.conversation.type == EMConversationTypeChat) {
         UIButton *clearButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        [clearButton setImage:[UIImage imageNamed:@"delete"] forState:UIControlStateNormal];
+        [clearButton setTitle:@"删除" forState:UIControlStateNormal];
         [clearButton addTarget:self action:@selector(deleteAllMessages:) forControlEvents:UIControlEventTouchUpInside];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:clearButton];
     }
@@ -348,8 +349,7 @@
         }
     }
     
-    [self.navigationController popViewControllerAnimated:YES];
-}
+    }
 
 - (void)showGroupDetailAction
 {

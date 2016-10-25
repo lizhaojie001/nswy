@@ -524,6 +524,7 @@
     if ([text isEqualToString:@"\n"]) {
         if ([self.delegate respondsToSelector:@selector(didSendText:)]) {
             [self.delegate didSendText:textView.text];
+            
             self.inputTextView.text = @"";
             [self _willShowInputTextViewToHeight:[self _getTextViewContentH:self.inputTextView]];
         }
