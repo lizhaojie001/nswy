@@ -9,17 +9,18 @@
 #import "NXHMessageViewController.h"
 #import "UISearchBar+FMAdd.h"
 #import "NXHButton.h"
-#import "EaseUsersListViewController.h"
+ 
 #import "ShowResultTableViewController.h"
 #import "NXHSearchViewController.h"
 #import "NXHContactListCell.h"
 #import "NXHHeaderBtn.h"
+#import "ChatViewController.h"
 
 
 
 
 
-@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate   >
+@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate,EMChatManagerDelegate   >
 
 @property (strong, nonatomic)  UIView *baseView;
  
@@ -186,16 +187,29 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.tableView reloadData];
+    //注册消息回调
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+
+      
   
    }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    //取消监听
+    [[EMClient sharedClient].chatManager removeDelegate:self];
+
+   }
+#pragma mark -- 消息回调
+- (void)didReceiveMessages:(NSArray *)aMessages{
+     [self.tableView reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
        self.navigationItem.title = @"会话";
     [self addviews];
      [self.tableView registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
-      self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
-    [self setUpSearchVC];
+       self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+     [self setUpSearchVC];
 
     //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
 
@@ -271,7 +285,7 @@
                 break;
         }   
         cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
-        cell.nickName.text =  conversation.latestMessage.to ;
+        cell.nickName.text =  conversation.latestMessage.from ;
     //    cell.lastMessage.text = 
            return cell;
     }
@@ -316,6 +330,21 @@
             break;
     }
   }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section) {
+        NXHContactListCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        
+        
+        ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:cell.nickName.text conversationType:EMConversationTypeChat];
+        viewController.title = cell.nickName.text;
+        [self.navigationController pushViewController:viewController animated:YES];
+        
+
+    }
+             }
+
 #pragma mark 懒加载
 
 

@@ -47,7 +47,7 @@
     [self.view addSubview: self.searchBar];
     self.tableView.frame = CGRectMake(0, self.searchBar.y+self.searchBar.height, self.view.width, self.view.height - self.searchBar.y - self.searchBar.height);
     self.tableView.bounces = NO;
-         [self tableViewDidTriggerHeaderRefresh];
+        [self tableViewDidTriggerHeaderRefresh];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,9 +141,7 @@
             [_delegate userListViewController:self didSelectUserModel:model];
         } else {
             ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
-            
-            
-            viewController.title = model.buddy;
+      viewController.title = model.buddy;
             [self.navigationController pushViewController:viewController animated:YES];
         }
     }}

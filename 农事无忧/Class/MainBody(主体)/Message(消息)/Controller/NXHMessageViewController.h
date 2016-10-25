@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EaseUsersListViewController.h"
 
 @interface NXHMessageViewController : UITableViewController
 
