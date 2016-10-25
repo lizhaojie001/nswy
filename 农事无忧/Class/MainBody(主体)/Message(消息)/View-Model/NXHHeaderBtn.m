@@ -23,9 +23,10 @@
 
 -(void)layoutSubviews{
     [super layoutSubviews];
-
-    self.imageView.frame = CGRectMake(0, 5, self.width-20, (self.width-20)*0.95);
-    self.imageView.centetX = self.centetX;
+    CGFloat W = self.width-20;
+    CGFloat H = W;
+    self.imageView.frame = CGRectMake(0, 5, W, H);
+    self.imageView.centetX = self.bounds.size.width/2.0;
 
 //
 //    NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
@@ -35,8 +36,8 @@
 //       NSLayoutConstraint * c3 = [NSLayoutConstraint constraintWithItem:self.imageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.imageView attribute:NSLayoutAttributeWidth multiplier:0.95 constant:0];
 
 
-    self.titleLabel.frame =  CGRectMake(0, CGRectGetMaxY(self.imageView.frame)+2,self.width, 14) ;
-    self.titleLabel.centetX = self.centetX;
+    self.titleLabel.frame =  CGRectMake(0, CGRectGetMaxY(self.imageView.frame),self.width, 13) ;
+    self.titleLabel.centetX = self.width/2;
     self.titleLabel.font = [UIFont systemFontOfSize:13];
     //self.titleLabel.backgroundColor = [UIColor redColor];
 //    NSLayoutConstraint * c4 = [NSLayoutConstraint constraintWithItem:self.titleLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.imageView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:3];

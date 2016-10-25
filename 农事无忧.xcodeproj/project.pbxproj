@@ -133,6 +133,7 @@
 		045414911D88DEAE0009ECF8 /* NXHCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0454148F1D88DEAE0009ECF8 /* NXHCollectionViewCell.xib */; };
 		0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414981D88F2930009ECF8 /* WEBViewController.m */; };
 		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
+		045D6C451DBDDFD80014BF6B /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D6C441DBDDFD80014BF6B /* headerView.xib */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
 		0482E36F1DAA4D40006724AC /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 0482E36E1DAA4D40006724AC /* content.json */; };
 		0482E3721DABA568006724AC /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3711DABA568006724AC /* CTDisplayView.m */; };
@@ -579,6 +580,7 @@
 		045414971D88F2930009ECF8 /* WEBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEBViewController.h; sourceTree = "<group>"; };
 		045414981D88F2930009ECF8 /* WEBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEBViewController.m; sourceTree = "<group>"; };
 		045414991D88F2930009ECF8 /* WEBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEBViewController.xib; sourceTree = "<group>"; };
+		045D6C441DBDDFD80014BF6B /* headerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = headerView.xib; sourceTree = "<group>"; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
 		0482E36E1DAA4D40006724AC /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
@@ -1343,6 +1345,7 @@
 				04425A921D913A60004D804A /* NXHNoticeCell.h */,
 				04425A931D913A60004D804A /* NXHNoticeCell.m */,
 				04425A941D913A60004D804A /* NXHNoticeCell.xib */,
+				045D6C441DBDDFD80014BF6B /* headerView.xib */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -2925,6 +2928,7 @@
 				04231F5D1D7E79EC0015EC53 /* guide_two.jpg in Resources */,
 				04231F551D7E79EC0015EC53 /* guide_four.jpg in Resources */,
 				04231F641D7E79EC0015EC53 /* Launch Screen.storyboard in Resources */,
+				045D6C451DBDDFD80014BF6B /* headerView.xib in Resources */,
 				0482E38F1DACD22B006724AC /* NXHModifyController.xib in Resources */,
 				04425A961D913A60004D804A /* NXHNoticeCell.xib in Resources */,
 				04425A7B1D8FC691004D804A /* NXHContactListCell.xib in Resources */,

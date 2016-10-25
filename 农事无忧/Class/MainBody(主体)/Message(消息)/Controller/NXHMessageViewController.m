@@ -19,11 +19,11 @@
 
 
 
-@interface NXHMessageViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate   >
+@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate   >
 
-@property (weak, nonatomic) IBOutlet UIView *baseView;
+@property (strong, nonatomic)  UIView *baseView;
  
-@property (weak, nonatomic) IBOutlet UITableView *tableView2;
+ 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 
 
@@ -37,6 +37,9 @@
 /**暂存接受信息*/
 @property (nonatomic,strong) NSString  * str;
 @property (nonnull,nonatomic,strong) UIView * badge;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthOftableView;
+ 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthOfBaseView;
  
 
 @property (strong, nonatomic)   UISearchBar *customSearchBar;
@@ -56,42 +59,44 @@
 @implementation NXHMessageViewController
 
 - (void)addviews{
-    CGFloat W = self.baseView.width/4;
-    CGFloat H = self.baseView.height;
+    CGFloat W = self.view.width/4.0;
+    CGFloat H = W;
+    UIView * v = [[UIView alloc]init];
 
-    for (int i =0; i < 4; i ++) {
+    for (int i =0; i < 4; i++) {
 
-        UIView * v = [[UIView alloc]initWithFrame:CGRectMake(i*W, 0, H>W?W:H, H)];
-
-        v.centetX = W/2*(i*2+1);
+       
+         
         
-        NXHHeaderBtn * btn = [[NXHHeaderBtn alloc]initWithFrame:v.bounds];
+        NXHHeaderBtn * btn = [[NXHHeaderBtn alloc]initWithFrame:CGRectMake(i*W, 0, H, H)];
     //    [btn setBackgroundImage: [UIImage imageNamed:@"bg_ffffff"] forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor whiteColor]];
+        
+       [btn setBackgroundColor:RandomColor];
         [btn setImage:self.imageArr[i] forState:UIControlStateNormal];
         [btn setTitle:self.strArr[i] forState:UIControlStateNormal];
         [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+        
         btn.tag = i;
         v.tag = i;
         [btn addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
         [v addSubview:btn];
 
+//
+//        if (i==3) {
+//            _badge = [[UIView alloc]init];
+//            NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
+//            NSLayoutConstraint * c1 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
+//            NSLayoutConstraint * c2 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_badge attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+//            _badge.backgroundColor = [UIColor redColor];
+//            _badge.hidden = YES;
+//            [v addConstraints:@[c,c1,c2]];
+//            [v addSubview:_badge];
+//        }
 
-        if (i==3) {
-            _badge = [[UIView alloc]init];
-            NSLayoutConstraint * c = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeTop multiplier:1.0 constant:5];
-            NSLayoutConstraint * c1 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:v attribute:NSLayoutAttributeRight multiplier:1.0 constant:-5];
-            NSLayoutConstraint * c2 = [NSLayoutConstraint constraintWithItem:_badge attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_badge attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-            _badge.backgroundColor = [UIColor redColor];
-            _badge.hidden = YES;
-            [v addConstraints:@[c,c1,c2]];
-            [v addSubview:_badge];
-        }
-
-
-        [self.baseView addSubview:v];
+       
+       
     }
-
+    self.baseView =v;
 }
 
  
@@ -100,17 +105,18 @@
 - (void)setUpSearchVC{
     //创建用于展示搜索结果的表Vc的实例
     self.showResultVC=[[ShowResultTableViewController alloc]init];
-
+   
     //创建搜索控制器的实例
     self.searchController=[[UISearchController alloc]initWithSearchResultsController:self.showResultVC];
-    //配置搜索条   设置搜索条的尺寸为自适应
+    self.searchController.view.backgroundColor = [UIColor lightGrayColor];
+        //配置搜索条   设置搜索条的尺寸为自适应
     [self.searchController.searchBar sizeToFit];
 
     //设置搜索条中的分段类别
-    self.searchController.searchBar.scopeButtonTitles=@[@"设备",@"软件",@"其他"];
-    [self.searchController.searchBar setTintColor:ThemeColor];
+   // self.searchController.searchBar.scopeButtonTitles=@[@"设备",@"软件",@"其他"];
+    //[self.searchController.searchBar setTintColor:ThemeColor];
      //为当前表透视图添加searchBar
-     [self.searchView addSubview: self.searchController.searchBar];
+     [self.tableView.tableHeaderView addSubview: self.searchController.searchBar];
 
 
     //设置搜索控制器的结果更新代理对象
@@ -180,26 +186,23 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
-
+    [self.tableView reloadData];
+  
    }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpSearchVC];
+       self.navigationItem.title = @"会话";
     [self addviews];
-  
-    self.navigationItem.title = @"会话";
-    self.tableView2.delegate = self;
+     [self.tableView registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
+      self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 44)];
+    [self setUpSearchVC];
 
-     [self.tableView2 registerNib:[UINib nibWithNibName:@"NXHContactListCell" bundle:nil] forCellReuseIdentifier:@"Cell"] ;
-        
-
+    //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
 
 
    }
 
-
-
+ 
 - (void)click:(UIButton*)btn{
     switch (btn.tag) {
         case 0:
@@ -234,38 +237,85 @@
 #pragma mark - <UITabbleViewDelegate>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return self.allConversationList.count;
+    return section==0?1: self.allConversationList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-       NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    EMConversation *conversation  = self.allConversationList[indexPath.row];
-    cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.timestamp];
-    cell.nickName.text =  conversation.latestMessage.from ;
     
-
-    return cell;
+    if (indexPath.section ==0) {
+        UITableViewCell * cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        self.baseView.frame = cell.contentView.bounds;
+        cell.selectionStyle =UITableViewCellSelectionStyleNone;
+      cell.backgroundColor=ThemeColor;
+        [cell.contentView addSubview:self.baseView];
+        return cell;
+    }else{
+        NXHContactListCell  * cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+        EMConversation *conversation  = self.allConversationList[indexPath.row];
+        MYLog(@"--------%d",conversation.latestMessage.body.type );
+        switch (conversation.latestMessage.body.type ) {
+            case EMMessageBodyTypeText:{
+                // 收到的文字消息
+                  EMMessageBody *msgBody =conversation.lastReceivedMessage.body;
+                EMTextMessageBody *textBody = (EMTextMessageBody *)msgBody;
+              cell.lastMessage.text =  textBody.text;
+         
+                break;
+            }
+            default:
+                break;
+        }   
+        cell.lastTime.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
+        cell.nickName.text =  conversation.latestMessage.to ;
+    //    cell.lastMessage.text = 
+           return cell;
+    }
+    
+ 
+ 
 }
  
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-
-    if ([tableView isEqual:self.tableView2]) {
-
-        return @"会话";
-    }
-    return nil;
+    return section==0? nil:@"会话";
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-    return 100;
+    switch (indexPath.section) {
+        case 0:
+            return self.view.width/4.0;
+            break;    
+        default:
+            return 60;
+            break;
+    }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    
+    return section==0?0:10;
+}
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view =  [[UIView alloc]init ];//]WithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor =ThemeColor;
+    switch (section ) {
+        case 0:
+            return view;
+            break;
+            
+        default:
+            return  nil;
+
+            break;
+    }
+  }
 #pragma mark 懒加载
 
 

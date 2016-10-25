@@ -62,7 +62,7 @@
     
     [self setupVc:Home andImage:[UIImage imageNamed:@"首页"]HightlightImage:[UIImage imageNamed:@"首页1"] andTitle:@"首页"];
     
-    NXHMessageViewController * Message = [[UIStoryboard storyboardWithName:@"Storyboard" bundle:nil] instantiateViewControllerWithIdentifier:@"NXHMessageViewController"];
+    NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
     [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
     
     
