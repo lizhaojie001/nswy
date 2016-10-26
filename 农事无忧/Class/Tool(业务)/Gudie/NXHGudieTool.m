@@ -43,7 +43,7 @@
         //创建窗口根控制器
         //UITabbleController控制器的view不是懒加载,在创建控制器的时候就会加载
         
-        window.rootViewController = [[NXHMainViewController alloc]init];
+        window.rootViewController = [[NXHLoginViewController alloc]init];
         
     }else{
         //最新版本号,进入新特性界面,保存当前版本号的最细版本号

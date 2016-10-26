@@ -21,7 +21,10 @@
 
 
 
-@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate,EMChatManagerDelegate   >
+@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate,EMChatManagerDelegate   >{
+    
+    dispatch_source_t _timer;
+}
 
 @property (strong, nonatomic)  UIView *baseView;
  
@@ -188,28 +191,25 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    //注册消息回调
-    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
-    [self setUpBadge];
+    [self.tableView reloadData]; 
       
-  
    }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    //取消监听
-    [[EMClient sharedClient].chatManager removeDelegate:self];
-
+   
+  
    }
 #pragma mark -- 接收消息回调
-- (void)didReceiveMessages:(NSArray *)aMessages{
+- (void)messagesDidReceive:(NSArray *)aMessages{
+    self.allConversationList = nil;
      [self.tableView reloadData];
     [self setUpBadge];
    }
 #pragma mark -- 已读消息回调
-- (void)didReceiveHasReadAcks:(NSArray *)aMessages{
-    [self setUpBadge];
-    
-}
+//- (void)didReceiveHasReadAcks:(NSArray *)aMessages{
+//    [self setUpBadge];
+//    
+//}
 - (void)setUpBadge{
     int j=0;
     for (int i =0; i< _allConversationList.count; i ++) {
@@ -226,6 +226,10 @@
  
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+
+    
+
        self.navigationItem.title = @"会话";
     [self addviews];
     [self.tableView registerClass:[EaseConversationCell class] forCellReuseIdentifier:@"Cell"] ;
@@ -239,9 +243,20 @@
     }]; 
     //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
     [self setUpBadge];
-
-   }
-
+     [self setTimer];
+    
+}
+- (void) setTimer{
+    MJWeakSelf;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);
+    
+    dispatch_source_set_event_handler(_timer, ^{
+        [weakSelf allConversationList];
+                    });
+}
  
 - (void)click:(UIButton*)btn{
     switch (btn.tag) {
@@ -281,7 +296,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
+    if (self.allConversationList) {
+        self.allConversationList = nil;
+    }
     return section==0?1: self.allConversationList.count;
 }
 
@@ -304,17 +321,17 @@
                   EMMessageBody *msgBody =conversation.lastReceivedMessage.body;
                 EMTextMessageBody *textBody = (EMTextMessageBody *)msgBody;
               cell.detailLabel.text =  textBody.text;
-         
+                cell.timeLabel.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
+                cell.titleLabel.text =  conversation.latestMessage.direction?conversation.latestMessage.from :conversation.latestMessage.to;
+                cell.avatarView.image= [NXHSaveTool fetchImageWithDirectorystringByAppendingPathComponent:AvatarImage];
+                cell.avatarView.badge = conversation.unreadMessagesCount;
                 break;
             }
             default:
                 break;
         }   
-        cell.timeLabel.text = [NSString stringWithFormat:@"%lld",  conversation.latestMessage.localTime];
-        cell.titleLabel.text =  conversation.latestMessage.direction?conversation.latestMessage.from :conversation.latestMessage.to;
-       // cell.avatarView.imageView= []
-    //    cell.lastMessage.text = 
-           return cell;
+      
+                   return cell;
     }
     
  
@@ -399,13 +416,12 @@
  
 
 - (NSArray *)allConversationList {
-	if(_allConversationList == nil) {
-
-
+    
+        _allConversationList =nil;
         _allConversationList = [[EMClient sharedClient].chatManager getAllConversations];
-        
-    }
-        	return _allConversationList;
+          
+     [self setUpBadge];
+    return _allConversationList;
     
 }
 

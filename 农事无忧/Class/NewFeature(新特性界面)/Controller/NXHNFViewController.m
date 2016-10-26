@@ -144,7 +144,7 @@
     // 点击立即体验按钮
    
       // 跳转到核心界面,push,modal,切换跟控制器的方法
-        NXHKeyWindow.rootViewController = [[NXHMainViewController alloc] init];
+        NXHKeyWindow.rootViewController = [[NXHLoginViewController alloc] init];
         
         CATransition *anim = [CATransition animation];
         anim.duration = 0.5;

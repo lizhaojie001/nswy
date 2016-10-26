@@ -8,10 +8,11 @@
 
 #import "NXHLoginViewController.h"
 #import "SVProgressHUD.h"
- 
+
 #import "NXHLogon.h"
 #import "NXHMainViewController.h"
-
+#import <RealReachability.h>
+#import "AppDelegate.h"
 
 @interface NXHLoginViewController ()<UITextFieldDelegate,UIApplicationDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *UserName;
@@ -64,10 +65,25 @@ static id instance_;
     return instance_;
 }
 
++(void)initialize{
+    if([EMClient sharedClient].isAutoLogin){
+       AppDelegate * delegate=  [UIApplication sharedApplication].delegate;
+    UIViewController *  vc= delegate.window.rootViewController;
+        [vc removeFromParentViewController];
+        vc.view =nil;
+        delegate.window.rootViewController = [[NXHMainViewController alloc]init];
+         
+        return ;
 
+    }
+}
 
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+    
+    
+    
     self.UserName.leftViewMode = UITextFieldViewModeAlways;
     self.UserName.leftView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"手机(1)"]];
     self.UserName.leftView.contentMode = UIViewContentModeScaleAspectFit;
@@ -79,12 +95,37 @@ static id instance_;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChange:) name:kRealReachabilityChangedNotification object:nil];
     self.UserName.delegate = self;
     self.Password.delegate = self;
 //     Do any additional setup after loading the view from its nib.
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popVc)];
     [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName  , nil] forState:UIControlStateNormal];
+}
+
+-(void)networkChange:(NSNotification*)notification{
+    RealReachability *reachability =(RealReachability *)notification.object;
+    ReachabilityStatus status = [reachability currentReachabilityStatus];
+    ReachabilityStatus previousStatus = [reachability previousReachabilityStatus];
+    NSLog(@"networkChanged, currentStatus:%@, previousStatus:%@", @(status), @(previousStatus));
+    
+    if (status == RealStatusNotReachable)
+    {
+        //self.flagLabel.text = @"Network unreachable!";
+        [SVProgressHUD showInfoWithStatus:@"网络断开"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        return;
+        
+    }else{
+        [SVProgressHUD showSuccessWithStatus:@"网络恢复"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        return;
+    }
+
 }
 - (void)popVc{
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -121,24 +162,35 @@ static id instance_;
 }
 
 - (IBAction)Login:(UIButton *)sender {
+//    if ([RealReachability sharedInstance].currentReachabilityStatus==RealStatusNotReachable) {
+//        [SVProgressHUD showWithStatus:@"网络断开"];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [SVProgressHUD dismiss];
+//            
+//        });
+//        return;
+//    }
+    
     MYLog(@"登录") ;
     [self.Password resignFirstResponder];
     [SVProgressHUD  showWithStatus:@"登陆中"];
     BOOL isAutoLogin = [EMClient sharedClient].options.isAutoLogin;
- if (!isAutoLogin) {
+    if (!isAutoLogin) {
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // time-consuming task
 
-            EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"];
+            EMError *error = [[EMClient sharedClient] loginWithUsername:@"17181300355" password:@"123456"]; 
             if (!error) {
                 MYLog(@"登录成功 设置自动登录");
-                //设置自动登录
-              
-                [[EMClient sharedClient].options setIsAutoLogin:YES];
+                //设置自动登录     
+                 [[EMClient sharedClient].options setIsAutoLogin:YES];
+               
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
-                    [self popVc];
-                 //   [self.previousWindow makeKeyAndVisible];
+                    UIWindow * newWindow=  [UIApplication sharedApplication].keyWindow;
+                    newWindow.rootViewController = [[NXHMainViewController alloc]init];
+                    [newWindow makeKeyAndVisible];
 
                 });
             }else{
@@ -152,7 +204,8 @@ static id instance_;
 
 
     });
- }else{
+        
+    }else{
      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
          // time-consuming task
 
@@ -162,23 +215,26 @@ static id instance_;
 
              dispatch_async(dispatch_get_main_queue(), ^{
                  [SVProgressHUD dismiss];
-                 [self popVc];
+                 UIWindow * newWindow=  [UIApplication sharedApplication].keyWindow;
+                 newWindow.rootViewController = [[NXHMainViewController alloc]init];
+                 [newWindow makeKeyAndVisible];
+                 return ;
 
              });
          }else{
              [SVProgressHUD  showWithStatus:[NSString stringWithFormat:@"登陆失败:%@",error ]];
-             dispatch_async(dispatch_get_main_queue(), ^{
+             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                  [SVProgressHUD dismiss];
-
-
+                 return ;
              });
+            
          }
 
 
      });
 
  }
-
+     
 }
 
 
@@ -240,11 +296,14 @@ void show(id formatstring)
 
     }else{
         [textField resignFirstResponder];
-        [self Login:nil];
+       // [self Login:nil];
        
     }
     MYLog(@"%s",__FUNCTION__);
    return  YES;
 }// called when 'return' key pressed. return NO to ignore.
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

@@ -4,7 +4,7 @@
 target '农事无忧' do
   # Uncomment this line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-
+pod 'RealReachability'
   # Pods for 农事无忧
 
   target '农事无忧Tests' do

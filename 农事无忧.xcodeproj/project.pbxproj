@@ -134,6 +134,7 @@
 		0454149A1D88F2930009ECF8 /* WEBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045414981D88F2930009ECF8 /* WEBViewController.m */; };
 		0454149B1D88F2930009ECF8 /* WEBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045414991D88F2930009ECF8 /* WEBViewController.xib */; };
 		045D6C451DBDDFD80014BF6B /* headerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045D6C441DBDDFD80014BF6B /* headerView.xib */; };
+		045D6C721DC0ABF80014BF6B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045D6C711DC0ABF80014BF6B /* SystemConfiguration.framework */; };
 		0482840F1D810E850002C0EC /* UISearchBar+FMAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */; };
 		0482E36F1DAA4D40006724AC /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = 0482E36E1DAA4D40006724AC /* content.json */; };
 		0482E3721DABA568006724AC /* CTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0482E3711DABA568006724AC /* CTDisplayView.m */; };
@@ -581,6 +582,7 @@
 		045414981D88F2930009ECF8 /* WEBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WEBViewController.m; sourceTree = "<group>"; };
 		045414991D88F2930009ECF8 /* WEBViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WEBViewController.xib; sourceTree = "<group>"; };
 		045D6C441DBDDFD80014BF6B /* headerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = headerView.xib; sourceTree = "<group>"; };
+		045D6C711DC0ABF80014BF6B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0482840D1D810E850002C0EC /* UISearchBar+FMAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+FMAdd.h"; sourceTree = "<group>"; };
 		0482840E1D810E850002C0EC /* UISearchBar+FMAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+FMAdd.m"; sourceTree = "<group>"; };
 		0482E36E1DAA4D40006724AC /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
@@ -996,6 +998,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045D6C721DC0ABF80014BF6B /* SystemConfiguration.framework in Frameworks */,
 				0433E1761D7E811400E015D3 /* libiconv.tbd in Frameworks */,
 				0433E1741D7E80FE00E015D3 /* libsqlite3.tbd in Frameworks */,
 				0433E1721D7E80F200E015D3 /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -2761,6 +2764,7 @@
 		E2886F5EAE2835681ACF1D38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				045D6C711DC0ABF80014BF6B /* SystemConfiguration.framework */,
 				0433E1751D7E811400E015D3 /* libiconv.tbd */,
 				0433E1731D7E80FE00E015D3 /* libsqlite3.tbd */,
 				0433E1711D7E80F200E015D3 /* libstdc++.6.0.9.tbd */,

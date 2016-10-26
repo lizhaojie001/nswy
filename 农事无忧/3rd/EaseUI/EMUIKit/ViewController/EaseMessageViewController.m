@@ -179,7 +179,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+        
     self.isViewDidAppear = YES;
     [[EaseSDKHelper shareHelper] setIsShowingimagePicker:NO];
     
@@ -192,6 +192,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
     
     self.isViewDidAppear = NO;
     [[EMCDDeviceManager sharedInstance] disableProximitySensor];
@@ -1453,8 +1454,10 @@
                 [self.conversation markMessageAsReadWithId:message.messageId error:nil];
             }
         }
+        [self _reloadTableViewDataWithMessage:message];
+        
     }
-}
+   }
 
 - (void)didReceiveCmdMessages:(NSArray *)aCmdMessages
 {
@@ -1465,13 +1468,13 @@
         }
     }
 }
-
-- (void)didReceiveHasDeliveredAcks:(NSArray *)aMessages
-{
-    for(EMMessage *message in aMessages){
-        [self _updateMessageStatus:message];
-    }
-}
+ 
+//- (void)didReceiveHasDeliveredAcks:(NSArray *)aMessages
+//{
+//    for(EMMessage *message in aMessages){
+//        [self _updateMessageStatus:message];
+//    }
+//}
 
 - (void)didReceiveHasReadAcks:(NSArray *)aMessages
 {
@@ -1509,14 +1512,27 @@
     }
 }
 
-- (void)didMessageStatusChanged:(EMMessage *)aMessage
-                          error:(EMError *)aError;
-{
-    [self _updateMessageStatus:aMessage];
+/**
+ *  <#Description#>
+ *
+ *  @param aMessage <#aMessage description#>
+ *  @param aError   <#aError description#>
+ */
+-(void)messageStatusDidChange:(EMMessage *)aMessage error:(EMError *)aError{
+     [self _updateMessageStatus:aMessage];
 }
-
-- (void)didMessageAttachmentsStatusChanged:(EMMessage *)message
-                                     error:(EMError *)error{
+//- (void)didMessageStatusChanged:(EMMessage *)aMessage
+//                          error:(EMError *)aError;
+//{
+//    [self _updateMessageStatus:aMessage];
+//}
+/**
+ *  <#Description#>
+ *
+ *  @param message <#message description#>
+ *  @param error   <#error description#>
+ */
+- (void)messageAttachmentStatusDidChange:(EMMessage *)message error:(EMError *)error{
     if (!error) {
         EMFileMessageBody *fileBody = (EMFileMessageBody*)[message body];
         if ([fileBody type] == EMMessageBodyTypeImage) {
@@ -1541,7 +1557,35 @@
     }else{
         
     }
+
 }
+//- (void)didMessageAttachmentsStatusChanged:(EMMessage *)message
+//                                     error:(EMError *)error{
+//    if (!error) {
+//        EMFileMessageBody *fileBody = (EMFileMessageBody*)[message body];
+//        if ([fileBody type] == EMMessageBodyTypeImage) {
+//            EMImageMessageBody *imageBody = (EMImageMessageBody *)fileBody;
+//            if ([imageBody thumbnailDownloadStatus] == EMDownloadStatusSuccessed)
+//            {
+//                [self _reloadTableViewDataWithMessage:message];
+//            }
+//        }else if([fileBody type] == EMMessageBodyTypeVideo){
+//            EMVideoMessageBody *videoBody = (EMVideoMessageBody *)fileBody;
+//            if ([videoBody thumbnailDownloadStatus] == EMDownloadStatusSuccessed)
+//            {
+//                [self _reloadTableViewDataWithMessage:message];
+//            }
+//        }else if([fileBody type] == EMMessageBodyTypeVoice){
+//            if ([fileBody downloadStatus] == EMDownloadStatusSuccessed)
+//            {
+//                [self _reloadTableViewDataWithMessage:message];
+//            }
+//        }
+//        
+//    }else{
+//        
+//    }
+//}
 
 #pragma mark - EMCDDeviceManagerProximitySensorDelegate
 
@@ -1653,8 +1697,10 @@
                      progress:(id)progress
 {
     [self.messsagesSource addObject:message];
+    MYLog(@"%@",message);
+   //  __weak EaseMessageViewController *weakSelf = self;
+    MJWeakSelf;
     
-     __weak EaseMessageViewController *weakSelf = self;
     dispatch_async(_messageQueue, ^{
         NSArray *messages = [weakSelf formatMessages:@[message]];
         

@@ -15,7 +15,7 @@
 #import "NXHButton.h"
 #import "NXHLoginViewController.h"
 #import  <objc/runtime.h>
-@interface NXHMainViewController ()<UITabBarControllerDelegate,UITabBarDelegate>
+@interface NXHMainViewController ()<UITabBarControllerDelegate,UITabBarDelegate,EMChatManagerDelegate>
 /**两个button*/
 @property (nonatomic,strong) UIButton * btn1;
 /**两个button*/
@@ -35,9 +35,11 @@
  
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[EMClient sharedClient].chatManager  addDelegate:self delegateQueue:nil];
+    
     self.delegate =self;
     MYLog(@"didSelectItem:%@",   self.tabBar.delegate);  
-    [self.tabBar setTintColor:[UIColor lightGrayColor]];
+    [self.tabBar setTintColor:[UIColor whiteColor]];
     [self setupAllVc];
     
      }
@@ -49,7 +51,7 @@
     Vc.title =title;
     Vc.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ;
     Vc.tabBarItem.selectedImage = [hightlightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-
+    Vc.tabBarItem.badgeValue=@"11";
     NXHNaviController * navi = [[NXHNaviController alloc]initWithRootViewController:Vc];
     [self addChildViewController:navi];
     
@@ -63,8 +65,7 @@
     
     NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
     [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
-    
-    
+        
     NXHHomeViewController * Home = [[NXHHomeViewController alloc]initWithCollectionViewLayout: [[UICollectionViewFlowLayout alloc]init] ];
     
     [self setupVc:Home andImage:[UIImage imageNamed:@"首页"]HightlightImage:[UIImage imageNamed:@"首页1"] andTitle:@"首页"];
@@ -126,6 +127,18 @@
      addAnimation:pulse forKey:nil];
     
    self.indexFlag = index;
+    
+}
+-(void)messagesDidReceive:(NSArray *)aMessages{
+    NXHMyLogFunction;
+    int j=0;
+    for (int i =0; i< [[EMClient sharedClient].chatManager getAllConversations].count; i ++) {
+        EMConversation * conversation = [[EMClient sharedClient].chatManager getAllConversations][i];
+        j = j + conversation.unreadMessagesCount;
+        
+    }      
+    
+    MYLog(@"---------J:%d",j);
     
 }
 @end

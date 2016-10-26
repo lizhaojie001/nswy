@@ -13,6 +13,8 @@
 #import "NXHModifyController.h"
 #import "NXHFeedbackController.h"
 #import "SVProgressHUD.h"
+#import "NXHLoginViewController.h"
+#import "AppDelegate.h"
 
 
  
@@ -215,19 +217,28 @@ static NSString * const Cell = @"Cell";
     if (alertView.tag ==10) {
         switch (buttonIndex) {
             case 0:
-                
-                //不做操作
+               //不做操作
                 NXHMyLogFunction;
                 break;
             default:{
                 //退出登录
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
                 EMError *error = [[EMClient sharedClient] logout:YES];
                 if (!error) {
                     MYLog(@"退出成功");
                     MYLog(@"%i",[EMClient sharedClient].isLoggedIn);
-                    [self.navigationController popToRootViewControllerAnimated:YES];
-                    
                 }
+            });
+            
+                    AppDelegate *app = [UIApplication sharedApplication].delegate; // 获取当前app单例  
+                   
+                 UIViewController *vc = app.window.rootViewController;  
+                      [vc removeFromParentViewController];
+                    vc.view = nil;
+                    app.window.rootViewController = [[NXHLoginViewController alloc]init];  
+                  
+                    
+               
             }
                 break;
         }

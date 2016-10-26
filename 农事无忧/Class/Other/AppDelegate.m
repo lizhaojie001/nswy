@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NXHGudieTool.h"
-
+#import "RealReachability.h"
 
 
 
@@ -16,9 +16,11 @@
 #import "NXHLoginViewController.h"
 #import "NXHNaviController.h"
 #import "HWPopTool.h"
+#import "AFNetworkReachabilityManager.h"
+#import "SVProgressHUD.h"
  
 
-@interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate>
+@interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate,EMChatManagerDelegate>
  
  
 @end
@@ -53,6 +55,11 @@
     [[EMClient sharedClient] addDelegate:self];
     //注册好友回调
     [[EMClient sharedClient].contactManager addDelegate:self delegateQueue:nil];
+    /**
+     *  注册消息回调
+     */
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+
     //AppKey:注册的AppKey，详细见下面注释。
 //    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
     EMOptions *options = [EMOptions optionsWithAppkey:@"zyl#nswy"];
@@ -69,6 +76,9 @@
    
     [window makeKeyAndVisible];
   
+//网络状态监听
+     [GLobalRealReachability startNotifier];
+   ;
     return YES;
 }
 //APP进入后台
@@ -127,6 +137,62 @@
     MYLog(@"%u",aConnectionState);
 }
 
+//网络监听回调
+- (void)networkChanged:(NSNotification *)notification
+{
+    RealReachability *reachability = (RealReachability *)notification.object;
+    ReachabilityStatus status = [reachability currentReachabilityStatus];
+    ReachabilityStatus previousStatus = [reachability previousReachabilityStatus];
+    NSLog(@"networkChanged, currentStatus:%@, previousStatus:%@", @(status), @(previousStatus));
+    
+    if (status == RealStatusNotReachable)
+    {
+        //self.flagLabel.text = @"Network unreachable!";
+        [SVProgressHUD showInfoWithStatus:@"网络断开"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        return;
+        
+    }else{
+        [SVProgressHUD showSuccessWithStatus:@"网络恢复"];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [SVProgressHUD dismiss];
+        });
+        return;
+    }
+    
+    if (status == RealStatusViaWiFi)
+    {
+       // self.flagLabel.text = @"Network wifi! Free!";
+    }
+    
+    if (status == RealStatusViaWWAN)
+    {
+        //self.flagLabel.text = @"Network WWAN! In charge!";
+    }
+    
+    WWANAccessType accessType = [GLobalRealReachability currentWWANtype];
+    
+    if (status == RealStatusViaWWAN)
+    {
+        if (accessType == WWANType2G)
+        {
+                     }
+        else if (accessType == WWANType3G)
+        {
+            
+        }
+        else if (accessType == WWANType4G)
+        {            }
+        else
+        {
+          //@"Unknown RealReachability WWAN Status, might be iOS6";
+        }
+    }
+    
+    
+}
 
 
 
@@ -134,6 +200,10 @@
     [[EMClient sharedClient] removeDelegate:self];
     //移除好友回调
     [[EMClient sharedClient].contactManager removeDelegate:self];
-
+   [[NSNotificationCenter defaultCenter] removeObserver:self];
+ 
+ 
 }
+
+ 
 @end

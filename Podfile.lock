@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 152d71d0ed48ea027534b4d83ca7cdf16fd8dee1
+PODS:
+  - RealReachability (1.1.8):
+    - RealReachability/Connection (= 1.1.8)
+    - RealReachability/Ping (= 1.1.8)
+  - RealReachability/Connection (1.1.8)
+  - RealReachability/Ping (1.1.8)
+
+DEPENDENCIES:
+  - RealReachability
+
+SPEC CHECKSUMS:
+  RealReachability: e6c8a2bbffa316006e8c282efc1ee2567d61a920
+
+PODFILE CHECKSUM: 974512508406c53e915cbc31eeaa4823d4a38dac
 
 COCOAPODS: 1.0.1
