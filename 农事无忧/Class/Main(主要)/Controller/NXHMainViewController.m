@@ -15,7 +15,7 @@
 #import "NXHButton.h"
 #import "NXHLoginViewController.h"
 #import  <objc/runtime.h>
-@interface NXHMainViewController ()<UITabBarControllerDelegate,UITabBarDelegate,EMChatManagerDelegate>
+@interface NXHMainViewController ()<EMChatManagerDelegate>//<UITabBarControllerDelegate,UITabBarDelegate
 /**两个button*/
 @property (nonatomic,strong) UIButton * btn1;
 /**两个button*/
@@ -37,12 +37,14 @@
     [super viewDidLoad];
     [[EMClient sharedClient].chatManager  addDelegate:self delegateQueue:nil];
     
-    self.delegate =self;
+    //self.delegate =self;
     MYLog(@"didSelectItem:%@",   self.tabBar.delegate);  
     [self.tabBar setTintColor:[UIColor whiteColor]];
     [self setupAllVc];
     
-     }
+   
+    [self setBadge];
+}
 
  
 
@@ -51,7 +53,7 @@
     Vc.title =title;
     Vc.tabBarItem.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ;
     Vc.tabBarItem.selectedImage = [hightlightImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    Vc.tabBarItem.badgeValue=@"11";
+    //Vc.tabBarItem.badgeValue=@"11";
     NXHNaviController * navi = [[NXHNaviController alloc]initWithRootViewController:Vc];
     [self addChildViewController:navi];
     
@@ -83,22 +85,22 @@
 
 
 }
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
-    if (LOGEDIN) {
-        return YES;
-    } else
-    {if (![viewController isEqual:tabBarController.childViewControllers[0]] ) {
-//      NXHLoginViewController * login=  [[NXHLoginViewController alloc]init];
-//        [login show];
-        NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:[[NXHLoginViewController alloc]init]];
-        [((UINavigationController*)tabBarController.selectedViewController) presentViewController:navi animated:YES completion:nil];
-        
-        return NO;
-    }
-         return YES;
-    }
-
-}
+//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+//    if (LOGEDIN) {
+//        return YES;
+//    } else
+//    {if (![viewController isEqual:tabBarController.childViewControllers[0]] ) {
+////      NXHLoginViewController * login=  [[NXHLoginViewController alloc]init];
+////        [login show];
+//        NXHNaviController *navi = [[NXHNaviController alloc]initWithRootViewController:[[NXHLoginViewController alloc]init]];
+//        [((UINavigationController*)tabBarController.selectedViewController) presentViewController:navi animated:YES completion:nil];
+//        
+//        return NO;
+//    }
+//         return YES;
+//    }
+//
+//}
 #pragma mark -开启tabar动画
 //- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
 //    NXHMyLogFunction;
@@ -129,16 +131,23 @@
    self.indexFlag = index;
     
 }
+
+#pragma mark -消息回调
 -(void)messagesDidReceive:(NSArray *)aMessages{
-    NXHMyLogFunction;
+    [self setBadge];
+    
+}
+-(void)setBadge{
     int j=0;
     for (int i =0; i< [[EMClient sharedClient].chatManager getAllConversations].count; i ++) {
         EMConversation * conversation = [[EMClient sharedClient].chatManager getAllConversations][i];
         j = j + conversation.unreadMessagesCount;
         
-    }      
-    
-    MYLog(@"---------J:%d",j);
-    
+    }     
+    MYLog(@"%@",self.viewControllers);
+    self.viewControllers.firstObject.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",j];
+}
+-(void)messagesDidRead:(NSArray *)aMessages{
+    [self setBadge];
 }
 @end

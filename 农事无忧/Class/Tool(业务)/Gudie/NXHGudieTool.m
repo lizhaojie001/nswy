@@ -42,7 +42,10 @@
         //没有最新的版本号,进入核心页面
         //创建窗口根控制器
         //UITabbleController控制器的view不是懒加载,在创建控制器的时候就会加载
-        
+        if ( [EMClient sharedClient].isAutoLogin ) {
+            window.rootViewController = [[NXHMainViewController alloc]init];
+            return;
+        }
         window.rootViewController = [[NXHLoginViewController alloc]init];
         
     }else{

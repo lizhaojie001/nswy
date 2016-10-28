@@ -66,17 +66,7 @@ static id instance_;
 }
 
 +(void)initialize{
-    if([EMClient sharedClient].isAutoLogin){
-       AppDelegate * delegate=  [UIApplication sharedApplication].delegate;
-    UIViewController *  vc= delegate.window.rootViewController;
-        [vc removeFromParentViewController];
-        vc.view =nil;
-        delegate.window.rootViewController = [[NXHMainViewController alloc]init];
-         
-        return ;
-
-    }
-}
+   }
 
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -99,8 +89,15 @@ static id instance_;
     self.UserName.delegate = self;
     self.Password.delegate = self;
 //     Do any additional setup after loading the view from its nib.
-    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popVc)];
-    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName  , nil] forState:UIControlStateNormal];
+//    self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(popVc)];
+  //  [self.navigationItem.leftBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName  , nil] forState:UIControlStateNormal];
+    
+    
+        
+     
+   
+   
+    
 }
 
 -(void)networkChange:(NSNotification*)notification{

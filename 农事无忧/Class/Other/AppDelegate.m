@@ -18,6 +18,7 @@
 #import "HWPopTool.h"
 #import "AFNetworkReachabilityManager.h"
 #import "SVProgressHUD.h"
+#import "NXHMainViewController.h"
  
 
 @interface AppDelegate ()<EMClientDelegate, EMContactManagerDelegate,EMChatManagerDelegate>
@@ -71,8 +72,13 @@
     self.window =window;
  window.backgroundColor = [UIColor whiteColor];
 #warning  暂时 修改
-  [NXHGudieTool guideRootViewController:window];
     
+    if([EMClient sharedClient].isAutoLogin){
+   self.window.rootViewController = [[NXHMainViewController alloc]init];
+    
+    }else{
+         [NXHGudieTool guideRootViewController:window];
+    }
    
     [window makeKeyAndVisible];
   
@@ -205,5 +211,8 @@
  
 }
 
+-(void)messagesDidRead:(NSArray *)aMessages{
+    NXHMyLogFunction;
+}
  
 @end

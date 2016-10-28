@@ -21,7 +21,7 @@
 
 
 
-@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate,EMChatManagerDelegate   >{
+@interface NXHMessageViewController ()<UISearchBarDelegate,UISearchResultsUpdating,UISearchBarDelegate,EMChatManagerDelegate    >{
     
     dispatch_source_t _timer;
 }
@@ -192,6 +192,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData]; 
+    NXHMyLogFunction;
       
    }
 -(void)viewWillDisappear:(BOOL)animated{
@@ -201,15 +202,14 @@
    }
 #pragma mark -- 接收消息回调
 - (void)messagesDidReceive:(NSArray *)aMessages{
-    self.allConversationList = nil;
+  
      [self.tableView reloadData];
-    [self setUpBadge];
+    //[self setUpBadge];
    }
 #pragma mark -- 已读消息回调
-//- (void)didReceiveHasReadAcks:(NSArray *)aMessages{
-//    [self setUpBadge];
-//    
-//}
+-(void)messagesDidRead:(NSArray *)aMessages{
+    [self.tableView reloadData];
+}
 - (void)setUpBadge{
     int j=0;
     for (int i =0; i< _allConversationList.count; i ++) {
@@ -226,10 +226,8 @@
  
 - (void)viewDidLoad {
     [super viewDidLoad];
+        
     [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
-
-    
-
        self.navigationItem.title = @"会话";
     [self addviews];
     [self.tableView registerClass:[EaseConversationCell class] forCellReuseIdentifier:@"Cell"] ;
@@ -237,12 +235,12 @@
      [self setUpSearchVC];
         MJWeakSelf;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.allConversationList =nil;
+        
         [weakSelf.tableView reloadData];
-        [weakSelf setUpBadge];
+       // [weakSelf setUpBadge];
     }]; 
     //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
-    [self setUpBadge];
+    //[self setUpBadge];
      [self setTimer];
     
 }
@@ -254,6 +252,7 @@
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);
     
     dispatch_source_set_event_handler(_timer, ^{
+      
         [weakSelf allConversationList];
                     });
 }
@@ -296,9 +295,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (self.allConversationList) {
-        self.allConversationList = nil;
-    }
+   
     return section==0?1: self.allConversationList.count;
 }
 
@@ -420,7 +417,7 @@
         _allConversationList =nil;
         _allConversationList = [[EMClient sharedClient].chatManager getAllConversations];
           
-     [self setUpBadge];
+    // [self setUpBadge];
     return _allConversationList;
     
 }
@@ -440,4 +437,5 @@
     NXHMyLogFunction;
 }
     
+
 @end

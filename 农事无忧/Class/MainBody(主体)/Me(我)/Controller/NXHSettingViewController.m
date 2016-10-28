@@ -223,19 +223,26 @@ static NSString * const Cell = @"Cell";
             default:{
                 //退出登录
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                EMError *error = [[EMClient sharedClient] logout:YES];
+                EMError *error = [[EMClient sharedClient] logout:NO];
                 if (!error) {
-                    MYLog(@"退出成功");
-                    MYLog(@"%i",[EMClient sharedClient].isLoggedIn);
+                    [SVProgressHUD showWithStatus:@"正在退出..."];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [SVProgressHUD showSuccessWithStatus:@"退出成功"];
+                        MYLog(@"是否在线%i",[EMClient sharedClient].isLoggedIn);
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            AppDelegate *app = [UIApplication sharedApplication].delegate; // 获取当前app单例  
+                            
+                            UIViewController *vc = app.window.rootViewController;  
+                            [vc removeFromParentViewController];
+                            vc.view = nil;
+                            app.window.rootViewController = [[NXHLoginViewController alloc]init];  
+                        });
+                    });
+                  
                 }
             });
             
-                    AppDelegate *app = [UIApplication sharedApplication].delegate; // 获取当前app单例  
                    
-                 UIViewController *vc = app.window.rootViewController;  
-                      [vc removeFromParentViewController];
-                    vc.view = nil;
-                    app.window.rootViewController = [[NXHLoginViewController alloc]init];  
                   
                     
                
