@@ -16,6 +16,7 @@
 #import "NXHHeaderBtn.h"
 #import "ChatViewController.h"
 #import "EaseConversationCell.h"
+#import "EaseMessageViewController.h"
 
 
 
@@ -192,6 +193,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.tableView reloadData]; 
+    [self setUpBadge];
     NXHMyLogFunction;
       
    }
@@ -204,7 +206,7 @@
 - (void)messagesDidReceive:(NSArray *)aMessages{
   
      [self.tableView reloadData];
-    //[self setUpBadge];
+    
    }
 #pragma mark -- 已读消息回调
 -(void)messagesDidRead:(NSArray *)aMessages{
@@ -237,10 +239,9 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         [weakSelf.tableView reloadData];
-       // [weakSelf setUpBadge];
+        
     }]; 
-    //[self.tableView registerNib:[UINib nibWithNibName:@"headerView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"headerView"];
-    //[self setUpBadge];
+    
      [self setTimer];
     
 }
@@ -288,7 +289,7 @@
    
     [self.view endEditing:YES];
 }
-#pragma mark - <UITabbleViewDelegate>
+#pragma mark - <UITabbleViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
 
     return 2;
@@ -377,14 +378,18 @@
         EaseConversationCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         
         
-        ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:cell.titleLabel.text conversationType:EMConversationTypeChat];
+        EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:cell.titleLabel.text conversationType:EMConversationTypeChat];
         viewController.title = cell.titleLabel.text;
         [self.navigationController pushViewController:viewController animated:YES];
         
 
     }
              }
+#pragma mark - 可编辑
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
 #pragma mark 懒加载
 
 
@@ -414,10 +419,13 @@
 
 - (NSArray *)allConversationList {
     
-        _allConversationList =nil;
+    _allConversationList =nil  ; 
         _allConversationList = [[EMClient sharedClient].chatManager getAllConversations];
-          
-    // [self setUpBadge];
+
+    
+                 
+    
+    
     return _allConversationList;
     
 }
@@ -436,6 +444,10 @@
 -(void)dealloc{
     NXHMyLogFunction;
 }
-    
+#pragma mark 会话列表发生变化
+- (void)conversationListDidUpdate:(NSArray *)aConversationList{
+   
+    [self.tableView reloadData];
+}
 
 @end

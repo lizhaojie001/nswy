@@ -30,6 +30,7 @@
     [super viewWillAppear:animated];
     
     [self registerNotifications];
+     [self tableViewDidTriggerHeaderRefresh];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -40,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
     // Do any additional setup after loading the view.
 }
 
@@ -201,7 +202,9 @@
 {
     [self tableViewDidTriggerHeaderRefresh];
 }
-
+-(void)messagesDidReceive:(NSArray *)aMessages{
+    [self tableViewDidTriggerHeaderRefresh];
+}
 #pragma mark - registerNotifications
 -(void)registerNotifications{
     [self unregisterNotifications];

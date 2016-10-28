@@ -11,6 +11,7 @@
  */
 
 #import <UIKit/UIKit.h>
+ 
 
 #define KCELLDEFAULTHEIGHT 50
 
@@ -23,7 +24,7 @@
 @property (strong, nonatomic) UIView *defaultFooterView;
 @property (strong, nonatomic) UITableView *tableView;
 
-@property (strong, nonatomic) NSMutableArray *dataArray;
+@property (strong, nonatomic) NSMutableArray  *dataArray;
 @property (strong, nonatomic) NSMutableDictionary *dataDictionary;
 @property (nonatomic) int page;
 

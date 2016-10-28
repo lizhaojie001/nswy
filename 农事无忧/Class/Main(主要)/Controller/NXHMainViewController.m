@@ -15,6 +15,8 @@
 #import "NXHButton.h"
 #import "NXHLoginViewController.h"
 #import  <objc/runtime.h>
+ 
+
 @interface NXHMainViewController ()<EMChatManagerDelegate>//<UITabBarControllerDelegate,UITabBarDelegate
 /**两个button*/
 @property (nonatomic,strong) UIButton * btn1;
@@ -32,7 +34,11 @@
 - (BOOL)prefersStatusBarHidden{
     return NO;
 }
- 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NXHMyLogFunction;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[EMClient sharedClient].chatManager  addDelegate:self delegateQueue:nil];
@@ -41,8 +47,8 @@
     MYLog(@"didSelectItem:%@",   self.tabBar.delegate);  
     [self.tabBar setTintColor:[UIColor whiteColor]];
     [self setupAllVc];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setBadge) name:@"Badge" object:nil];
     
-   
     [self setBadge];
 }
 
@@ -64,10 +70,13 @@
 - (void)setupAllVc{
     
     
-    
-    NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
+//    
+   NXHMessageViewController * Message = [[NXHMessageViewController alloc]initWithStyle:UITableViewStyleGrouped];
+   //   EaseConversationListViewController* Message = [[EaseConversationListViewController alloc]initWithStyle:UITableViewStyleGrouped];
     [self setupVc:Message andImage:[UIImage imageNamed:@"消息" ]HightlightImage:[UIImage imageNamed:@"消息1"] andTitle:@"消息"];
-        
+
+    
+    
     NXHHomeViewController * Home = [[NXHHomeViewController alloc]initWithCollectionViewLayout: [[UICollectionViewFlowLayout alloc]init] ];
     
     [self setupVc:Home andImage:[UIImage imageNamed:@"首页"]HightlightImage:[UIImage imageNamed:@"首页1"] andTitle:@"首页"];
@@ -137,6 +146,7 @@
     [self setBadge];
     
 }
+
 -(void)setBadge{
     int j=0;
     for (int i =0; i< [[EMClient sharedClient].chatManager getAllConversations].count; i ++) {
@@ -145,9 +155,7 @@
         
     }     
     MYLog(@"%@",self.viewControllers);
-    self.viewControllers.firstObject.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d",j];
+    self.viewControllers.firstObject.tabBarItem.badgeValue =j==0?nil: [NSString stringWithFormat:@"%d",j];
 }
--(void)messagesDidRead:(NSArray *)aMessages{
-    [self setBadge];
-}
+ 
 @end

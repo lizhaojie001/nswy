@@ -140,7 +140,7 @@
         if (_delegate && [_delegate respondsToSelector:@selector(userListViewController:didSelectUserModel:)]) {
             [_delegate userListViewController:self didSelectUserModel:model];
         } else {
-            ChatViewController *viewController = [[ChatViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
+            EaseMessageViewController *viewController = [[EaseMessageViewController alloc] initWithConversationChatter:model.buddy conversationType:EMConversationTypeChat];
       viewController.title = model.buddy;
             [self.navigationController pushViewController:viewController animated:YES];
         }

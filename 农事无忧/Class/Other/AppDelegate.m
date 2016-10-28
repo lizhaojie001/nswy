@@ -211,8 +211,6 @@
  
 }
 
--(void)messagesDidRead:(NSArray *)aMessages{
-    NXHMyLogFunction;
-}
+ 
  
 @end

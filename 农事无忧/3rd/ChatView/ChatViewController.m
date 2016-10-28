@@ -15,13 +15,13 @@
 //#import "ChatGroupDetailViewController.h"
 //#import "ChatroomDetailViewController.h"
 //#import "UserProfileViewController.h"
-//#import "UserProfileManager.h"
+ 
 //#import "ContactListSelectViewController.h"
 //#import "ChatDemoHelper.h"
 // #import "EMChooseViewController.h"
 //#import "ContactSelectionViewController.h"
 
-@interface ChatViewController ()<UIAlertViewDelegate,EMClientDelegate> //EMChooseViewDelegate>
+@interface ChatViewController ()<UIAlertViewDelegate,EMClientDelegate,EMChatManagerDelegate> //EMChooseViewDelegate>
 {
     UIMenuItem *_copyMenuItem;
     UIMenuItem *_deleteMenuItem;
@@ -43,7 +43,7 @@
     self.showRefreshHeader = YES;
     self.delegate = self;
     self.dataSource = self;
-    
+    [[EMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
     [self _setupBarButtonItem];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteAllMessages:) name:KNOTIFICATIONNAME_DELETEALLMESSAGE object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(exitGroup) name:@"ExitGroup" object:nil];
@@ -253,7 +253,7 @@
     id<IMessageModel> model = nil;
     model = [[EaseMessageModel alloc] initWithMessage:message];
     model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
-//    UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.nickname];
+    // UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:model.nickname];
 //    if (profileEntity) {
 //        model.avatarURLPath = profileEntity.imageUrl;
 //        model.nickname = profileEntity.nickname;
@@ -317,7 +317,7 @@
 #pragma mark - EaseMob
 
 #pragma mark - EMClientDelegate
-
+ 
 - (void)didLoginFromOtherDevice
 {
    
